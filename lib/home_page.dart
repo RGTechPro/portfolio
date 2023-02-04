@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_circular_text/circular_text.dart';
+import 'package:flutter_circular_text/circular_text/model.dart';
+import 'package:flutter_circular_text/circular_text/widget.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -82,25 +85,130 @@ class HomePage extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 150, top: 50),
-                  child: ClipPath(
-                    clipper: CustomClipperImage(),
-                    child: Container(
-                      height: 450,
-                      child: Image.asset(
-                        'images/my_photo.png',
-                        //height: 100,
-                        alignment: Alignment.topLeft,
-                        width: 350,
-                        fit: BoxFit.fitWidth,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 150, top: 50),
+                      child: SizedBox(
+                        width: 500,
+                        height: 500,
+                        child: Stack(children: [
+                          Positioned(
+                            left: 70,
+                            child: ClipPath(
+                              clipper: CustomClipperImage(),
+                              child: Container(
+                                height: 450,
+                                child: Image.asset(
+                                  'images/my_photo.png',
+                                  //height: 100,
+                                  alignment: Alignment.topLeft,
+                                  width: 350,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    color: Color(0xff252734)),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 4,
+                            left: 330,
+                            child: SizedBox(
+                              width: 150,
+                              child: Text('Rishabh Gupta.',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Neue',
+                                      fontSize: 38,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 330,
+                            left: 350,
+                            child: SizedBox(
+                              width: 150,
+                              child: Text('15',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Neue',
+                                      fontSize: 80,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 405,
+                            left: 385,
+                            child: SizedBox(
+                              width: 150,
+                              child: Text('Projects',
+                                  style: TextStyle(
+                                      color: Color(0xff04c189),
+                                      fontFamily: 'Neue',
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 205,
+                            // left: 315,
+                            child: SizedBox(
+                              width: 150,
+                              child: Text('523+',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Neue',
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 265,
+                            left: 85,
+                            child: SizedBox(
+                              width: 150,
+                              child: Text('Days',
+                                  style: TextStyle(
+                                      color: Color(0xff04c189),
+                                      fontFamily: 'Neue',
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                          ),
+                          Positioned(
+                            top: 415,
+                            left: 70,
+                            child: SizedBox(
+                              width: 300,
+                              child: Text('SOFTWARE  DEVELOPER',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Neue',
+                                    fontSize: 15,
+                                  )),
+                            ),
+                          )
+                        ]),
                       ),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle, color: Color(0xff252734)),
                     ),
                   ),
-                ),
+                  CircularText(radius: 50, children: [
+                    TextItem(
+                      startAngle: 210,
+                      space: 18,
+                      text: Text('FLUTTER & CLOUD DEV•',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Neue',
+                            fontSize: 15,
+                          )),
+                    )
+                  ])
+                ],
               )
             ],
           ),
