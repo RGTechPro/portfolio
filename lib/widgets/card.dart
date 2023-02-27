@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
-
+import 'package:dots_indicator/dots_indicator.dart';
 class WorkCard extends StatelessWidget {
   WorkCard(
       {required this.position,
@@ -65,7 +65,7 @@ class WorkCard extends StatelessWidget {
                     child: Wrap(
                       children: skills!
                           .map((i) => Padding(
-                                padding: const EdgeInsets.only(right: 7),
+                                padding: const EdgeInsets.only(right: 10),
                                 child: Chip(
                                     labelPadding: EdgeInsets.all(8),
                                     labelStyle: descriptionText,
@@ -92,7 +92,7 @@ class WorkCard extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 70),
+              padding: const EdgeInsets.only(bottom: 100, left: 65),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
@@ -101,7 +101,7 @@ class WorkCard extends StatelessWidget {
                     pic,
                     //height: 100,
                     alignment: Alignment.topLeft,
-                    width: 450,
+                    width: 400,
                     fit: BoxFit.fill,
                   ),
                   decoration: BoxDecoration(
