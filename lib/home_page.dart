@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -6,15 +7,23 @@ import 'package:flutter_circular_text/circular_text/model.dart';
 import 'package:flutter_circular_text/circular_text/widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
-import 'package:portfolio/widgets/card.dart';
+import 'package:portfolio/widgets/ach_card.dart';
+import 'package:portfolio/widgets/pro_card.dart';
+import 'package:portfolio/widgets/work_card.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   final GColors = [Color(0xff282b38), Color.fromARGB(255, 67, 71, 88)];
+  int _currentPosition = 0;
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
     double screenPad = 16.0; // screen padding for swiping between pages
-    int _currentPosition = 0;
+
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
@@ -426,14 +435,18 @@ class HomePage extends StatelessWidget {
                         style: topicHeading),
                     Expanded(
                       child: PageView(
+                        physics: ScrollPhysics(),
                         controller: PageController(
-                            initialPage: _currentPosition,
+                            initialPage: 0,
                             viewportFraction: 1 +
                                 (screenPad *
                                     2 /
                                     screenWidth)), // calculate viewPortFraction
                         onPageChanged: (int value) {
-                          _currentPosition = value;
+                          setState(() {
+                            _currentPosition = value;
+                            print(_currentPosition.toDouble());
+                          });
                         },
                         scrollDirection: Axis.horizontal,
                         children: [
@@ -460,6 +473,154 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    DotsIndicator(
+                      dotsCount: 2,
+                      position: _currentPosition.toDouble(),
+                      decorator: DotsDecorator(
+                        activeColor: Color(0xff04c189),
+                        size: const Size.square(9.0),
+                        activeSize: const Size(18.0, 9.0),
+                        activeShape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Achievements', style: topicHeading),
+                    Expanded(
+                      child: PageView(
+                        physics: ScrollPhysics(),
+                        controller: PageController(
+                            initialPage: 0,
+                            viewportFraction: 1 +
+                                (screenPad *
+                                    2 /
+                                    screenWidth)), // calculate viewPortFraction
+                        onPageChanged: (int value) {
+                          setState(() {
+                            _currentPosition = value;
+                            print(_currentPosition.toDouble());
+                          });
+                        },
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          AchCard(
+                            position: 'WINNER',
+                            competition: 'Smart India Hackathon 2022',
+                            description:
+                                'I along with my team, won the first position in the Smart India Hackathon 2022, organized by the Government of India and also won a cash prize of rupees 1 Lakh. We had to create a solution for a problem statement given by the Ministry of Electronics and Information Technology (MEITY). We created MeraAadhar. MeraAadhaar is a mobile App that gives the user the power to book a preferred operator on his phone in the preferred time slot and perform operations like Aadhaar Card updation and enrollment at the comfort of their home.',
+                            time: 'Aug 2022',
+                            pic: 'images/sih.jpeg',
+                            link1: 'https://www.sih.gov.in/',
+                            link2: 'https://github.com/wersharks/mera_aadhar',
+                            link3:
+                                'https://www.linkedin.com/posts/rgpro_sih-sih2022-smartindiahackathon-activity-6970396204174061568-CN5y?utm_source=share&utm_medium=member_desktop',
+                            skills: ['Flutter', 'Node.js', 'Python'],
+                          ),
+                          AchCard(
+                            position: 'GRAND FINALIST',
+                            competition: 'UNESCO India Africa Hackathon',
+                            description:
+                                'After two rounds of elimination I got a chance to attend this huge event organized by Indian Govt and UNESCO with impeccable arrangements and experience. A chance to blend in and experience numerous cultures with an exchange of Technical Knowledge. We “CodeX” worked on an Education category problem to develop an app for data collection, analysis and visualization related to Schools in order to improve the education system. Vice President of India, UP CM, UP Governer and Education Minister were Chief Guests of this event.',
+                            time: 'Nov 2022',
+                            pic: 'images/uia.jpeg',
+                            link1: 'https://uia.mic.gov.in/',
+                            link2: 'https://github.com/RGTechPro/learn_ai',
+                            link3:
+                                'https://www.linkedin.com/posts/rgpro_unesco-unescoindiaafricahackathon-vicepresident-activity-7004025965924233216-0avi?utm_source=share&utm_medium=member_desktop',
+                            skills: ['Flutter', 'Node.js', 'Python'],
+                          )
+                        ],
+                      ),
+                    ),
+                    DotsIndicator(
+                      dotsCount: 2,
+                      position: _currentPosition.toDouble(),
+                      decorator: DotsDecorator(
+                        activeColor: Color(0xff04c189),
+                        size: const Size.square(9.0),
+                        activeSize: const Size(18.0, 9.0),
+                        activeShape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Projects', style: topicHeading),
+                    Expanded(
+                      child: PageView(
+                        physics: ScrollPhysics(),
+                        controller: PageController(
+                            initialPage: 0,
+                            viewportFraction: 1 +
+                                (screenPad *
+                                    2 /
+                                    screenWidth)), // calculate viewPortFraction
+                        onPageChanged: (int value) {
+                          setState(() {
+                            _currentPosition = value;
+                            print(_currentPosition.toDouble());
+                          });
+                        },
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          ProCard(
+                            name: 'MERA AADHAR',
+                            description:
+                                'Mera Aadhaar is a mobile App that gives the user the power to book a preferred operator on his phone in the preferred time slot and perform operations like Aadhaar Card updation and enrollment at the comfort of their home. I along with my team, won the first position in the Smart India Hackathon 2022 through this project, organized by the Government of India and also won a cash prize of rupees 1 Lakh.',
+                            pic: 'images/2.jpeg',
+                            link1: 'https://github.com/wersharks/mera_aadhar',
+                            skills: ['Flutter', 'Node.js', 'Python'],
+                          ),
+                          ProCard(
+                            name: 'JDMS Pharmacy',
+                            description:
+                                'Made a Pharmacy App with Flutter fully integrated with Firebase. This app is currently being used in a city with over 500 users.',
+                            pic: 'images/jdms.webp',
+                            link2:
+                                'https://play.google.com/store/apps/details?id=com.jdms.jdms_pharmacy',
+                            skills: ['Flutter', 'Node.js', 'Python'],
+                          ),
+                          // AchCard(
+                          //   position: 'GRAND FINALIST',
+                          //   competition: 'UNESCO India Africa Hackathon',
+                          //   description:
+                          //       'After two rounds of elimination I got a chance to attend this huge event organized by Indian Govt and UNESCO with impeccable arrangements and experience. A chance to blend in and experience numerous cultures with an exchange of Technical Knowledge. We “CodeX” worked on an Education category problem to develop an app for data collection, analysis and visualization related to Schools in order to improve the education system. Vice President of India, UP CM, UP Governer and Education Minister were Chief Guests of this event.',
+                          //   time: 'Nov 2022',
+                          //   pic: 'images/uia.jpeg',
+                          //   link1: 'https://uia.mic.gov.in/',
+                          //   link2: 'https://github.com/RGTechPro/learn_ai',
+                          //   link3: 'https://www.linkedin.com/posts/rgpro_unesco-unescoindiaafricahackathon-vicepresident-activity-7004025965924233216-0avi?utm_source=share&utm_medium=member_desktop',
+                          //   skills: ['Flutter', 'Node.js', 'Python'],
+                          // )
+                        ],
+                      ),
+                    ),
+                    DotsIndicator(
+                      dotsCount: 2,
+                      position: _currentPosition.toDouble(),
+                      decorator: DotsDecorator(
+                        activeColor: Color(0xff04c189),
+                        size: const Size.square(9.0),
+                        activeSize: const Size(18.0, 9.0),
+                        activeShape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0)),
+                      ),
+                    )
                   ],
                 ),
               ),

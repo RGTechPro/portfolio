@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
 import 'package:dots_indicator/dots_indicator.dart';
+
 class WorkCard extends StatelessWidget {
   WorkCard(
       {required this.position,
@@ -67,7 +68,7 @@ class WorkCard extends StatelessWidget {
                           .map((i) => Padding(
                                 padding: const EdgeInsets.only(right: 10),
                                 child: Chip(
-                                    labelPadding: EdgeInsets.all(8),
+                                    labelPadding: EdgeInsets.all(5),
                                     labelStyle: descriptionText,
                                     backgroundColor: Color(0xff282b38),
                                     shape: RoundedRectangleBorder(
@@ -75,7 +76,8 @@ class WorkCard extends StatelessWidget {
                                         side: BorderSide(color: Colors.white)),
                                     label: Text(
                                       i,
-                                      style: descriptionText,
+                                      style: descriptionText.copyWith(
+                                          fontSize: 20),
                                     )),
                               ))
                           .toList(),
