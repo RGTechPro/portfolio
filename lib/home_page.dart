@@ -19,11 +19,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   final GColors = [Color(0xff282b38), Color.fromARGB(255, 67, 71, 88)];
-  int _currentPosition = 0;
+  int _currentPosition_work = 0;
+  int _currentPosition_ach = 0;
+  int _currentPosition_pro = 0;
+  PageController workPage = PageController();
+  PageController achPage = PageController();
+  PageController proPage = PageController();
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
     double screenPad = 16.0; // screen padding for swiping between pages
-
+    workPage = PageController(
+        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+    achPage = PageController(
+        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+    proPage = PageController(
+        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
@@ -436,16 +446,12 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
-                        controller: PageController(
-                            initialPage: 0,
-                            viewportFraction: 1 +
-                                (screenPad *
-                                    2 /
-                                    screenWidth)), // calculate viewPortFraction
+                        controller: workPage,
+                        // calculate viewPortFraction
                         onPageChanged: (int value) {
                           setState(() {
-                            _currentPosition = value;
-                            print(_currentPosition.toDouble());
+                            _currentPosition_work = value;
+                            print(_currentPosition_work.toDouble());
                           });
                         },
                         scrollDirection: Axis.horizontal,
@@ -473,16 +479,53 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    DotsIndicator(
-                      dotsCount: 2,
-                      position: _currentPosition.toDouble(),
-                      decorator: DotsDecorator(
-                        activeColor: Color(0xff04c189),
-                        size: const Size.square(9.0),
-                        activeSize: const Size(18.0, 9.0),
-                        activeShape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 7.0),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                workPage.previousPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowLeft,
+                                color:  Color(0xff00CC8E),
+                              )),
+                        ),
+                        DotsIndicator(
+                          dotsCount: 2,
+                          position: _currentPosition_work.toDouble(),
+                          decorator: DotsDecorator(
+                            activeColor: Color(0xff04c189),
+                            size: const Size.square(9.0),
+                            activeSize: const Size(18.0, 9.0),
+                            activeShape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 7),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                workPage.nextPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowRight,
+                                color:  Color(0xff00CC8E),
+                              )),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -497,16 +540,11 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
-                        controller: PageController(
-                            initialPage: 0,
-                            viewportFraction: 1 +
-                                (screenPad *
-                                    2 /
-                                    screenWidth)), // calculate viewPortFraction
+                        controller: achPage, // calculate viewPortFraction
                         onPageChanged: (int value) {
                           setState(() {
-                            _currentPosition = value;
-                            print(_currentPosition.toDouble());
+                            _currentPosition_ach = value;
+                            print(_currentPosition_ach.toDouble());
                           });
                         },
                         scrollDirection: Axis.horizontal,
@@ -540,16 +578,53 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    DotsIndicator(
-                      dotsCount: 2,
-                      position: _currentPosition.toDouble(),
-                      decorator: DotsDecorator(
-                        activeColor: Color(0xff04c189),
-                        size: const Size.square(9.0),
-                        activeSize: const Size(18.0, 9.0),
-                        activeShape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 7.0),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                achPage.previousPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowLeft,
+                                color:  Color(0xff00CC8E),
+                              )),
+                        ),
+                        DotsIndicator(
+                          dotsCount: 2,
+                          position: _currentPosition_ach.toDouble(),
+                          decorator: DotsDecorator(
+                            activeColor: Color(0xff04c189),
+                            size: const Size.square(9.0),
+                            activeSize: const Size(18.0, 9.0),
+                            activeShape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 7),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                achPage.nextPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowRight,
+                                color:  Color(0xff00CC8E),
+                              )),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -564,16 +639,11 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
-                        controller: PageController(
-                            initialPage: 0,
-                            viewportFraction: 1 +
-                                (screenPad *
-                                    2 /
-                                    screenWidth)), // calculate viewPortFraction
+                        controller: proPage, // calculate viewPortFraction
                         onPageChanged: (int value) {
                           setState(() {
-                            _currentPosition = value;
-                            print(_currentPosition.toDouble());
+                            _currentPosition_pro = value;
+                            print(_currentPosition_pro.toDouble());
                           });
                         },
                         scrollDirection: Axis.horizontal,
@@ -582,9 +652,10 @@ class _HomePageState extends State<HomePage> {
                             name: 'MERA AADHAR',
                             description:
                                 'Mera Aadhaar is a mobile App that gives the user the power to book a preferred operator on his phone in the preferred time slot and perform operations like Aadhaar Card updation and enrollment at the comfort of their home. I along with my team, won the first position in the Smart India Hackathon 2022 through this project, organized by the Government of India and also won a cash prize of rupees 1 Lakh.',
-                            pic: 'images/2.jpeg',
+                            pic: 'images/MERA AADHAR1.jpeg',
                             link1: 'https://github.com/wersharks/mera_aadhar',
                             skills: ['Flutter', 'Node.js', 'Python'],
+                            noi: 14,
                           ),
                           ProCard(
                             name: 'JDMS Pharmacy',
@@ -610,16 +681,53 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    DotsIndicator(
-                      dotsCount: 2,
-                      position: _currentPosition.toDouble(),
-                      decorator: DotsDecorator(
-                        activeColor: Color(0xff04c189),
-                        size: const Size.square(9.0),
-                        activeSize: const Size(18.0, 9.0),
-                        activeShape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 7.0),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                proPage.previousPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowLeft,
+                                color:  Color(0xff00CC8E),
+                              )),
+                        ),
+                        DotsIndicator(
+                          dotsCount: 2,
+                          position: _currentPosition_pro.toDouble(),
+                          decorator: DotsDecorator(
+                            activeColor: Color(0xff04c189),
+                            size: const Size.square(9.0),
+                            activeSize: const Size(18.0, 9.0),
+                            activeShape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 7),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                proPage.nextPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowRight,
+                                color:  Color(0xff00CC8E),
+                              )),
+                        ),
+                      ],
                     )
                   ],
                 ),
