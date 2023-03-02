@@ -8,8 +8,10 @@ import 'package:flutter_circular_text/circular_text/widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/widgets/ach_card.dart';
+import 'package:portfolio/widgets/blog_card.dart';
 import 'package:portfolio/widgets/pro_card.dart';
 import 'package:portfolio/widgets/work_card.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,9 +24,27 @@ class _HomePageState extends State<HomePage> {
   int _currentPosition_work = 0;
   int _currentPosition_ach = 0;
   int _currentPosition_pro = 0;
+  int _currentPosition_blog = 0;
   PageController workPage = PageController();
   PageController achPage = PageController();
   PageController proPage = PageController();
+  PageController blogPage = PageController();
+  final String readCounters = """
+  query{
+  user(username:"rgpro") {
+    publication {
+      posts(page:0) {
+        title
+        brief
+        slug
+        coverImage
+        dateAdded
+        
+      }
+    }
+  }
+}
+""";
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
     double screenPad = 16.0; // screen padding for swiping between pages
@@ -34,6 +54,9 @@ class _HomePageState extends State<HomePage> {
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     proPage = PageController(
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+    blogPage = PageController(
+        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
@@ -495,7 +518,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.arrowLeft,
-                                color:  Color(0xff00CC8E),
+                                color: Color(0xff00CC8E),
                               )),
                         ),
                         DotsIndicator(
@@ -522,7 +545,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.arrowRight,
-                                color:  Color(0xff00CC8E),
+                                color: Color(0xff00CC8E),
                               )),
                         ),
                       ],
@@ -594,7 +617,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.arrowLeft,
-                                color:  Color(0xff00CC8E),
+                                color: Color(0xff00CC8E),
                               )),
                         ),
                         DotsIndicator(
@@ -621,7 +644,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.arrowRight,
-                                color:  Color(0xff00CC8E),
+                                color: Color(0xff00CC8E),
                               )),
                         ),
                       ],
@@ -666,18 +689,6 @@ class _HomePageState extends State<HomePage> {
                                 'https://play.google.com/store/apps/details?id=com.jdms.jdms_pharmacy',
                             skills: ['Flutter', 'Node.js', 'Python'],
                           ),
-                          // AchCard(
-                          //   position: 'GRAND FINALIST',
-                          //   competition: 'UNESCO India Africa Hackathon',
-                          //   description:
-                          //       'After two rounds of elimination I got a chance to attend this huge event organized by Indian Govt and UNESCO with impeccable arrangements and experience. A chance to blend in and experience numerous cultures with an exchange of Technical Knowledge. We “CodeX” worked on an Education category problem to develop an app for data collection, analysis and visualization related to Schools in order to improve the education system. Vice President of India, UP CM, UP Governer and Education Minister were Chief Guests of this event.',
-                          //   time: 'Nov 2022',
-                          //   pic: 'images/uia.jpeg',
-                          //   link1: 'https://uia.mic.gov.in/',
-                          //   link2: 'https://github.com/RGTechPro/learn_ai',
-                          //   link3: 'https://www.linkedin.com/posts/rgpro_unesco-unescoindiaafricahackathon-vicepresident-activity-7004025965924233216-0avi?utm_source=share&utm_medium=member_desktop',
-                          //   skills: ['Flutter', 'Node.js', 'Python'],
-                          // )
                         ],
                       ),
                     ),
@@ -697,7 +708,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.arrowLeft,
-                                color:  Color(0xff00CC8E),
+                                color: Color(0xff00CC8E),
                               )),
                         ),
                         DotsIndicator(
@@ -724,7 +735,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.arrowRight,
-                                color:  Color(0xff00CC8E),
+                                color: Color(0xff00CC8E),
                               )),
                         ),
                       ],
@@ -732,6 +743,115 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+
+Query(
+                      options: QueryOptions(
+                        document: gql(readCounters),
+                        pollInterval: Duration(seconds: 10),
+                      ),
+                      builder: (QueryResult result,
+                          {VoidCallback? refetch, FetchMore? fetchMore}) {
+                        if (result.hasException) {
+                          return Text(result.exception.toString());
+                        }
+
+                        if (result.isLoading) {
+                          return Text('Loading');
+                        }
+
+                        // it can be either Map or List
+                        List data =
+                            result.data!['user']['publication']['posts'];
+                     
+
+                        print(data);
+
+return
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Blogs', style: topicHeading),
+                    Expanded(
+                        child: 
+                         PageView.builder(
+                          physics: ScrollPhysics(),
+                          controller: blogPage, // calculate viewPortFraction
+                          onPageChanged: (int value) {
+                            setState(() {
+                              _currentPosition_blog = value;
+                              print(_currentPosition_blog.toDouble());
+                            });
+                          },
+                          itemCount: data.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return BlogCard(
+                              title: data[index]['title'],
+                              brief: data[index]['brief'],
+                              date: data[index]['dateAdded'],
+                              pic: data[index]['coverImage'],
+                              link:
+                                  "https://rishabhgupta.hashnode.dev/${data[index]['slug']}",
+                            );
+                          },
+                         
+                        )
+                      
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 7.0),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                blogPage.previousPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowLeft,
+                                color: Color(0xff00CC8E),
+                              )),
+                        ),
+                        DotsIndicator(
+                          dotsCount: data.length,
+                          position: _currentPosition_blog.toDouble(),
+                          decorator: DotsDecorator(
+                            activeColor: Color(0xff04c189),
+                            size: const Size.square(9.0),
+                            activeSize: const Size(18.0, 9.0),
+                            activeShape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 7),
+                          child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              iconSize: 22,
+                              onPressed: () {
+                                blogPage.nextPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.linear);
+                              },
+                              icon: Icon(
+                                FontAwesomeIcons.arrowRight,
+                                color: Color(0xff00CC8E),
+                              )),
+                        ),
+                      ],
+                    )
+                  ],)
+                );}
+              )
             ],
           ),
           backgroundColor: Colors.transparent,
