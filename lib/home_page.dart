@@ -9,9 +9,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/widgets/ach_card.dart';
 import 'package:portfolio/widgets/blog_card.dart';
+import 'package:portfolio/widgets/edu_card.dart';
 import 'package:portfolio/widgets/pro_card.dart';
+import 'package:portfolio/widgets/skill_card.dart';
 import 'package:portfolio/widgets/work_card.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:dev_icons/dev_icons.dart';
+
+import 'models/skillChip.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -464,6 +469,202 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text('Skills', style: topicHeading),
+                    Expanded(
+                      child: PageView(
+                        physics: ScrollPhysics(),
+                        controller: workPage,
+                        // calculate viewPortFraction
+                        onPageChanged: (int value) {
+                          setState(() {
+                            _currentPosition_work = value;
+                            print(_currentPosition_work.toDouble());
+                          });
+                        },
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          SkillCard(
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Bash',
+                                  icon: Icon(
+                                    DevIcons.bashPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Dart',
+                                  icon: Icon(
+                                    DevIcons.dartPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'SQL',
+                                  icon: Icon(
+                                    DevIcons.mysqlPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'MongoDB',
+                                  icon: Icon(
+                                    DevIcons.mongodbPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'GoLang',
+                                  icon: Icon(
+                                    DevIcons.goPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'GraphQL',
+                                  icon: Icon(
+                                    DevIcons.graphqlPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'C/C++',
+                                  icon: Icon(
+                                    DevIcons.cplusplusPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'HTML',
+                                  icon: Icon(
+                                    DevIcons.html5Plain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'CSS',
+                                  icon: Icon(
+                                    DevIcons.css3Plain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Javascript',
+                                  icon: Icon(
+                                    DevIcons.javascriptPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'AWS',
+                                  icon: Icon(
+                                    DevIcons.amazonwebservicesOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Docker',
+                                  icon: Icon(
+                                    DevIcons.dockerPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Android',
+                                  icon: Icon(
+                                    DevIcons.androidPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+
+                              SkillChip(
+                                  skill: 'Git',
+                                  icon: Icon(
+                                    DevIcons.gitPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              //   SkillChip(skill: 'Latex', icon: Icon(DevIcons)),
+                              SkillChip(
+                                  skill: 'Kubernetes',
+                                  icon: Icon(
+                                    DevIcons.kubernetesPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'GCP',
+                                  icon: Icon(
+                                    DevIcons.googlecloudPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Django',
+                                  icon: Icon(
+                                    DevIcons.djangoPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Figma',
+                                  icon: Icon(
+                                    DevIcons.figmaPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Jenkins',
+                                  icon: Icon(
+                                    DevIcons.jenkinsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Nginx',
+                                  icon: Icon(
+                                    DevIcons.nginxOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                              //    SkillChip(skill: 'Azure', icon: Icon(DevIcons.)),
+                              //   SkillChip(skill: 'Solidity', icon: Icon(DevIcons.solid)),
+                              SkillChip(
+                                  skill: 'Java',
+                                  icon: Icon(
+                                    DevIcons.javaPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Linux',
+                                  icon: Icon(
+                                    DevIcons.linuxPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Text('Work Experience and Volunteering',
                         style: topicHeading),
                     Expanded(
@@ -743,63 +944,142 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              Query(
+                  options: QueryOptions(
+                    document: gql(readCounters),
+                    pollInterval: Duration(seconds: 10),
+                  ),
+                  builder: (QueryResult result,
+                      {VoidCallback? refetch, FetchMore? fetchMore}) {
+                    if (result.hasException) {
+                      return Text(result.exception.toString());
+                    }
 
-Query(
-                      options: QueryOptions(
-                        document: gql(readCounters),
-                        pollInterval: Duration(seconds: 10),
-                      ),
-                      builder: (QueryResult result,
-                          {VoidCallback? refetch, FetchMore? fetchMore}) {
-                        if (result.hasException) {
-                          return Text(result.exception.toString());
-                        }
+                    if (result.isLoading) {
+                      return Text('Loading');
+                    }
 
-                        if (result.isLoading) {
-                          return Text('Loading');
-                        }
+                    // it can be either Map or List
+                    List data = result.data!['user']['publication']['posts'];
 
-                        // it can be either Map or List
-                        List data =
-                            result.data!['user']['publication']['posts'];
-                     
+                    print(data);
 
-                        print(data);
-
-return
+                    return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 100, vertical: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Blogs', style: topicHeading),
+                            Expanded(
+                                child: PageView.builder(
+                              physics: ScrollPhysics(),
+                              controller:
+                                  blogPage, // calculate viewPortFraction
+                              onPageChanged: (int value) {
+                                setState(() {
+                                  _currentPosition_blog = value;
+                                  print(_currentPosition_blog.toDouble());
+                                });
+                              },
+                              itemCount: data.length,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                return BlogCard(
+                                  title: data[index]['title'],
+                                  brief: data[index]['brief'],
+                                  date: data[index]['dateAdded'],
+                                  pic: data[index]['coverImage'],
+                                  link:
+                                      "https://rishabhgupta.hashnode.dev/${data[index]['slug']}",
+                                );
+                              },
+                            )),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 7.0),
+                                  child: IconButton(
+                                      padding: EdgeInsets.zero,
+                                      constraints: BoxConstraints(),
+                                      iconSize: 22,
+                                      onPressed: () {
+                                        blogPage.previousPage(
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                            curve: Curves.linear);
+                                      },
+                                      icon: Icon(
+                                        FontAwesomeIcons.arrowLeft,
+                                        color: Color(0xff00CC8E),
+                                      )),
+                                ),
+                                DotsIndicator(
+                                  dotsCount: data.length,
+                                  position: _currentPosition_blog.toDouble(),
+                                  decorator: DotsDecorator(
+                                    activeColor: Color(0xff04c189),
+                                    size: const Size.square(9.0),
+                                    activeSize: const Size(18.0, 9.0),
+                                    activeShape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0)),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 7),
+                                  child: IconButton(
+                                      padding: EdgeInsets.zero,
+                                      constraints: BoxConstraints(),
+                                      iconSize: 22,
+                                      onPressed: () {
+                                        blogPage.nextPage(
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                            curve: Curves.linear);
+                                      },
+                                      icon: Icon(
+                                        FontAwesomeIcons.arrowRight,
+                                        color: Color(0xff00CC8E),
+                                      )),
+                                ),
+                              ],
+                            )
+                          ],
+                        ));
+                  }),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Blogs', style: topicHeading),
+                    Text('Education', style: topicHeading),
                     Expanded(
-                        child: 
-                         PageView.builder(
-                          physics: ScrollPhysics(),
-                          controller: blogPage, // calculate viewPortFraction
-                          onPageChanged: (int value) {
-                            setState(() {
-                              _currentPosition_blog = value;
-                              print(_currentPosition_blog.toDouble());
-                            });
-                          },
-                          itemCount: data.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return BlogCard(
-                              title: data[index]['title'],
-                              brief: data[index]['brief'],
-                              date: data[index]['dateAdded'],
-                              pic: data[index]['coverImage'],
-                              link:
-                                  "https://rishabhgupta.hashnode.dev/${data[index]['slug']}",
-                            );
-                          },
-                         
-                        )
-                      
+                      child: PageView(
+                        physics: ScrollPhysics(),
+                        controller: workPage,
+                        // calculate viewPortFraction
+                        onPageChanged: (int value) {
+                          setState(() {
+                            _currentPosition_work = value;
+                            print(_currentPosition_work.toDouble());
+                          });
+                        },
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          EduCard(
+                            collegeName:
+                                'Thapar Institute of Engineering & Technology',
+                            description:
+                                'Pursuing B.E. in Computer Engineering',
+                            duration: '2020 to 2024',
+                            pic: 'images/thapar.webp',
+                            link: 'https://www.thapar.edu/',
+                          ),
+                        ],
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -811,7 +1091,7 @@ return
                               constraints: BoxConstraints(),
                               iconSize: 22,
                               onPressed: () {
-                                blogPage.previousPage(
+                                workPage.previousPage(
                                     duration: Duration(milliseconds: 300),
                                     curve: Curves.linear);
                               },
@@ -821,8 +1101,8 @@ return
                               )),
                         ),
                         DotsIndicator(
-                          dotsCount: data.length,
-                          position: _currentPosition_blog.toDouble(),
+                          dotsCount: 1,
+                          position: _currentPosition_work.toDouble(),
                           decorator: DotsDecorator(
                             activeColor: Color(0xff04c189),
                             size: const Size.square(9.0),
@@ -838,7 +1118,7 @@ return
                               constraints: BoxConstraints(),
                               iconSize: 22,
                               onPressed: () {
-                                blogPage.nextPage(
+                                workPage.nextPage(
                                     duration: Duration(milliseconds: 300),
                                     curve: Curves.linear);
                               },
@@ -849,9 +1129,9 @@ return
                         ),
                       ],
                     )
-                  ],)
-                );}
-              )
+                  ],
+                ),
+              ),
             ],
           ),
           backgroundColor: Colors.transparent,
