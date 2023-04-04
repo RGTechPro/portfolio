@@ -30,10 +30,12 @@ class _HomePageState extends State<HomePage> {
   int _currentPosition_ach = 0;
   int _currentPosition_pro = 0;
   int _currentPosition_blog = 0;
+   int _currentPosition_edu = 0;
   PageController workPage = PageController();
   PageController achPage = PageController();
   PageController proPage = PageController();
   PageController blogPage = PageController();
+    PageController eduPage = PageController();
   final String readCounters = """
   query{
   user(username:"rgpro") {
@@ -52,7 +54,7 @@ class _HomePageState extends State<HomePage> {
 """;
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    double screenPad = 16.0; // screen padding for swiping between pages
+    double screenPad = screenWidth*0.01; // screen padding for swiping between pages
     workPage = PageController(
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     achPage = PageController(
@@ -471,188 +473,174 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text('Skills', style: topicHeading),
                     Expanded(
-                      child: PageView(
-                        physics: ScrollPhysics(),
-                        controller: workPage,
-                        // calculate viewPortFraction
-                        onPageChanged: (int value) {
-                          setState(() {
-                            _currentPosition_work = value;
-                            print(_currentPosition_work.toDouble());
-                          });
-                        },
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          SkillCard(
-                            skills: [
-                              SkillChip(
-                                  skill: 'Flutter',
-                                  icon: Icon(
-                                    DevIcons.flutterPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Firebase',
-                                  icon: Icon(
-                                    DevIcons.firebasePlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Node.js',
-                                  icon: Icon(
-                                    DevIcons.nodejsPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Python',
-                                  icon: Icon(
-                                    DevIcons.pythonPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Bash',
-                                  icon: Icon(
-                                    DevIcons.bashPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Dart',
-                                  icon: Icon(
-                                    DevIcons.dartPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'SQL',
-                                  icon: Icon(
-                                    DevIcons.mysqlPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'MongoDB',
-                                  icon: Icon(
-                                    DevIcons.mongodbPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'GoLang',
-                                  icon: Icon(
-                                    DevIcons.goPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'GraphQL',
-                                  icon: Icon(
-                                    DevIcons.graphqlPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'C/C++',
-                                  icon: Icon(
-                                    DevIcons.cplusplusPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'HTML',
-                                  icon: Icon(
-                                    DevIcons.html5Plain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'CSS',
-                                  icon: Icon(
-                                    DevIcons.css3Plain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Javascript',
-                                  icon: Icon(
-                                    DevIcons.javascriptPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'AWS',
-                                  icon: Icon(
-                                    DevIcons.amazonwebservicesOriginal,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Docker',
-                                  icon: Icon(
-                                    DevIcons.dockerPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Android',
-                                  icon: Icon(
-                                    DevIcons.androidPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Swift',
-                                  icon: Icon(
-                                    DevIcons.swiftPlain,
-                                    color: Color(0xff04c189),
-                                  )),
+                      child: SkillCard(
+                        skills: [
+                          SkillChip(
+                              skill: 'Flutter',
+                              icon: Icon(
+                                DevIcons.flutterPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Firebase',
+                              icon: Icon(
+                                DevIcons.firebasePlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Node.js',
+                              icon: Icon(
+                                DevIcons.nodejsPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Python',
+                              icon: Icon(
+                                DevIcons.pythonPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Bash',
+                              icon: Icon(
+                                DevIcons.bashPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Dart',
+                              icon: Icon(
+                                DevIcons.dartPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'SQL',
+                              icon: Icon(
+                                DevIcons.mysqlPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'MongoDB',
+                              icon: Icon(
+                                DevIcons.mongodbPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'GoLang',
+                              icon: Icon(
+                                DevIcons.goPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'GraphQL',
+                              icon: Icon(
+                                DevIcons.graphqlPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'C/C++',
+                              icon: Icon(
+                                DevIcons.cplusplusPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'HTML',
+                              icon: Icon(
+                                DevIcons.html5Plain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'CSS',
+                              icon: Icon(
+                                DevIcons.css3Plain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Javascript',
+                              icon: Icon(
+                                DevIcons.javascriptPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'AWS',
+                              icon: Icon(
+                                DevIcons.amazonwebservicesOriginal,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Docker',
+                              icon: Icon(
+                                DevIcons.dockerPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Android',
+                              icon: Icon(
+                                DevIcons.androidPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Swift',
+                              icon: Icon(
+                                DevIcons.swiftPlain,
+                                color: Color(0xff04c189),
+                              )),
 
-                              SkillChip(
-                                  skill: 'Git',
-                                  icon: Icon(
-                                    DevIcons.gitPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              //   SkillChip(skill: 'Latex', icon: Icon(DevIcons)),
-                              SkillChip(
-                                  skill: 'Kubernetes',
-                                  icon: Icon(
-                                    DevIcons.kubernetesPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'GCP',
-                                  icon: Icon(
-                                    DevIcons.googlecloudPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Django',
-                                  icon: Icon(
-                                    DevIcons.djangoPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Figma',
-                                  icon: Icon(
-                                    DevIcons.figmaPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Jenkins',
-                                  icon: Icon(
-                                    DevIcons.jenkinsPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Nginx',
-                                  icon: Icon(
-                                    DevIcons.nginxOriginal,
-                                    color: Color(0xff04c189),
-                                  )),
-                              //    SkillChip(skill: 'Azure', icon: Icon(DevIcons.)),
-                              //   SkillChip(skill: 'Solidity', icon: Icon(DevIcons.solid)),
-                              SkillChip(
-                                  skill: 'Java',
-                                  icon: Icon(
-                                    DevIcons.javaPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                              SkillChip(
-                                  skill: 'Linux',
-                                  icon: Icon(
-                                    DevIcons.linuxPlain,
-                                    color: Color(0xff04c189),
-                                  )),
-                            ],
-                          ),
+                          SkillChip(
+                              skill: 'Git',
+                              icon: Icon(
+                                DevIcons.gitPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          //   SkillChip(skill: 'Latex', icon: Icon(DevIcons)),
+                          SkillChip(
+                              skill: 'Kubernetes',
+                              icon: Icon(
+                                DevIcons.kubernetesPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'GCP',
+                              icon: Icon(
+                                DevIcons.googlecloudPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Django',
+                              icon: Icon(
+                                DevIcons.djangoPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Figma',
+                              icon: Icon(
+                                DevIcons.figmaPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Jenkins',
+                              icon: Icon(
+                                DevIcons.jenkinsPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Nginx',
+                              icon: Icon(
+                                DevIcons.nginxOriginal,
+                                color: Color(0xff04c189),
+                              )),
+                          //    SkillChip(skill: 'Azure', icon: Icon(DevIcons.)),
+                          //   SkillChip(skill: 'Solidity', icon: Icon(DevIcons.solid)),
+                          SkillChip(
+                              skill: 'Java',
+                              icon: Icon(
+                                DevIcons.javaPlain,
+                                color: Color(0xff04c189),
+                              )),
+                          SkillChip(
+                              skill: 'Linux',
+                              icon: Icon(
+                                DevIcons.linuxPlain,
+                                color: Color(0xff04c189),
+                              )),
                         ],
                       ),
                     ),
@@ -688,7 +676,38 @@ class _HomePageState extends State<HomePage> {
                             duration: 'Feb 2022 to June 2022',
                             pic: 'images/housy.png',
                             link: 'https://www.housyforyou.com/',
-                            skills: ['Flutter', 'Node.js', 'Python'],
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
                           ),
                           WorkCard(
                             position: 'SOFTWARE DEVELOPER INTERN',
@@ -698,7 +717,38 @@ class _HomePageState extends State<HomePage> {
                             duration: 'Feb 2022 to June 2022',
                             pic: 'images/housy.png',
                             link: 'https://www.housyforyou.com/',
-                            skills: ['Flutter', 'Node.js', 'Python'],
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
                           )
                         ],
                       ),
@@ -756,7 +806,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                     EdgeInsets.symmetric(horizontal: screenWidth*0.068, vertical: screenWidth*0.0204),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -784,7 +834,71 @@ class _HomePageState extends State<HomePage> {
                             link2: 'https://github.com/wersharks/mera_aadhar',
                             link3:
                                 'https://www.linkedin.com/posts/rgpro_sih-sih2022-smartindiahackathon-activity-6970396204174061568-CN5y?utm_source=share&utm_medium=member_desktop',
-                            skills: ['Flutter', 'Node.js', 'Python'],
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                    //size: screenWidth*0.0163265,
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189), 
+                                    //size: screenWidth*0.016,
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                    // size: screenWidth*0.016,
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189), 
+                                    //size: screenWidth*0.016,
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189), 
+                                    //size: screenWidth*0.016,
+                                  )),
+                              SkillChip(
+                                  skill: 'Django',
+                                  icon: Icon(
+                                    DevIcons.djangoPlain,
+                                    color: Color(0xff04c189),
+                                    // size: screenWidth*0.016,
+                                  )),
+                              SkillChip(
+                                  skill: 'React',
+                                  icon: Icon(
+                                    DevIcons.reactOriginal,
+                                    color: Color(0xff04c189),
+                                    // size: screenWidth*0.016,
+                                  )),
+                              SkillChip(
+                                  skill: 'AWS',
+                                  icon: Icon(
+                                    DevIcons.amazonwebservicesOriginal, 
+                                    //size: screenWidth*0.016,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Docker',
+                                  icon: Icon(
+                                    DevIcons.dockerPlain, 
+                                    //size: screenWidth*0.016,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
                           ),
                           AchCard(
                             position: 'GRAND FINALIST',
@@ -797,7 +911,62 @@ class _HomePageState extends State<HomePage> {
                             link2: 'https://github.com/RGTechPro/learn_ai',
                             link3:
                                 'https://www.linkedin.com/posts/rgpro_unesco-unescoindiaafricahackathon-vicepresident-activity-7004025965924233216-0avi?utm_source=share&utm_medium=member_desktop',
-                            skills: ['Flutter', 'Node.js', 'Python'],
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Django',
+                                  icon: Icon(
+                                    DevIcons.djangoPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'React',
+                                  icon: Icon(
+                                    DevIcons.reactOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'AWS',
+                                  icon: Icon(
+                                    DevIcons.amazonwebservicesOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Docker',
+                                  icon: Icon(
+                                    DevIcons.dockerPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
                           )
                         ],
                       ),
@@ -878,7 +1047,62 @@ class _HomePageState extends State<HomePage> {
                                 'Mera Aadhaar is a mobile App that gives the user the power to book a preferred operator on his phone in the preferred time slot and perform operations like Aadhaar Card updation and enrollment at the comfort of their home. I along with my team, won the first position in the Smart India Hackathon 2022 through this project, organized by the Government of India and also won a cash prize of rupees 1 Lakh.',
                             pic: 'images/MERA AADHAR1.jpeg',
                             link1: 'https://github.com/wersharks/mera_aadhar',
-                            skills: ['Flutter', 'Node.js', 'Python'],
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Django',
+                                  icon: Icon(
+                                    DevIcons.djangoPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'React',
+                                  icon: Icon(
+                                    DevIcons.reactOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'AWS',
+                                  icon: Icon(
+                                    DevIcons.amazonwebservicesOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Docker',
+                                  icon: Icon(
+                                    DevIcons.dockerPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
                             noi: 14,
                           ),
                           ProCard(
@@ -888,7 +1112,50 @@ class _HomePageState extends State<HomePage> {
                             pic: 'images/jdms.webp',
                             link2:
                                 'https://play.google.com/store/apps/details?id=com.jdms.jdms_pharmacy',
-                            skills: ['Flutter', 'Node.js', 'Python'],
+                            skills: [
+                              SkillChip(
+                                  skill: 'Flutter',
+                                  icon: Icon(
+                                    DevIcons.flutterPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Firebase',
+                                  icon: Icon(
+                                    DevIcons.firebasePlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Node.js',
+                                  icon: Icon(
+                                    DevIcons.nodejsPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Python',
+                                  icon: Icon(
+                                    DevIcons.pythonPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Swift',
+                                  icon: Icon(
+                                    DevIcons.swiftPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'Django',
+                                  icon: Icon(
+                                    DevIcons.djangoPlain,
+                                    color: Color(0xff04c189),
+                                  )),
+                              SkillChip(
+                                  skill: 'AWS',
+                                  icon: Icon(
+                                    DevIcons.amazonwebservicesOriginal,
+                                    color: Color(0xff04c189),
+                                  )),
+                            ],
                           ),
                         ],
                       ),
@@ -1059,12 +1326,12 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
-                        controller: workPage,
+                        controller: eduPage,
                         // calculate viewPortFraction
                         onPageChanged: (int value) {
                           setState(() {
-                            _currentPosition_work = value;
-                            print(_currentPosition_work.toDouble());
+                            _currentPosition_edu = value;
+                            print(_currentPosition_edu.toDouble());
                           });
                         },
                         scrollDirection: Axis.horizontal,
@@ -1091,7 +1358,7 @@ class _HomePageState extends State<HomePage> {
                               constraints: BoxConstraints(),
                               iconSize: 22,
                               onPressed: () {
-                                workPage.previousPage(
+                                eduPage.previousPage(
                                     duration: Duration(milliseconds: 300),
                                     curve: Curves.linear);
                               },
@@ -1102,7 +1369,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         DotsIndicator(
                           dotsCount: 1,
-                          position: _currentPosition_work.toDouble(),
+                          position: _currentPosition_edu.toDouble(),
                           decorator: DotsDecorator(
                             activeColor: Color(0xff04c189),
                             size: const Size.square(9.0),
@@ -1118,7 +1385,7 @@ class _HomePageState extends State<HomePage> {
                               constraints: BoxConstraints(),
                               iconSize: 22,
                               onPressed: () {
-                                workPage.nextPage(
+                                eduPage.nextPage(
                                     duration: Duration(milliseconds: 300),
                                     curve: Curves.linear);
                               },

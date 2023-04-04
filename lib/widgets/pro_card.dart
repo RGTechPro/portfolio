@@ -6,6 +6,7 @@ import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:portfolio/models/skillChip.dart';
 
 class ProCard extends StatelessWidget {
   ProCard(
@@ -18,7 +19,7 @@ class ProCard extends StatelessWidget {
       this.noi});
   String name;
   String description;
-  List<String>? skills;
+  List<SkillChip>? skills;
   String pic;
   String? link1;
   String? link2;
@@ -56,6 +57,7 @@ class ProCard extends StatelessWidget {
                           .map((i) => Padding(
                                 padding: const EdgeInsets.only(right: 10),
                                 child: Chip(
+                                  avatar: i.icon,
                                     labelPadding: EdgeInsets.all(5),
                                     labelStyle: descriptionText,
                                     backgroundColor: Color(0xff282b38),
@@ -63,7 +65,7 @@ class ProCard extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(15),
                                         side: BorderSide(color: Colors.white)),
                                     label: Text(
-                                      i,
+                                      i.skill,
                                       style: descriptionText.copyWith(
                                           fontSize: 20),
                                     )),

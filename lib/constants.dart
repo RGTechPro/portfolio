@@ -36,5 +36,5 @@ const descriptionText = TextStyle(
     letterSpacing: 2,
     color: Colors.white,
     fontFamily: 'Neue',
-    fontSize: 25,
+    fontSize: 22,
     height: 1.5);
