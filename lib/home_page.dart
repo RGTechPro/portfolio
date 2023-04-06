@@ -15,6 +15,7 @@ import 'package:portfolio/widgets/skill_card.dart';
 import 'package:portfolio/widgets/work_card.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:dev_icons/dev_icons.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import 'models/skillChip.dart';
 
@@ -806,7 +807,15 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding:
-                     EdgeInsets.symmetric(horizontal: screenWidth*0.068, vertical: screenWidth*0.0204),
+                     EdgeInsets.symmetric(horizontal: ResponsiveValue(context,
+                      defaultValue:
+                      screenWidth*0.068,
+                      valueWhen: [
+                        Condition.smallerThan(name: DESKTOP,value: screenWidth*0.05),
+                        
+                       
+                      ]
+                    ).value!, vertical: screenWidth*0.0204),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

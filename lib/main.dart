@@ -29,7 +29,7 @@ ClampingScrollWrapper.builder(context, child!)   ,
           minWidth: 480,
           defaultScale: true,
           breakpoints: [
-              ResponsiveBreakpoint.resize(480, name: MOBILE),
+        ResponsiveBreakpoint.resize(480, name: MOBILE),
         ResponsiveBreakpoint.resize(800, name: TABLET),
         ResponsiveBreakpoint.resize(1000, name: DESKTOP),
         ResponsiveBreakpoint.autoScale(2460, name: '4K'),
@@ -45,4 +45,3 @@ ClampingScrollWrapper.builder(context, child!)   ,
     );
   }
 }
-
