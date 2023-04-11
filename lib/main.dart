@@ -29,6 +29,7 @@ ClampingScrollWrapper.builder(context, child!)   ,
           minWidth: 480,
           defaultScale: true,
           breakpoints: [
+          //   ResponsiveBreakpoint.resize(360, name:'SMOBILE' ),
         ResponsiveBreakpoint.resize(480, name: MOBILE),
         ResponsiveBreakpoint.resize(800, name: TABLET),
         ResponsiveBreakpoint.resize(1000, name: DESKTOP),

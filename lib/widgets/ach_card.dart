@@ -39,7 +39,7 @@ class AchCard extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(
-          top: 0.017 * screenWidth,
+          top: 0.012 * screenWidth,
           left: screenWidth * 0.01,
           right: screenWidth * 0.01),
       child: Container(
@@ -63,10 +63,10 @@ class AchCard extends StatelessWidget {
                           position,
                           style: positionText.copyWith(
                               fontSize: ResponsiveValue(context,
-                                  defaultValue: 25.0,
+                                  defaultValue: 22.0,
                                   valueWhen: [
                                 Condition.smallerThan(
-                                    name: DESKTOP, value: screenWidth * 0.0225),
+                                    name: DESKTOP, value: screenWidth * 0.02),
                                 Condition.smallerThan(name: TABLET, value: 17.0)
                               ]).value),
                         ),
@@ -77,11 +77,11 @@ class AchCard extends StatelessWidget {
                             competition,
                             style: companyText.copyWith(
                                 fontSize: ResponsiveValue(context,
-                                    defaultValue: 30.0,
+                                    defaultValue: 27.0,
                                     valueWhen: [
                                   Condition.smallerThan(
                                       name: DESKTOP,
-                                      value: screenWidth * 0.025),
+                                      value: screenWidth * 0.022),
                                   Condition.smallerThan(
                                       name: TABLET, value: 19.0)
                                 ]).value),
@@ -99,7 +99,7 @@ class AchCard extends StatelessWidget {
                             description,
                             style: descriptionText.copyWith(
                               fontSize: ResponsiveValue(context,
-                                  defaultValue: screenWidth * 0.0136,
+                                  defaultValue: screenWidth * 0.012,
                                   valueWhen: [
                                     Condition.smallerThan(
                                         name: DESKTOP,
@@ -112,13 +112,13 @@ class AchCard extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: Text(
                             time,
                             style: descriptionText.copyWith(
                                 color: Color(0xff04c189),
                                 fontSize: ResponsiveValue(context,
-                                    defaultValue: 22.0,
+                                    defaultValue: 20.0,
                                     valueWhen: [
                                       Condition.smallerThan(
                                           name: DESKTOP,
@@ -141,11 +141,11 @@ class AchCard extends StatelessWidget {
                                 children: skills!
                                     .map((i) => Padding(
                                           padding: const EdgeInsets.only(
-                                              right: 10, bottom: 10),
+                                              right: 10, bottom: 7),
                                           child: Chip(
                                               avatar: i.icon,
                                               labelPadding: EdgeInsets.all(
-                                                  screenWidth * 0.0034),
+                                                  screenWidth * 0.003),
                                               labelStyle: descriptionText,
                                               backgroundColor:
                                                   Color(0xff282b38),
@@ -158,7 +158,7 @@ class AchCard extends StatelessWidget {
                                                 i.skill,
                                                 style: descriptionText.copyWith(
                                                     fontSize:
-                                                        screenWidth * 0.012245),
+                                                        screenWidth * 0.01),
                                               )),
                                         ))
                                     .toList(),
@@ -226,7 +226,7 @@ class AchCard extends StatelessWidget {
                                   defaultValue: 25.0,
                                   valueWhen: [
                                 Condition.smallerThan(
-                                    name: DESKTOP, value: screenWidth * 0.0225),
+                                    name: DESKTOP, value: screenWidth * 0.02),
                                 Condition.smallerThan(name: TABLET, value: 17.0)
                               ]).value),
                         ),
@@ -244,14 +244,15 @@ class AchCard extends StatelessWidget {
                                         valueWhen: [
                                       Condition.smallerThan(
                                           name: DESKTOP,
-                                          value: screenWidth * 0.025),
+                                          value: screenWidth * 0.022),
                                       Condition.smallerThan(
                                           name: TABLET, value: 19.0)
                                     ]).value),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: screenWidth * 0.0068),
                               child: Text(
                                 time,
                                 style: descriptionText.copyWith(
@@ -261,12 +262,19 @@ class AchCard extends StatelessWidget {
                                         valueWhen: [
                                           Condition.smallerThan(
                                               name: DESKTOP,
-                                              value: screenWidth * 0.0225)
+                                              value: screenWidth * 0.02),
+                                          Condition.smallerThan(
+                                              name: MOBILE,
+                                              value: screenWidth * 0.03),
+                                              //   Condition.smallerThan(
+                                              // name: 'SMOBILE',
+                                              // value: screenWidth * 0.03)
                                         ]).value),
                               ),
                             ),
                           ],
                         ),
+
                         Padding(
                           padding: const EdgeInsets.only(bottom: 7.0),
                           child: Container(
@@ -281,11 +289,11 @@ class AchCard extends StatelessWidget {
                               description,
                               style: descriptionText.copyWith(
                                 fontSize: ResponsiveValue(context,
-                                    defaultValue: screenWidth * 0.0136,
+                                    defaultValue: screenWidth * 0.012,
                                     valueWhen: [
                                       Condition.smallerThan(
                                           name: DESKTOP,
-                                          value: screenWidth * 0.015),
+                                          value: screenWidth * 0.014),
                                       Condition.smallerThan(
                                           name: TABLET, value: 13.5)
                                     ]).value,
@@ -424,13 +432,13 @@ class AchCard extends StatelessWidget {
                         defaultValue: screenWidth * 0.306,
                         valueWhen: [
                           Condition.smallerThan(
-                              name: DESKTOP, value: screenWidth * 0.2),
-                              Condition.smallerThan(
-                              name: TABLET, value: screenWidth * 0.28)
+                              name: DESKTOP, value: screenWidth * 0.197),
+                          Condition.smallerThan(
+                              name: TABLET, value: screenWidth * 0.24)
                         ]).value,
 
-                    //450 
-                    
+                    //450
+
                     child: Image.asset(
                       pic,
                       //height: 100,
@@ -439,9 +447,8 @@ class AchCard extends StatelessWidget {
                           defaultValue: screenWidth * 0.272,
                           valueWhen: [
                             Condition.smallerThan(
-                            
                                 name: DESKTOP, value: screenWidth * 0.375),
-                                  Condition.smallerThan(
+                            Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5)
                           ]).value,
 

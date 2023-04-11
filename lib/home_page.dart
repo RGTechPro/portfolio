@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                 end: Alignment.bottomRight)),
         child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(75),
+            preferredSize: Size.fromHeight(60),
             child: AppBar(
               title: Padding(
                 padding: const EdgeInsets.only(left: 40, top: 30),
@@ -811,15 +811,21 @@ class _HomePageState extends State<HomePage> {
                       defaultValue:
                       screenWidth*0.068,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP,value: screenWidth*0.05),
-                        
-                       
+                        Condition.smallerThan(name: DESKTOP,value: screenWidth*0.04),
                       ]
-                    ).value!, vertical: screenWidth*0.0204),
+                    ).value!, vertical: screenWidth*0.0104),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Achievements', style: topicHeading),
+                    Text('Achievements', style: topicHeading.copyWith(fontSize:ResponsiveValue(context,
+                      defaultValue:
+                    35.0,
+                      valueWhen: [
+                        Condition.smallerThan(name: DESKTOP,value: 25.0),
+                        
+                       
+                      ]
+                    ).value! )),
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
