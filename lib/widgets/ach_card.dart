@@ -227,7 +227,10 @@ class AchCard extends StatelessWidget {
                                   valueWhen: [
                                 Condition.smallerThan(
                                     name: DESKTOP, value: screenWidth * 0.02),
-                                Condition.smallerThan(name: TABLET, value: 17.0)
+                                Condition.smallerThan(
+                                    name: TABLET, value: 17.0),
+                                Condition.smallerThan(
+                                    name: MOBILE, value: 20.0),
                               ]).value),
                         ),
                         Row(
@@ -246,7 +249,9 @@ class AchCard extends StatelessWidget {
                                           name: DESKTOP,
                                           value: screenWidth * 0.022),
                                       Condition.smallerThan(
-                                          name: TABLET, value: 19.0)
+                                          name: TABLET, value: 19.0),
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 25.0),
                                     ]).value),
                               ),
                             ),
@@ -266,9 +271,11 @@ class AchCard extends StatelessWidget {
                                           Condition.smallerThan(
                                               name: MOBILE,
                                               value: screenWidth * 0.03),
-                                              //   Condition.smallerThan(
-                                              // name: 'SMOBILE',
-                                              // value: screenWidth * 0.03)
+                                          Condition.smallerThan(
+                                              name: MOBILE, value: 20.0),
+                                          //   Condition.smallerThan(
+                                          // name: 'SMOBILE',
+                                          // value: screenWidth * 0.03)
                                         ]).value),
                               ),
                             ),
@@ -295,7 +302,9 @@ class AchCard extends StatelessWidget {
                                           name: DESKTOP,
                                           value: screenWidth * 0.014),
                                       Condition.smallerThan(
-                                          name: TABLET, value: 13.5)
+                                          name: TABLET, value: 13.5),
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 15.0)
                                     ]).value,
                               ),
                               textAlign: TextAlign.justify,
@@ -350,8 +359,23 @@ class AchCard extends StatelessWidget {
                                               label: Text(
                                                 i.skill,
                                                 style: descriptionText.copyWith(
-                                                    fontSize:
-                                                        screenWidth * 0.012245),
+                                                    fontSize: ResponsiveValue(
+                                                        context,
+                                                        defaultValue:
+                                                            screenWidth *
+                                                                0.012245,
+                                                        valueWhen: [
+                                                      Condition.smallerThan(
+                                                          name: MOBILE,
+                                                          value: 15.0),
+                                                           Condition.smallerThan(
+                                                          name: TABLET,
+                                                          value: screenWidth *
+                                                                0.015245)
+                                                    ]).value
+
+                                                    //screenWidth * 0.012245
+                                                    ),
                                               )),
                                         ))
                                     .toList(),
@@ -434,7 +458,8 @@ class AchCard extends StatelessWidget {
                           Condition.smallerThan(
                               name: DESKTOP, value: screenWidth * 0.197),
                           Condition.smallerThan(
-                              name: TABLET, value: screenWidth * 0.24)
+                              name: TABLET, value: screenWidth * 0.24),
+                          Condition.smallerThan(name: MOBILE, value: 300.0),
                         ]).value,
 
                     //450
@@ -449,7 +474,8 @@ class AchCard extends StatelessWidget {
                             Condition.smallerThan(
                                 name: DESKTOP, value: screenWidth * 0.375),
                             Condition.smallerThan(
-                                name: TABLET, value: screenWidth * 0.5)
+                                name: TABLET, value: screenWidth * 0.5),
+                            Condition.smallerThan(name: MOBILE, value: 500.0),
                           ]).value,
 
                       //400

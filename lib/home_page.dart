@@ -31,12 +31,12 @@ class _HomePageState extends State<HomePage> {
   int _currentPosition_ach = 0;
   int _currentPosition_pro = 0;
   int _currentPosition_blog = 0;
-   int _currentPosition_edu = 0;
+  int _currentPosition_edu = 0;
   PageController workPage = PageController();
   PageController achPage = PageController();
   PageController proPage = PageController();
   PageController blogPage = PageController();
-    PageController eduPage = PageController();
+  PageController eduPage = PageController();
   final String readCounters = """
   query{
   user(username:"rgpro") {
@@ -55,7 +55,8 @@ class _HomePageState extends State<HomePage> {
 """;
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    double screenPad = screenWidth*0.01; // screen padding for swiping between pages
+    double screenPad =
+        screenWidth * 0.01; // screen padding for swiping between pages
     workPage = PageController(
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     achPage = PageController(
@@ -650,12 +651,23 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                     EdgeInsets.symmetric( horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.04),
+                        ]).value!,
+                    vertical: screenWidth * 0.0104),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Work Experience and Volunteering',
-                        style: topicHeading),
+                        style: topicHeading.copyWith(fontSize: ResponsiveValue(context,
+                                defaultValue: 35.0,
+                                valueWhen: [
+                              Condition.smallerThan(name: DESKTOP, value: 25.0),
+                              Condition.smallerThan(name: MOBILE, value: 32.0),
+                            ]).value!)),
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
@@ -806,26 +818,25 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding:
-                     EdgeInsets.symmetric(horizontal: ResponsiveValue(context,
-                      defaultValue:
-                      screenWidth*0.068,
-                      valueWhen: [
-                        Condition.smallerThan(name: DESKTOP,value: screenWidth*0.04),
-                      ]
-                    ).value!, vertical: screenWidth*0.0104),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.04),
+                        ]).value!,
+                    vertical: screenWidth * 0.0104),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Achievements', style: topicHeading.copyWith(fontSize:ResponsiveValue(context,
-                      defaultValue:
-                    35.0,
-                      valueWhen: [
-                        Condition.smallerThan(name: DESKTOP,value: 25.0),
-                        
-                       
-                      ]
-                    ).value! )),
+                    Text('Achievements',
+                        style: topicHeading.copyWith(
+                            fontSize: ResponsiveValue(context,
+                                defaultValue: 35.0,
+                                valueWhen: [
+                              Condition.smallerThan(name: DESKTOP, value: 25.0),
+                              Condition.smallerThan(name: MOBILE, value: 32.0),
+                            ]).value!)),
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
@@ -861,7 +872,7 @@ class _HomePageState extends State<HomePage> {
                                   skill: 'Firebase',
                                   icon: Icon(
                                     DevIcons.firebasePlain,
-                                    color: Color(0xff04c189), 
+                                    color: Color(0xff04c189),
                                     //size: screenWidth*0.016,
                                   )),
                               SkillChip(
@@ -875,14 +886,14 @@ class _HomePageState extends State<HomePage> {
                                   skill: 'Python',
                                   icon: Icon(
                                     DevIcons.pythonPlain,
-                                    color: Color(0xff04c189), 
+                                    color: Color(0xff04c189),
                                     //size: screenWidth*0.016,
                                   )),
                               SkillChip(
                                   skill: 'Swift',
                                   icon: Icon(
                                     DevIcons.swiftPlain,
-                                    color: Color(0xff04c189), 
+                                    color: Color(0xff04c189),
                                     //size: screenWidth*0.016,
                                   )),
                               SkillChip(
@@ -902,14 +913,14 @@ class _HomePageState extends State<HomePage> {
                               SkillChip(
                                   skill: 'AWS',
                                   icon: Icon(
-                                    DevIcons.amazonwebservicesOriginal, 
+                                    DevIcons.amazonwebservicesOriginal,
                                     //size: screenWidth*0.016,
                                     color: Color(0xff04c189),
                                   )),
                               SkillChip(
                                   skill: 'Docker',
                                   icon: Icon(
-                                    DevIcons.dockerPlain, 
+                                    DevIcons.dockerPlain,
                                     //size: screenWidth*0.016,
                                     color: Color(0xff04c189),
                                   )),
