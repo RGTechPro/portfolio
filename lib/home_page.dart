@@ -1050,11 +1050,23 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                     EdgeInsets.symmetric(horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.04),
+                        ]).value!,
+                    vertical: screenWidth * 0.0104),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Projects', style: topicHeading),
+                    Text('Projects', style: topicHeading.copyWith(
+                            fontSize: ResponsiveValue(context,
+                                defaultValue: 35.0,
+                                valueWhen: [
+                              Condition.smallerThan(name: DESKTOP, value: 25.0),
+                              Condition.smallerThan(name: MOBILE, value: 32.0),
+                            ]).value!)),
                     Expanded(
                       child: PageView(
                         physics: ScrollPhysics(),
@@ -1258,8 +1270,13 @@ class _HomePageState extends State<HomePage> {
                     print(data);
 
                     return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 100, vertical: 30),
+                        padding:  EdgeInsets.symmetric(horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.04),
+                        ]).value!,
+                    vertical: screenWidth * 0.0104),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

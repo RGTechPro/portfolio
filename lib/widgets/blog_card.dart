@@ -6,6 +6,7 @@ import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:intl/intl.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class BlogCard extends StatelessWidget {
   BlogCard(
@@ -24,82 +25,231 @@ class BlogCard extends StatelessWidget {
   Widget build(BuildContext context) {
     DateTime dateP = DateTime.parse(date);
     String new_date = DateFormat.yMMMMd().format(dateP);
+    double screenWidth = MediaQuery.of(context).size.width; // screen width
+    print(screenWidth);
+    double screenHeight = MediaQuery.of(context).size.height; // screen width
 
     print(new_date);
     return Padding(
-      padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
+      padding: EdgeInsets.only(
+          top: 0.012 * screenWidth,
+          left: screenWidth * 0.01,
+          right: screenWidth * 0.01),
       child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ResponsiveRowColumn(
+          rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+          columnCrossAxisAlignment: CrossAxisAlignment.start,
+          layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              ? ResponsiveRowColumnType.COLUMN
+              : ResponsiveRowColumnType.ROW,
           //crossAxisAlignment: CrossAxisAlignment.baseline,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 550,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Text(
-                      title,
-                      style: companyText,
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 550,
-                  child: Text(
-                    brief,
-                    style: descriptionText,
-                    textAlign: TextAlign.justify,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    new_date,
-                    style: descriptionText.copyWith(color: Color(0xff04c189)),
-                  ),
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          html.window.open(link, "_blank");
-                        },
-                        icon: Icon(
-                          FontAwesomeIcons.arrowUpRightFromSquare,
-                          color: Colors.white,
-                        )),
-                    TextButton(
-                      onPressed: () {
-                                                  html.window.open(link, "_blank");
-
-                      },
-                      child: Text(
-                        'Continue Reading...',
-                        style: companyText,
-                      ),
+            ResponsiveRowColumnItem(
+              child: !ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: ResponsiveValue(context,
+                              defaultValue: screenWidth * 0.36,
+                              valueWhen: [
+                                Condition.smallerThan(
+                                    name: DESKTOP, value: 900.0)
+                              ]).value,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: Text(
+                              title,
+                              style: companyText.copyWith(
+                                  fontSize: ResponsiveValue(context,
+                                      defaultValue: 27.0,
+                                      valueWhen: [
+                                    Condition.smallerThan(
+                                        name: DESKTOP,
+                                        value: screenWidth * 0.02),
+                                    Condition.smallerThan(
+                                        name: TABLET, value: 17.0),
+                                    Condition.smallerThan(
+                                        name: MOBILE, value: 25.0),
+                                  ]).value),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: ResponsiveValue(context,
+                              defaultValue: screenWidth * 0.36,
+                              valueWhen: [
+                                Condition.smallerThan(
+                                    name: DESKTOP, value: 900.0)
+                              ]).value,
+                          child: Text(
+                            brief,
+                            style: descriptionText.copyWith(
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: screenWidth * 0.012,
+                                    valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP,
+                                      value: screenWidth * 0.014),
+                                  Condition.smallerThan(
+                                      name: TABLET, value: 13.5),
+                                  Condition.smallerThan(
+                                      name: MOBILE, value: 15.0)
+                                ]).value),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            new_date,
+                            style: descriptionText.copyWith(
+                                color: Color(0xff04c189)),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  html.window.open(link, "_blank");
+                                },
+                                icon: Icon(
+                                  FontAwesomeIcons.arrowUpRightFromSquare,
+                                  color: Colors.white,
+                                )),
+                            TextButton(
+                              onPressed: () {
+                                html.window.open(link, "_blank");
+                              },
+                              child: Text(
+                                'Continue Reading...',
+                                style: companyText,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
                     )
-                  ],
-                )
-              ],
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 550,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: Text(
+                              title,
+                              style: companyText.copyWith(
+                                  fontSize: ResponsiveValue(context,
+                                      defaultValue: 22.0,
+                                      valueWhen: [
+                                    Condition.smallerThan(
+                                        name: DESKTOP, value: 22.0),
+                                    Condition.smallerThan(
+                                        name: TABLET, value: 22.0),
+                                    Condition.smallerThan(
+                                        name: MOBILE, value: 25.0),
+                                  ]).value),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: ResponsiveValue(context,
+                              defaultValue: screenWidth * 0.544,
+                              valueWhen: [
+                                Condition.smallerThan(
+                                    name: DESKTOP, value: 900.0)
+                              ]).value,
+                          child: Text(
+                            brief,
+                            style: descriptionText.copyWith(
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: screenWidth * 0.012,
+                                    valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP,
+                                      value: screenWidth * 0.014),
+                                  Condition.smallerThan(
+                                      name: TABLET, value: 13.5),
+                                  Condition.smallerThan(
+                                      name: MOBILE, value: 15.0)
+                                ]).value),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            new_date,
+                            style: descriptionText.copyWith(
+                                color: Color(0xff04c189)),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  html.window.open(link, "_blank");
+                                },
+                                icon: Icon(
+                                  FontAwesomeIcons.arrowUpRightFromSquare,
+                                  color: Colors.white,
+                                )),
+                            TextButton(
+                              onPressed: () {
+                                html.window.open(link, "_blank");
+                              },
+                              child: Text(
+                                'Continue Reading...',
+                                style: companyText,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 100, left: 30),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  height: 450,
-                  child: Image.network(
-                    pic,
-                    //height: 100,
-                    alignment: Alignment.topLeft,
-                    width: 675,
-                    fit: BoxFit.fill,
+            ResponsiveRowColumnItem(
+              columnOrder: 1073741822,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: ResponsiveValue(context,
+                      defaultValue: 100.0,
+                      valueWhen: [
+                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+                      ]).value!,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    height: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.31,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.23),
+                          Condition.smallerThan(
+                              name: TABLET, value: screenWidth * 0.24),
+                          Condition.smallerThan(name: MOBILE, value: 350.0),
+                        ]).value,
+                    //450,
+                    child: Image.network(
+                      pic,
+                      //height: 100,
+                      alignment: Alignment.topLeft,
+                      width: ResponsiveValue(context,
+                          defaultValue: screenWidth * 0.4,
+                          valueWhen: [
+                            Condition.smallerThan(
+                                name: DESKTOP, value: screenWidth * 0.5),
+                            Condition.smallerThan(
+                                name: TABLET, value: screenWidth * 0.5),
+                            Condition.smallerThan(name: MOBILE, value: 500.0),
+                          ]).value,
+                      fit: BoxFit.fill,
+                    ),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.rectangle, color: Color(0xff252734)),
                 ),
               ),
             ),

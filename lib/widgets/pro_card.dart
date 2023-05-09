@@ -7,6 +7,7 @@ import 'dart:html' as html;
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:portfolio/models/skillChip.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class ProCard extends StatelessWidget {
   ProCard(
@@ -27,104 +28,325 @@ class ProCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width; // screen width
+    print(screenWidth);
+    double screenHeight = MediaQuery.of(context).size.height; // screen width
+
     return Padding(
-      padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
+      padding: EdgeInsets.only(
+          top: 0.012 * screenWidth,
+          left: screenWidth * 0.01,
+          right: screenWidth * 0.01),
       child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ResponsiveRowColumn(
+          rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+          columnCrossAxisAlignment: CrossAxisAlignment.start,
           //crossAxisAlignment: CrossAxisAlignment.baseline,
+          layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              ? ResponsiveRowColumnType.COLUMN
+              : ResponsiveRowColumnType.ROW,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: positionText,
+            ResponsiveRowColumnItem(
+                child: !ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: positionText.copyWith(
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: 22.0,
+                                    valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP, value: screenWidth * 0.02),
+                                  Condition.smallerThan(
+                                      name: TABLET, value: 17.0)
+                                ]).value),
+                          ),
+                          Container(
+                            width: ResponsiveValue(context,
+                                defaultValue: screenWidth * 0.544,
+                                valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP, value: 900.0)
+                                ]).value,
+                            child: Text(
+                              description,
+                              style: descriptionText.copyWith(
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: screenWidth * 0.012,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: DESKTOP,
+                                          value: screenWidth * 0.015),
+                                      Condition.smallerThan(
+                                          name: TABLET, value: 13.0)
+                                    ]).value,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          if (skills!.isNotEmpty)
+                            Container(
+                              width: ResponsiveValue(context,
+                                  defaultValue: screenWidth * 0.544,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: DESKTOP, value: 900.0)
+                                  ]).value,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: screenWidth * 0.0068),
+                                child: Wrap(
+                                  children: skills!
+                                      .map((i) => Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 10, bottom: 7),
+                                            child: Chip(
+                                                avatar: i.icon,
+                                                labelPadding: EdgeInsets.all(
+                                                    screenWidth * 0.003),
+                                                labelStyle: descriptionText,
+                                                backgroundColor:
+                                                    Color(0xff282b38),
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    side: BorderSide(
+                                                        color: Colors.white)),
+                                                label: Text(
+                                                  i.skill,
+                                                  style:
+                                                      descriptionText.copyWith(
+                                                          fontSize:
+                                                              screenWidth *
+                                                                  0.01),
+                                                )),
+                                          ))
+                                      .toList(),
+                                ),
+                              ),
+                            ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    html.window.open(link1!, "_blank");
+                                  },
+                                  icon: Icon(
+                                    FontAwesomeIcons.github,
+                                    color: Colors.white,
+                                  )),
+                              IconButton(
+                                  onPressed: () {
+                                    html.window.open(link2!, "_blank");
+                                  },
+                                  icon: Icon(
+                                    FontAwesomeIcons.googlePlay,
+                                    color: Colors.white,
+                                  )),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Color(0xff04c189))),
+                              child: TextButton(
+                                  onPressed: () {
+                                    showCustomDialog(context, noi!, name);
+                                  },
+                                  child: Text(
+                                    'Project Gallery',
+                                    style: positionText,
+                                  )),
+                            ),
+                          )
+                        ],
+                      )
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: positionText.copyWith(
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: 25.0,
+                                    valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP, value: screenWidth * 0.02),
+                                  Condition.smallerThan(
+                                      name: TABLET, value: 17.0),
+                                  Condition.smallerThan(
+                                      name: MOBILE, value: 20.0),
+                                ]).value),
+                          ),
+                          Container(
+                            width: ResponsiveValue(context,
+                                defaultValue: screenWidth * 0.544,
+                                valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP, value: 900.0)
+                                ]).value,
+                            child: Text(
+                              description,
+                              style: descriptionText.copyWith(
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: screenWidth * 0.012,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: DESKTOP,
+                                          value: screenWidth * 0.014),
+                                      Condition.smallerThan(
+                                          name: TABLET, value: 13.5),
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 15.0)
+                                    ]).value,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          if (skills!.isNotEmpty)
+                            Container(
+                              width: ResponsiveValue(context,
+                                  defaultValue: screenWidth * 0.544,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: DESKTOP, value: 900.0)
+                                  ]).value,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: screenWidth * 0.0068),
+                                child: Wrap(
+                                  children: skills!
+                                      .map((i) => Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 10, bottom: 10),
+                                            child: Chip(
+                                                avatar: i.icon,
+                                                labelPadding: EdgeInsets.all(
+                                                    screenWidth * 0.0034),
+                                                labelStyle: descriptionText,
+                                                backgroundColor:
+                                                    Color(0xff282b38),
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    side: BorderSide(
+                                                        color: Colors.white)),
+                                                label: Text(
+                                                  i.skill,
+                                                  style:
+                                                      descriptionText.copyWith(
+                                                    fontSize: ResponsiveValue(
+                                                        context,
+                                                        defaultValue:
+                                                            screenWidth *
+                                                                0.012245,
+                                                        valueWhen: [
+                                                          Condition.smallerThan(
+                                                              name: MOBILE,
+                                                              value: 15.0),
+                                                          Condition.smallerThan(
+                                                              name: TABLET,
+                                                              value:
+                                                                  screenWidth *
+                                                                      0.015245)
+                                                        ]).value,
+                                                  ),
+                                                )),
+                                          ))
+                                      .toList(),
+                                ),
+                              ),
+                            ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    html.window.open(link1!, "_blank");
+                                  },
+                                  icon: Icon(
+                                    FontAwesomeIcons.github,
+                                    color: Colors.white,
+                                  )),
+                              IconButton(
+                                  onPressed: () {
+                                    html.window.open(link2!, "_blank");
+                                  },
+                                  icon: Icon(
+                                    FontAwesomeIcons.googlePlay,
+                                    color: Colors.white,
+                                  )),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 15.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Color(0xff04c189))),
+                              child: TextButton(
+                                  onPressed: () {
+                                    showCustomDialog(context, noi!, name);
+                                  },
+                                  child: Text(
+                                    'Project Gallery',
+                                    style: positionText.copyWith(
+                                        fontSize: ResponsiveValue(context,
+                                            defaultValue: 18.0,
+                                            valueWhen: [
+                                          Condition.smallerThan(
+                                              name: MOBILE, value: 15.0),
+                                          Condition.smallerThan(
+                                              name: TABLET, value: 18.0)
+                                        ]).value),
+                                  )),
+                            ),
+                          )
+                        ],
+                      )),
+            ResponsiveRowColumnItem(
+              columnOrder: 1073741822,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: ResponsiveValue(context,
+                      defaultValue: 100.0,
+                      valueWhen: [
+                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+                      ]).value!,
                 ),
-                Container(
-                  width: 800,
-                  child: Text(
-                    description,
-                    style: descriptionText,
-                    textAlign: TextAlign.justify,
-                  ),
-                ),
-                if (skills!.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Wrap(
-                      children: skills!
-                          .map((i) => Padding(
-                                padding: const EdgeInsets.only(right: 10),
-                                child: Chip(
-                                  avatar: i.icon,
-                                    labelPadding: EdgeInsets.all(5),
-                                    labelStyle: descriptionText,
-                                    backgroundColor: Color(0xff282b38),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(15),
-                                        side: BorderSide(color: Colors.white)),
-                                    label: Text(
-                                      i.skill,
-                                      style: descriptionText.copyWith(
-                                          fontSize: 20),
-                                    )),
-                              ))
-                          .toList(),
-                    ),
-                  ),
-                Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          html.window.open(link1!, "_blank");
-                        },
-                        icon: Icon(
-                          FontAwesomeIcons.github,
-                          color: Colors.white,
-                        )),
-                    IconButton(
-                        onPressed: () {
-                          html.window.open(link2!, "_blank");
-                        },
-                        icon: Icon(
-                          FontAwesomeIcons.googlePlay,
-                          color: Colors.white,
-                        )),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
                   child: Container(
+                    height: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.336,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.219),
+                          Condition.smallerThan(
+                              name: TABLET, value: screenWidth * 0.275),
+                          Condition.smallerThan(name: MOBILE, value: 350.0),
+                        ]).value,
+                    child: Image.asset(
+                      pic,
+                      //height: 100,
+                      alignment: Alignment.topLeft,
+                      width: ResponsiveValue(context,
+                          defaultValue: screenWidth * 0.22,
+                          valueWhen: [
+                            Condition.smallerThan(
+                                name: DESKTOP, value: screenWidth * 0.18),
+                            Condition.smallerThan(
+                                name: TABLET, value: screenWidth * 0.23),
+                            Condition.smallerThan(name: MOBILE, value: 270.0),
+                          ]).value,
+                      fit: BoxFit.fill,
+                    ),
                     decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xff04c189))),
-                    child: TextButton(
-                        onPressed: () {
-                          showCustomDialog(context, noi!, name);
-                        },
-                        child: Text(
-                          'Project Gallery',
-                          style: positionText,
-                        )),
+                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 100, left: 65),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  height: 600,
-                  child: Image.asset(
-                    pic,
-                    //height: 100,
-                    alignment: Alignment.topLeft,
-                    width: 300,
-                    fit: BoxFit.fill,
-                  ),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.rectangle, color: Color(0xff252734)),
                 ),
               ),
             ),
