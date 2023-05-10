@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../models/skillChip.dart';
 
@@ -16,9 +17,14 @@ class SkillCard extends StatelessWidget {
   List<SkillChip> skills;
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
+    print(screenWidth);
+    double screenHeight = MediaQuery.of(context).size.height; // screen width
 
     return Padding(
-      padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
+      padding: EdgeInsets.only(
+          top: 0.012 * screenWidth,
+          left: screenWidth * 0.01,
+          right: screenWidth * 0.01),
       child: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +34,23 @@ class SkillCard extends StatelessWidget {
               child: Wrap(
                 children: skills!
                     .map((i) => Padding(
-                          padding: const EdgeInsets.only(right: 30, top: 30),
+                          padding: EdgeInsets.only(
+                              right: ResponsiveValue(context,
+                                  defaultValue: 30.0,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: TABLET, value: 15.0),
+                                    Condition.smallerThan(
+                                        name: MOBILE, value: 17.5)
+                                  ]).value!,
+                              top: ResponsiveValue(context,
+                                  defaultValue: 30.0,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: TABLET, value: 15.0),
+                                    Condition.smallerThan(
+                                        name: MOBILE, value: 17.5)
+                                  ]).value!),
                           child: Chip(
                               avatar: i.icon,
                               labelPadding: EdgeInsets.all(5),
@@ -39,7 +61,13 @@ class SkillCard extends StatelessWidget {
                                   side: BorderSide(color: Colors.white)),
                               label: Text(
                                 i.skill,
-                                style: descriptionText.copyWith(fontSize: 25),
+                                style: descriptionText.copyWith(
+                                    fontSize: ResponsiveValue(context,
+                                        defaultValue: screenWidth * 0.01736,
+                                        valueWhen: [
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 20.0)
+                                    ]).value!),
                               )),
                         ))
                     .toList(),
@@ -51,4 +79,3 @@ class SkillCard extends StatelessWidget {
     );
   }
 }
-

@@ -65,7 +65,15 @@ class _HomePageState extends State<HomePage> {
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     blogPage = PageController(
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
-
+    eduPage = PageController(
+        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+    double mFont = ResponsiveValue(context,
+        defaultValue: screenWidth * 0.01736,
+        valueWhen: [
+          Condition.smallerThan(name: DESKTOP, value: 17.7),
+          Condition.smallerThan(name: TABLET, value: 16.2),
+          Condition.smallerThan(name: MOBILE, value: 18.0),
+        ]).value!;
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
@@ -378,88 +386,151 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                      Condition.smallerThan(
+                          name: DESKTOP, value: screenWidth * 0.04),
+                    ]).value!),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('About Me', style: topicHeading),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 7.0),
+                      child: Text('About Me', style: topicHeading),
+                    ),
+                    ResponsiveRowColumn(
+                      rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      columnCrossAxisAlignment: CrossAxisAlignment.start,
+                      //crossAxisAlignment: CrossAxisAlignment.baseline,
+                      layout:
+                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                              ? ResponsiveRowColumnType.COLUMN
+                              : ResponsiveRowColumnType.ROW,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 25),
-                          child: Container(
-                            width: 800,
-                            child: RichText(
-                              textAlign: TextAlign.justify,
-                              text: TextSpan(
-                                style: aboutMeText,
-                                children: <TextSpan>[
-                                  TextSpan(text: "Hi, I'm a "),
-                                  TextSpan(
-                                      text: "third-year ", style: aboutMeText2),
-                                  TextSpan(
-                                      text: 'undergraduate at ',
-                                      style: aboutMeText),
-                                  TextSpan(
-                                      text:
-                                          'Thapar Institute of Engineering & Technology',
-                                      style: aboutMeText2),
-                                  TextSpan(
-                                      text: ", and I've been a ",
-                                      style: aboutMeText),
-                                  TextSpan(
-                                      text: 'Flutter Developer',
-                                      style: aboutMeText2),
-                                  TextSpan(
-                                      text:
-                                          " for two years. I'm enthusiastic about ",
-                                      style: aboutMeText),
-                                  TextSpan(text: 'DevOps', style: aboutMeText2),
-                                  TextSpan(
-                                      text:
-                                          ' and enjoy building new things. My passion for innovation has led me to win the ',
-                                      style: aboutMeText),
-                                  TextSpan(
-                                      text: 'Smart India Hackathon',
-                                      style: aboutMeText2),
-                                  TextSpan(
-                                      text: ' and become a finalist at the ',
-                                      style: aboutMeText),
-                                  TextSpan(
-                                      text: 'UNSECO India Africa Hackathon',
-                                      style: aboutMeText2),
-                                  TextSpan(
-                                      text:
-                                          ". As a developer, I have a deep understanding of the latest technologies, tools, and best practices in mobile app development. My focus on providing the best user experience has allowed me to develop apps that have received ",
-                                      style: aboutMeText),
-                                  TextSpan(
-                                      text: 'great feedback ',
-                                      style: aboutMeText2),
-                                  TextSpan(
-                                      text:
-                                          "from clients and users alike. I'm always eager to explore new tools and technologies that can help streamline the development and deployment process.",
-                                      style: aboutMeText)
-                                ],
+                        ResponsiveRowColumnItem(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25),
+                            child: Container(
+                              width: ResponsiveValue(context,
+                                  defaultValue: screenWidth * 0.544,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: DESKTOP, value: 800.0)
+                                  ]).value,
+                              child: RichText(
+                                textAlign: TextAlign.justify,
+                                text: TextSpan(
+                                  style: aboutMeText.copyWith(fontSize: mFont),
+                                  children: <TextSpan>[
+                                    TextSpan(text: "Hi, I'm a "),
+                                    TextSpan(
+                                        text: "third-year ",
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: 'undergraduate at ',
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text:
+                                            'Thapar Institute of Engineering & Technology',
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: ", and I've been a ",
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: 'Flutter Developer',
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text:
+                                            " for two years. I'm enthusiastic about ",
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: 'DevOps',
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text:
+                                            ' and enjoy building new things. My passion for innovation has led me to win the ',
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: 'Smart India Hackathon',
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: ' and become a finalist at the ',
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: 'UNSECO India Africa Hackathon',
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text:
+                                            ". As a developer, I have a deep understanding of the latest technologies, tools, and best practices in mobile app development. My focus on providing the best user experience has allowed me to develop apps that have received ",
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text: 'great feedback ',
+                                        style: aboutMeText2.copyWith(
+                                            fontSize: mFont)),
+                                    TextSpan(
+                                        text:
+                                            "from clients and users alike. I'm always eager to explore new tools and technologies that can help streamline the development and deployment process.",
+                                        style: aboutMeText.copyWith(
+                                            fontSize: mFont))
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                            height: 450,
-                            child: Image.asset(
-                              'images/my_photo.png',
-                              //height: 100,
-                              alignment: Alignment.topLeft,
-                              width: 375,
-                              fit: BoxFit.fitWidth,
+                        ResponsiveRowColumnItem(
+                          columnOrder: 1073741822,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              height: ResponsiveValue(context,
+                                  defaultValue: screenWidth * 0.3125,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: DESKTOP,
+                                        value: screenWidth * 0.275),
+                                    Condition.smallerThan(
+                                        name: TABLET, value: screenWidth * 0.3),
+                                    Condition.smallerThan(
+                                        name: MOBILE, value: 340.0),
+                                  ]).value, //450
+                              child: Image.asset(
+                                'images/my_photo.png',
+                                //height: 100,
+                                alignment: Alignment.topLeft,
+                                width: ResponsiveValue(context,
+                                    defaultValue: screenWidth * 0.260,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: DESKTOP,
+                                          value: screenWidth * 0.23),
+                                      Condition.smallerThan(
+                                          name: TABLET,
+                                          value: screenWidth * 0.275),
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 270.0),
+                                    ]).value //375,
+                                ,
+                                fit: BoxFit.fitWidth,
+                              ),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  color: Color(0xff252734)),
                             ),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                color: Color(0xff252734)),
                           ),
                         ),
                       ],
@@ -468,8 +539,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.04),
+                        ]).value!,
+                    vertical: screenWidth * 0.0104),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -650,8 +727,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding:
-                     EdgeInsets.symmetric( horizontal: ResponsiveValue(context,
+                padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveValue(context,
                         defaultValue: screenWidth * 0.068,
                         valueWhen: [
                           Condition.smallerThan(
@@ -662,7 +739,8 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Work Experience and Volunteering',
-                        style: topicHeading.copyWith(fontSize: ResponsiveValue(context,
+                        style: topicHeading.copyWith(
+                            fontSize: ResponsiveValue(context,
                                 defaultValue: 35.0,
                                 valueWhen: [
                               Condition.smallerThan(name: DESKTOP, value: 25.0),
@@ -1049,8 +1127,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding:
-                     EdgeInsets.symmetric(horizontal: ResponsiveValue(context,
+                padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveValue(context,
                         defaultValue: screenWidth * 0.068,
                         valueWhen: [
                           Condition.smallerThan(
@@ -1060,7 +1138,8 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Projects', style: topicHeading.copyWith(
+                    Text('Projects',
+                        style: topicHeading.copyWith(
                             fontSize: ResponsiveValue(context,
                                 defaultValue: 35.0,
                                 valueWhen: [
@@ -1270,13 +1349,14 @@ class _HomePageState extends State<HomePage> {
                     print(data);
 
                     return Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: ResponsiveValue(context,
-                        defaultValue: screenWidth * 0.068,
-                        valueWhen: [
-                          Condition.smallerThan(
-                              name: DESKTOP, value: screenWidth * 0.04),
-                        ]).value!,
-                    vertical: screenWidth * 0.0104),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: ResponsiveValue(context,
+                                defaultValue: screenWidth * 0.068,
+                                valueWhen: [
+                                  Condition.smallerThan(
+                                      name: DESKTOP, value: screenWidth * 0.04),
+                                ]).value!,
+                            vertical: screenWidth * 0.0104),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -1360,8 +1440,14 @@ class _HomePageState extends State<HomePage> {
                         ));
                   }),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+                padding: EdgeInsets.symmetric(
+                    horizontal: ResponsiveValue(context,
+                        defaultValue: screenWidth * 0.068,
+                        valueWhen: [
+                          Condition.smallerThan(
+                              name: DESKTOP, value: screenWidth * 0.04),
+                        ]).value!,
+                    vertical: screenWidth * 0.0104),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
