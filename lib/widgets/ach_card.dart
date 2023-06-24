@@ -46,6 +46,8 @@ class AchCard extends StatelessWidget {
         child: ResponsiveRowColumn(
           rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
           columnCrossAxisAlignment: CrossAxisAlignment.start,
+                    rowCrossAxisAlignment: CrossAxisAlignment.start,
+
           // rowPadding: const EdgeInsets.all(30),
           // columnPadding: const EdgeInsets.all(30),
           layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -197,6 +199,7 @@ class AchCard extends StatelessWidget {
                                   FontAwesomeIcons.github,
                                   color: Colors.white,
                                 )),
+                           if(link3!=null)
                             IconButton(
                                 padding: EdgeInsets.all(ResponsiveValue(context,
                                     defaultValue: 8.0,

@@ -8,7 +8,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:portfolio/models/skillChip.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 class ProCard extends StatelessWidget {
   ProCard(
       {required this.name,
@@ -41,6 +41,8 @@ class ProCard extends StatelessWidget {
         child: ResponsiveRowColumn(
           rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
           columnCrossAxisAlignment: CrossAxisAlignment.start,
+          rowCrossAxisAlignment: CrossAxisAlignment.start,
+
           //crossAxisAlignment: CrossAxisAlignment.baseline,
           layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
               ? ResponsiveRowColumnType.COLUMN
@@ -138,14 +140,15 @@ class ProCard extends StatelessWidget {
                                     FontAwesomeIcons.github,
                                     color: Colors.white,
                                   )),
-                              IconButton(
-                                  onPressed: () {
-                                    html.window.open(link2!, "_blank");
-                                  },
-                                  icon: Icon(
-                                    FontAwesomeIcons.googlePlay,
-                                    color: Colors.white,
-                                  )),
+                              if (link2 != null)
+                                IconButton(
+                                    onPressed: () {
+                                      html.window.open(link2!, "_blank");
+                                    },
+                                    icon: Icon(
+                                      FontAwesomeIcons.googlePlay,
+                                      color: Colors.white,
+                                    )),
                             ],
                           ),
                           Padding(
@@ -321,13 +324,13 @@ class ProCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
                     height: ResponsiveValue(context,
-                        defaultValue: screenWidth * 0.336,
+                        defaultValue: screenWidth * 0.406,
                         valueWhen: [
                           Condition.smallerThan(
                               name: DESKTOP, value: screenWidth * 0.219),
                           Condition.smallerThan(
-                              name: TABLET, value: screenWidth * 0.275),
-                          Condition.smallerThan(name: MOBILE, value: 350.0),
+                              name: TABLET, value: screenWidth * 0.45),
+                          Condition.smallerThan(name: MOBILE, value: 400.0),
                         ]).value,
                     child: Image.asset(
                       pic,
@@ -340,7 +343,7 @@ class ProCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.18),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.23),
-                            Condition.smallerThan(name: MOBILE, value: 270.0),
+                            Condition.smallerThan(name: MOBILE, value: 230.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
@@ -383,10 +386,15 @@ void showCustomDialog(BuildContext context, int noi, String name) {
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
                     height: 600,
-                    child: Image.asset(
-                      "images/$name${itemIndex + 1}.jpeg",
-                      fit: BoxFit.fill,
-                    ),
+
+child:CachedNetworkImage(
+   imageUrl:"https://firebasestorage.googleapis.com/v0/b/todo-a836d.appspot.com/o/portfolio%2F${name.replaceAll(' ', '%20').replaceAll(',', '%2C')}${itemIndex + 1}.jpeg?alt=media",
+   placeholder: (context, url) => new Image.asset('images/loading.gif'),
+   errorWidget: (context, url, error) => new Icon(Icons.error),
+ ),
+
+
+                 
                   ),
                 ),
               ),

@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         builder: (context, child) => ResponsiveWrapper.builder(
           ClampingScrollWrapper.builder(context, child!),
-          maxWidth: 1600,
+          maxWidth: 2460,
           minWidth: 480,
           defaultScale: true,
           breakpoints: [
@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+      
         ),
         home: HomePage(),
       ),

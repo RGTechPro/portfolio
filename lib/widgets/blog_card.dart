@@ -39,6 +39,8 @@ class BlogCard extends StatelessWidget {
         child: ResponsiveRowColumn(
           rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
           columnCrossAxisAlignment: CrossAxisAlignment.start,
+                    rowCrossAxisAlignment: CrossAxisAlignment.start,
+
           layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
               ? ResponsiveRowColumnType.COLUMN
               : ResponsiveRowColumnType.ROW,

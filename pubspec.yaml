@@ -44,6 +44,8 @@ dependencies:
   graphql_flutter: ^5.1.2
   intl: ^0.18.0
   dev_icons: ^1.0.0
+  another_transformer_page_view: ^2.0.1
+  cached_network_image: ^3.2.3
  
 
 dev_dependencies:
