@@ -68065,7 +68065,7 @@ o=3}else{p=1
 o=1}if(A.cn(d8).cM(b3)){p=3
 o=4}n=t.D
 m=A.dv(A.a([A.av("Rishabh ",A.cq(b0,b0,b0,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),A.av("Gupta",A.cq(b0,b0,new A.m(b5),b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),A.av(".",A.cq(b0,b0,b0,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0)],n),B.S,B.u,B.t,b0,b0,B.o)
-l=A.a([A.d0(new A.ac(B.AW,A.dv(A.a([A.d0(A.md(A.av("Home",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.acZ(a9),b0),50,b0),A.md(A.av("About",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.ad_(a9),A.Tl(b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0)),A.md(A.av("Works",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.ad0(a9),b0),A.md(A.av("Blogs",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.adb(a9),b0)],n),B.S,B.u,B.t,b0,b0,B.o),b0),70,b0)],n)
+l=A.a([A.d0(new A.ac(B.AU,A.dv(A.a([A.d0(A.md(A.av("Home",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.acZ(a9),b0),50,b0),A.md(A.av("About",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.ad_(a9),A.Tl(b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0)),A.md(A.av("Works",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.ad0(a9),b0),A.md(A.av("Blogs",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.adb(a9),b0)],n),B.S,B.u,B.t,b0,b0,B.o),b0),70,b0)],n)
 k=a9.ax
 j=a9.CW
 i=A.cn(d8).cM(b2)?B.c1:B.bB
@@ -68106,7 +68106,7 @@ e.push(new A.ac(B.ha,A.av(c2,A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,A.a_(d8,d,A.
 e.push(A.dv(A.a([A.d0(A.aoc(A.a([new A.oA(A.av(c1,A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,15,b0,b0,B.ai,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),17,210),new A.oA(A.av("\u2022",A.cq(b0,b0,new A.m(b5),b0,b0,b0,b0,b0,b4,b0,b0,25,b0,b0,B.ai,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),B.aO,b0),17,-177)],t.wL),50),75,b0),A.d0(b0,b0,30),new A.ac(B.ha,A.av(c2,A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b4,b0,b0,A.a_(d8,d,A.a([new A.w(b0,b1,B.e,d,b0,d7)],s),r).a,b0,b0,b0,b0,b0,!0,b0,1.75,b0,b0,b0,b0,b0,b0),b0,b0),b0)],n),B.S,B.u,B.t,b0,b0,B.o))}d=d6*0.0153
 e.push(new A.ac(B.ha,A.av("I am Rishabh, experienced Flutter & Cloud Developer. I am here to help you build your amazing product!",A.cq(b0,b0,new A.m(4287796382),b0,b0,b0,b0,b0,b4,b0,b0,A.a_(d8,d,A.a([new A.w(b0,b1,B.e,d,b0,d7),new A.w(b0,b2,B.e,17,b0,d7)],s),r).a,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),b0))
 d=A.Tl(b0,b0,new A.dr(new A.m(c3),t.Il),b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,new A.dr(new A.bD(B.a7,B.p),t.xx),b0,b0,b0,b0,b0,b0)
-e.push(new A.ac(B.AV,A.dv(A.a([A.d0(A.md(A.av("Mail Me",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.ade(),d),45,115),A.d0(b0,b0,40),A.bN(b0,b0,A.XR(B.Bs,B.i),b0,new A.adf(),b0,b0),A.bN(b0,b0,A.XR(B.Br,B.i),b0,new A.adg(),b0,b0),A.bN(b0,b0,A.XR(B.Bq,B.i),b0,new A.adh(),b0,b0),A.bN(b0,b0,A.XR(B.db,B.i),b0,new A.adi(),b0,b0)],n),B.S,B.u,B.t,b0,b0,B.o),b0))
+e.push(new A.ac(B.AW,A.dv(A.a([A.d0(A.md(A.av("Mail Me",A.cq(b0,b0,B.i,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,b0,!0,b0,b0,b0,b0,b0,b0,b0,b0),b0,b0),new A.ade(),d),45,115),A.d0(b0,b0,40),A.bN(b0,b0,A.XR(B.Bs,B.i),b0,new A.adf(),b0,b0),A.bN(b0,b0,A.XR(B.Br,B.i),b0,new A.adg(),b0,b0),A.bN(b0,b0,A.XR(B.Bq,B.i),b0,new A.adh(),b0,b0),A.bN(b0,b0,A.XR(B.db,B.i),b0,new A.adi(),b0,b0)],n),B.S,B.u,B.t,b0,b0,B.o),b0))
 d=t.rH
 i=A.qK(A.a([a1,A.ft(A.nj(new A.ac(new A.a5(a0,0,g,0),A.dB(e,f,B.u,B.t,b0,b0,B.o),b0),o),b0,b0,c0,!0,b0,b0,c0)],d),B.S,B.hS,i,B.y,B.hS)
 f=d6*0.068
@@ -68116,10 +68116,10 @@ g=A.av("About Me",B.c4,b0,b0)
 c=A.cn(d8).cM(b1)?B.c1:B.bB
 b=A.a_(d8,d6*0.544,A.a([new A.w(b0,b1,B.e,800,b0,d7)],s),r).a
 a=B.bD.aW(q)
-b=A.ft(new A.ac(B.AU,A.b_(b0,A.a4y(b0,b0,B.cC,b0,b0,!0,b0,A.dd(A.a([A.dd(b0,b0,"Hi, I'm a "),A.dd(b0,B.ac.aW(q),"final-year "),A.dd(b0,B.bD.aW(q),"undergraduate at "),A.dd(b0,B.ac.aW(q),c4),A.dd(b0,B.bD.aW(q),", and I've been a "),A.dd(b0,B.ac.aW(q),"Flutter Developer"),A.dd(b0,B.bD.aW(q)," for two years. I'm enthusiastic about "),A.dd(b0,B.ac.aW(q),"DevOps"),A.dd(b0,B.bD.aW(q)," and enjoy building new things. My passion for innovation has led me to win the "),A.dd(b0,B.ac.aW(q),"Smart India Hackathon"),A.dd(b0,B.bD.aW(q)," and become a finalist at the "),A.dd(b0,B.ac.aW(q),"UNSECO India Africa Hackathon"),A.dd(b0,B.bD.aW(q),". As a developer, I have a deep understanding of the latest technologies, tools, and best practices in mobile app development. My focus on providing the best user experience has allowed me to develop apps that have received "),A.dd(b0,B.ac.aW(q),"great feedback "),A.dd(b0,B.bD.aW(q),"from clients and users alike. I'm always eager to explore new tools and technologies that can help streamline the development and deployment process.")],t.Ne),a,b0),B.ar,b0,b0,1,B.az),b0,b0,b0,b0,b0,b0,b),b0),b0,b0,c0,!0,b0,b0,c0)
+b=A.ft(new A.ac(B.AV,A.b_(b0,A.a4y(b0,b0,B.cC,b0,b0,!0,b0,A.dd(A.a([A.dd(b0,b0,"Hi, I'm a "),A.dd(b0,B.ac.aW(q),"final-year "),A.dd(b0,B.bD.aW(q),"undergraduate at "),A.dd(b0,B.ac.aW(q),c4),A.dd(b0,B.bD.aW(q),", and I've been a "),A.dd(b0,B.ac.aW(q),"Flutter Developer"),A.dd(b0,B.bD.aW(q)," for two years. I'm enthusiastic about "),A.dd(b0,B.ac.aW(q),"DevOps"),A.dd(b0,B.bD.aW(q)," and enjoy building new things. My passion for innovation has led me to win the "),A.dd(b0,B.ac.aW(q),"Smart India Hackathon"),A.dd(b0,B.bD.aW(q)," and become a finalist at the "),A.dd(b0,B.ac.aW(q),"UNSECO India Africa Hackathon"),A.dd(b0,B.bD.aW(q),". As a developer, I have a deep understanding of the latest technologies, tools, and best practices in mobile app development. My focus on providing the best user experience has allowed me to develop apps that have received "),A.dd(b0,B.ac.aW(q),"great feedback "),A.dd(b0,B.bD.aW(q),"from clients and users alike. I'm always eager to explore new tools and technologies that can help streamline the development and deployment process.")],t.Ne),a,b0),B.ar,b0,b0,1,B.az),b0,b0,b0,b0,b0,b0,b),b0),b0,b0,c0,!0,b0,b0,c0)
 a=A.d4(20)
 q=d6*0.275
-a0=A.a_(d8,d6*0.3125,A.a([new A.w(b0,b1,B.e,q,b0,d7),new A.w(b0,b2,B.e,d6*0.3,b0,d7),new A.w(b0,b3,B.e,340,b0,d7)],s),r).a
+a0=A.a_(d8,d6*0.3125,A.a([new A.w(b0,b1,B.e,q,b0,d7),new A.w(b0,b2,B.e,d6*0.3,b0,d7),new A.w(b0,b3,B.e,315,b0,d7)],s),r).a
 c=A.dB(A.a([new A.ac(B.h7,g,b0),A.qK(A.a([b,A.ft(A.py(a,A.b_(b0,A.pZ(b7,B.bn,B.fF,A.a_(d8,d6*0.26,A.a([new A.w(b0,b1,B.e,d6*0.23,b0,d7),new A.w(b0,b2,B.e,q,b0,d7),new A.w(b0,b3,B.e,270,b0,d7)],s),r).a),b0,b0,new A.cJ(new A.m(b8),b0,b0,b0,b0,b0,B.a8),a0,b0,b0,b0)),b0,b0,b6,!0,b0,b0,c0)],d),B.y,B.u,c,B.S,B.ay)],n),B.y,B.u,B.t,b0,b0,B.o)
 d=A.a_(d8,f,A.a([new A.w(b0,b1,B.e,h,b0,d7)],s),r).a
 d.toString
@@ -68132,7 +68132,7 @@ g=A.a_(d8,35,A.a([new A.w(b0,b1,B.e,25,b0,d7),new A.w(b0,b3,B.e,32,b0,d7)],s),r)
 g.toString
 g=A.av("Work Experience and Volunteering",B.c4.aW(g),b0,b0)
 a1=a9.y
-a1=A.nj(A.a1V(A.a([A.am5("Townsquare","As a Flutter Developer Intern at Townsquare, I made valuable contributions to the optimization and enhancement of our social media app. I focused on streamlining loading times, optimizing code, and introducing exciting new features. I conducted thorough A/B testing to make informed decisions. Collaborating closely with designers and product managers, I prioritized the development of a seamless user experience. Additionally, I played a key role in implementing a robust and engaging notification system, further enhancing user engagement.","May 2023 to June 2023","https://www.townsquare.social/","images/townsquare.png","FLUTTER DEVELOPER INTERN",A.a([new A.a6(c5,A.Q(B.aB,new A.m(b5))),new A.a6(c6,A.Q(B.aC,new A.m(b5))),new A.a6(c7,A.Q(B.aD,new A.m(b5))),new A.a6(c8,A.Q(B.aE,new A.m(b5))),new A.a6(d2,A.Q(B.br,new A.m(b5))),new A.a6("GCP",A.Q(B.n7,new A.m(b5)))],q)),A.am5("Housy","Worked as a Software Development Intern at Housy and handled the app development of their app. Integrated payment system. Created, implemented, and documented the source code for mobile/web applications at Housy. Performed unit and integration, beta, and A/B testing before launch. Conducted functional and non-functional testing. Fixed multiple bugs. Implemented new features for meeting the business model requirements. Brought new changes in the UI. Learnt iOS app deployment on App Store Connect.","Feb 2022 to June 2022","https://www.housyforyou.com/","images/housy.png","SOFTWARE DEVELOPER INTERN",A.a([new A.a6(c5,A.Q(B.aB,new A.m(b5))),new A.a6(c6,A.Q(B.aC,new A.m(b5))),new A.a6(c7,A.Q(B.aD,new A.m(b5))),new A.a6(c8,A.Q(B.aE,new A.m(b5))),new A.a6(d2,A.Q(B.br,new A.m(b5)))],q)),A.am5("Microsoft Learn Student Chapter","As the Technical Coordinator for Makeathon 4.0 (Hackathon), I successfully organized and facilitated the event, ensuring its smooth execution. Achieved first rank in the coding competition 'Thapar Premier League', representing MLSC at TIET. Secured the first position in 'Ideathon' by pitching 'Clobofy', a solution for buying/selling used clothes and books. Conducted a workshop on Cyber Security in Tech Meet 2021 and coordinated a team for Quarter Quell as part of the organizing committee.","Oct 2020 to June 2022","https://mlsctiet.com/","images/mlsc.png","EXECUTIVE MEMBER",A.a([new A.a6(c5,A.Q(B.aB,new A.m(b5))),new A.a6(c6,A.Q(B.aC,new A.m(b5))),new A.a6(c7,A.Q(B.aD,new A.m(b5))),new A.a6(c8,A.Q(B.aE,new A.m(b5))),new A.a6("HTML",A.Q(B.n5,new A.m(b5))),new A.a6("CSS",A.Q(B.n4,new A.m(b5))),new A.a6(c9,A.Q(B.n6,new A.m(b5))),new A.a6(d3,A.Q(B.bI,new A.m(b5)))],q))],n),a1,new A.adj(a9),new A.h8(b0),B.a6),1)
+a1=A.nj(A.a1V(A.a([A.am5("Townsquare","As a Flutter Developer Intern at Townsquare, I made valuable contributions to the optimization and enhancement of our social media app. I focused on streamlining loading times, optimizing code, and introducing exciting new features. I conducted thorough A/B testing to make informed decisions. Collaborating closely with designers and product managers, I prioritized the development of a seamless user experience. Additionally, I played a key role in implementing a robust and engaging notification system, further enhancing user engagement.","May 2023 to June 2023","https://www.townsquare.social/","images/townsquare.png","FLUTTER DEVELOPER INTERN",A.a([new A.a6(c5,A.Q(B.aB,new A.m(b5))),new A.a6(c6,A.Q(B.aC,new A.m(b5))),new A.a6(c7,A.Q(B.aD,new A.m(b5))),new A.a6(c8,A.Q(B.aE,new A.m(b5))),new A.a6(d2,A.Q(B.br,new A.m(b5))),new A.a6("GCP",A.Q(B.n7,new A.m(b5)))],q)),A.am5("Housy","Worked as a Software Development Intern at Housy and handled the app development of their app. Integrated payment system. Created, implemented, and documented the source code for mobile/web applications at Housy. Performed unit and integration, beta, and A/B testing before launch. Conducted functional and non-functional testing. Fixed multiple bugs. Implemented new features for meeting the business model requirements. Brought new changes in the UI. Learnt iOS app deployment on App Store Connect.","Feb 2022 to June 2022","https://www.housyforyou.com/","images/housy.png","SOFTWARE DEVELOPER INTERN",A.a([new A.a6(c5,A.Q(B.aB,new A.m(b5))),new A.a6(c6,A.Q(B.aC,new A.m(b5))),new A.a6(c7,A.Q(B.aD,new A.m(b5))),new A.a6(c8,A.Q(B.aE,new A.m(b5))),new A.a6(d2,A.Q(B.br,new A.m(b5)))],q)),A.am5("MLSC","As the Technical Coordinator for Makeathon 4.0 (Hackathon), I successfully organized and facilitated the event, ensuring its smooth execution. Achieved first rank in the coding competition 'Thapar Premier League', representing MLSC at TIET. Secured the first position in 'Ideathon' by pitching 'Clobofy', a solution for buying/selling used clothes and books. Conducted a workshop on Cyber Security in Tech Meet 2021 and coordinated a team for Quarter Quell as part of the organizing committee.","Oct 2020 to June 2022","https://mlsctiet.com/","images/mlsc.png","EXECUTIVE MEMBER",A.a([new A.a6(c5,A.Q(B.aB,new A.m(b5))),new A.a6(c6,A.Q(B.aC,new A.m(b5))),new A.a6(c7,A.Q(B.aD,new A.m(b5))),new A.a6(c8,A.Q(B.aE,new A.m(b5))),new A.a6("HTML",A.Q(B.n5,new A.m(b5))),new A.a6("CSS",A.Q(B.n4,new A.m(b5))),new A.a6(c9,A.Q(B.n6,new A.m(b5))),new A.a6(d3,A.Q(B.bI,new A.m(b5)))],q))],n),a1,new A.adj(a9),new A.h8(b0),B.a6),1)
 a2=A.bN(b0,new A.aE(0,1/0,0,1/0),A.Q(B.ch,new A.m(c3)),22,new A.adk(a9),B.a0,b0)
 a3=a9.e
 a3=A.dB(A.a([g,a1,A.dv(A.a([new A.ac(B.d5,a2,b0),A.Eu(A.Es(new A.m(b5),new A.bD(A.d4(5),B.p),B.dV,B.c2),3,a3),new A.ac(B.d6,A.bN(b0,new A.aE(0,1/0,0,1/0),A.Q(B.ci,new A.m(c3)),22,new A.ad1(a9),B.a0,b0),b0)],n),B.S,B.ay,B.t,b0,b0,B.o)],n),B.y,B.u,B.t,b0,b0,B.o)
@@ -68412,11 +68412,11 @@ o.toString
 n=A.a_(a4,a3*0.044,A.a([new A.w(d,c,B.e,0,d,m)],r),q).a
 n.toString
 l=A.d4(20)
-k=A.a_(a4,a3*0.306,A.a([new A.w(d,c,B.e,a3*0.197,d,m),new A.w(d,b,B.e,a3*0.24,d,m),new A.w(d,a0,B.e,300,d,m)],r),q).a
+k=A.a_(a4,a3*0.306,A.a([new A.w(d,c,B.e,a3*0.197,d,m),new A.w(d,b,B.e,a3*0.24,d,m),new A.w(d,a0,B.e,270,d,m)],r),q).a
 return new A.ac(new A.a5(a2,0.012*a3,a2,0),A.b_(d,A.qK(A.a([p,A.ft(new A.ac(new A.a5(n,0,0,o),A.py(l,A.b_(d,A.pZ(e.w,B.bn,B.cN,A.a_(a4,a3*0.272,A.a([new A.w(d,c,B.e,a3*0.375,d,m),new A.w(d,b,B.e,a3*0.5,d,m),new A.w(d,a0,B.e,500,d,m)],r),q).a),d,d,new A.cJ(new A.m(4280624948),d,d,d,d,d,B.a8),k,d,d,d)),d),d,d,1073741822,!0,d,d,a1)],t.rH),B.y,B.u,s,B.y,B.ay),d,d,d,d,d,d,d),d)}}
 A.Sl.prototype={
 $1(a){var s=a.b,r=this.a,q=r*0.003,p=A.d4(15)
-return new A.ac(B.h9,A.px(s,new A.m(4280822584),A.av(a.a,B.C.aW(r*0.01),null,null),new A.a5(q,q,q,q),B.C,new A.bD(p,new A.c9(B.i,1,B.af,-1))),null)},
+return new A.ac(B.h8,A.px(s,new A.m(4280822584),A.av(a.a,B.C.aW(r*0.01),null,null),new A.a5(q,q,q,q),B.C,new A.bD(p,new A.c9(B.i,1,B.af,-1))),null)},
 $S:26}
 A.Sm.prototype={
 $0(){B.R.cG(window,this.a.x,"_blank")},
@@ -68431,7 +68431,7 @@ B.R.cG(s,r,"_blank")},
 $S:0}
 A.Sp.prototype={
 $1(a){var s=null,r=a.b,q=this.a,p=q*0.0034,o=A.d4(15),n=t.d
-return new A.ac(B.h8,A.px(r,new A.m(4280822584),A.av(a.a,B.C.aW(A.a_(this.b,q*0.012245,A.a([new A.w(s,"MOBILE",B.e,15,s,n),new A.w(s,"TABLET",B.e,q*0.015245,s,n)],t.R),t.i).a),s,s),new A.a5(p,p,p,p),B.C,new A.bD(o,new A.c9(B.i,1,B.af,-1))),s)},
+return new A.ac(B.h9,A.px(r,new A.m(4280822584),A.av(a.a,B.C.aW(A.a_(this.b,q*0.012245,A.a([new A.w(s,"MOBILE",B.e,15,s,n),new A.w(s,"TABLET",B.e,q*0.015245,s,n)],t.R),t.i).a),s,s),new A.a5(p,p,p,p),B.C,new A.bD(o,new A.c9(B.i,1,B.af,-1))),s)},
 $S:26}
 A.Sq.prototype={
 $0(){B.R.cG(window,this.a.x,"_blank")},
@@ -68563,11 +68563,11 @@ p=n}p=A.ft(p,h,h,b,!0,h,h,b)
 o=A.a_(a1,100,A.a([new A.w(h,g,B.e,10,h,m)],r),q).a
 o.toString
 n=A.d4(20)
-l=A.a_(a1,a0*0.406,A.a([new A.w(h,g,B.e,a0*0.219,h,m),new A.w(h,f,B.e,a0*0.45,h,m),new A.w(h,c,B.e,400,h,m)],r),q).a
-return new A.ac(new A.a5(a,0.012*a0,a,0),A.b_(h,A.qK(A.a([p,A.ft(new A.ac(new A.a5(0,0,0,o),A.py(n,A.b_(h,A.pZ(i.f,B.bn,B.cN,A.a_(a1,a0*0.22,A.a([new A.w(h,g,B.e,a0*0.18,h,m),new A.w(h,f,B.e,a0*0.23,h,m),new A.w(h,c,B.e,230,h,m)],r),q).a),h,h,new A.cJ(new A.m(4280624948),h,h,h,h,h,B.a8),l,h,h,h)),h),h,h,1073741822,!0,h,h,b)],t.rH),B.y,B.u,s,B.y,B.ay),h,h,h,h,h,h,h),h)}}
+l=A.a_(a1,a0*0.406,A.a([new A.w(h,g,B.e,a0*0.219,h,m),new A.w(h,f,B.e,a0*0.45,h,m),new A.w(h,c,B.e,370,h,m)],r),q).a
+return new A.ac(new A.a5(a,0.012*a0,a,0),A.b_(h,A.qK(A.a([p,A.ft(new A.ac(new A.a5(0,0,0,o),A.py(n,A.b_(h,A.pZ(i.f,B.bn,B.cN,A.a_(a1,a0*0.22,A.a([new A.w(h,g,B.e,a0*0.18,h,m),new A.w(h,f,B.e,a0*0.23,h,m),new A.w(h,c,B.e,220,h,m)],r),q).a),h,h,new A.cJ(new A.m(4280624948),h,h,h,h,h,B.a8),l,h,h,h)),h),h,h,1073741822,!0,h,h,b)],t.rH),B.y,B.u,s,B.y,B.ay),h,h,h,h,h,h,h),h)}}
 A.a2K.prototype={
 $1(a){var s=a.b,r=this.a,q=r*0.003,p=A.d4(15)
-return new A.ac(B.h9,A.px(s,new A.m(4280822584),A.av(a.a,B.C.aW(r*0.01),null,null),new A.a5(q,q,q,q),B.C,new A.bD(p,new A.c9(B.i,1,B.af,-1))),null)},
+return new A.ac(B.h8,A.px(s,new A.m(4280822584),A.av(a.a,B.C.aW(r*0.01),null,null),new A.a5(q,q,q,q),B.C,new A.bD(p,new A.c9(B.i,1,B.af,-1))),null)},
 $S:26}
 A.a2L.prototype={
 $0(){var s=window,r=this.a.r
@@ -68585,7 +68585,7 @@ A.atC(this.b,s.x,s.c)},
 $S:0}
 A.a2O.prototype={
 $1(a){var s=null,r=a.b,q=this.a,p=q*0.0034,o=A.d4(15),n=t.d
-return new A.ac(B.h8,A.px(r,new A.m(4280822584),A.av(a.a,B.C.aW(A.a_(this.b,q*0.012245,A.a([new A.w(s,"MOBILE",B.e,15,s,n),new A.w(s,"TABLET",B.e,q*0.015245,s,n)],t.R),t.i).a),s,s),new A.a5(p,p,p,p),B.C,new A.bD(o,new A.c9(B.i,1,B.af,-1))),s)},
+return new A.ac(B.h9,A.px(r,new A.m(4280822584),A.av(a.a,B.C.aW(A.a_(this.b,q*0.012245,A.a([new A.w(s,"MOBILE",B.e,15,s,n),new A.w(s,"TABLET",B.e,q*0.015245,s,n)],t.R),t.i).a),s,s),new A.a5(p,p,p,p),B.C,new A.bD(o,new A.c9(B.i,1,B.af,-1))),s)},
 $S:26}
 A.a2P.prototype={
 $0(){var s=window,r=this.a.r
@@ -68644,7 +68644,7 @@ s.toString
 r=a.b
 q=A.d4(15)
 p=a.a
-j=A.a_(m,this.b*0.01736,A.a([new A.w(o,n,B.e,20,o,l)],k),j).a
+j=A.a_(m,this.b*0.01736,A.a([new A.w(o,n,B.e,19,o,l)],k),j).a
 j.toString
 return new A.ac(new A.a5(0,s,i,0),A.px(r,new A.m(4280822584),A.av(p,B.C.aW(j),o,o),new A.a5(5,5,5,5),B.C,new A.bD(q,new A.c9(B.i,1,B.af,-1))),o)},
 $S:26}
@@ -68693,18 +68693,18 @@ o.toString
 n=A.a_(a4,a3*0.044,A.a([new A.w(d,c,B.e,0,d,m)],r),q).a
 n.toString
 l=A.d4(20)
-k=A.a_(a4,a3*0.306,A.a([new A.w(d,c,B.e,a3*0.197,d,m),new A.w(d,b,B.e,a3*0.24,d,m),new A.w(d,a0,B.e,300,d,m)],r),q).a
+k=A.a_(a4,a3*0.306,A.a([new A.w(d,c,B.e,a3*0.197,d,m),new A.w(d,b,B.e,a3*0.24,d,m),new A.w(d,a0,B.e,270,d,m)],r),q).a
 return new A.ac(new A.a5(a2,0.012*a3,a2,0),A.b_(d,A.qK(A.a([p,A.ft(new A.ac(new A.a5(n,0,0,o),A.py(l,A.b_(d,A.pZ(e.w,B.bn,B.cN,A.a_(a4,a3*0.272,A.a([new A.w(d,c,B.e,a3*0.375,d,m),new A.w(d,b,B.e,a3*0.5,d,m),new A.w(d,a0,B.e,500,d,m)],r),q).a),d,d,new A.cJ(new A.m(4280624948),d,d,d,d,d,B.a8),k,d,d,d)),d),d,d,1073741822,!0,d,d,a1)],t.rH),B.y,B.u,s,B.y,B.ay),d,d,d,d,d,d,d),d)}}
 A.aa_.prototype={
 $1(a){var s=a.b,r=this.a,q=r*0.003,p=A.d4(15)
-return new A.ac(B.h9,A.px(s,new A.m(4280822584),A.av(a.a,B.C.aW(r*0.01),null,null),new A.a5(q,q,q,q),B.C,new A.bD(p,new A.c9(B.i,1,B.af,-1))),null)},
+return new A.ac(B.h8,A.px(s,new A.m(4280822584),A.av(a.a,B.C.aW(r*0.01),null,null),new A.a5(q,q,q,q),B.C,new A.bD(p,new A.c9(B.i,1,B.af,-1))),null)},
 $S:26}
 A.aa0.prototype={
 $0(){B.R.cG(window,this.a.x,"_blank")},
 $S:0}
 A.aa1.prototype={
 $1(a){var s=null,r=a.b,q=this.a,p=q*0.0034,o=A.d4(15),n=t.d
-return new A.ac(B.h8,A.px(r,new A.m(4280822584),A.av(a.a,B.C.aW(A.a_(this.b,q*0.012245,A.a([new A.w(s,"MOBILE",B.e,15,s,n),new A.w(s,"TABLET",B.e,q*0.015245,s,n)],t.R),t.i).a),s,s),new A.a5(p,p,p,p),B.C,new A.bD(o,new A.c9(B.i,1,B.af,-1))),s)},
+return new A.ac(B.h9,A.px(r,new A.m(4280822584),A.av(a.a,B.C.aW(A.a_(this.b,q*0.012245,A.a([new A.w(s,"MOBILE",B.e,15,s,n),new A.w(s,"TABLET",B.e,q*0.015245,s,n)],t.R),t.i).a),s,s),new A.a5(p,p,p,p),B.C,new A.bD(o,new A.c9(B.i,1,B.af,-1))),s)},
 $S:26}
 A.aa2.prototype={
 $0(){B.R.cG(window,this.a.x,"_blank")},
@@ -72602,15 +72602,15 @@ B.AS=new A.aL(-38e3)
 B.a0=new A.a5(0,0,0,0)
 B.h7=new A.a5(0,0,0,7)
 B.AT=new A.a5(0,0,10,0)
-B.h8=new A.a5(0,0,10,10)
-B.h9=new A.a5(0,0,10,7)
+B.h8=new A.a5(0,0,10,7)
+B.h9=new A.a5(0,0,5,2)
 B.d5=new A.a5(0,0,7,0)
 B.bc=new A.a5(0,10,0,10)
 B.nb=new A.a5(0,15,0,15)
+B.AU=new A.a5(0,15,40,0)
 B.ha=new A.a5(0,20,0,0)
-B.AU=new A.a5(0,25,0,25)
-B.AV=new A.a5(0,30,0,0)
-B.AW=new A.a5(0,30,40,0)
+B.AV=new A.a5(0,25,0,25)
+B.AW=new A.a5(0,30,0,0)
 B.nc=new A.a5(0,7,0,7)
 B.AX=new A.a5(10,0,0,0)
 B.AY=new A.a5(16,0,16,0)
