@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 70,
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 40, top: 15),
+                    padding: const EdgeInsets.only(right: 40, top: 25),
                     child: Row(
                       children: [
                         SizedBox(
@@ -1064,7 +1064,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'FLUTTER DEVELOPER INTERN',
                               company: 'Townsquare',
                               description:
-                                  'As a Flutter Developer Intern at Townsquare, I made valuable contributions to the optimization and enhancement of our social media app. I focused on streamlining loading times, optimizing code, and introducing exciting new features. I conducted thorough A/B testing to make informed decisions. Collaborating closely with designers and product managers, I prioritized the development of a seamless user experience. Additionally, I played a key role in implementing a robust and engaging notification system, further enhancing user engagement.',
+                                  'As a Flutter Developer Intern at Townsquare, I optimized our social media app, reducing loading times, improving code efficiency, and introducing new features. Through A/B testing, I made data-driven decisions. Collaborating with designers and product managers, I prioritized a seamless user experience. Additionally, I implemented a robust notification system to enhance user engagement.',
                               duration: 'May 2023 to June 2023',
                               pic: 'images/townsquare.png',
                               link: 'https://www.townsquare.social/',
@@ -1152,7 +1152,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'EXECUTIVE MEMBER',
                               company: 'MLSC',
                               description:
-                                  "As the Technical Coordinator for Makeathon 4.0 (Hackathon), I successfully organized and facilitated the event, ensuring its smooth execution. Achieved first rank in the coding competition 'Thapar Premier League', representing MLSC at TIET. Secured the first position in 'Ideathon' by pitching 'Clobofy', a solution for buying/selling used clothes and books. Conducted a workshop on Cyber Security in Tech Meet 2021 and coordinated a team for Quarter Quell as part of the organizing committee.",
+                                  "As the Technical Coordinator for Makeathon 4.0, I organized and facilitated the event seamlessly. Achieved first rank in 'Thapar Premier League' coding competition, representing MLSC at TIET. Secured the top position in 'Ideathon' with 'Clobofy', a solution for buying/selling used clothes and books. Conducted a Cyber Security workshop in Tech Meet 2021 and coordinated a Quarter Quell team as part of the organizing committee.",
                               duration: 'Oct 2020 to June 2022',
                               pic: 'images/mlsc.png',
                               link: 'https://mlsctiet.com/',
@@ -1299,7 +1299,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'WINNER',
                               competition: 'Smart India Hackathon 2022',
                               description:
-                                  'I along with my team, won the first position in the Smart India Hackathon 2022, organized by the Government of India and also won a cash prize of rupees 1 Lakh. We had to create a solution for a problem statement given by the Ministry of Electronics and Information Technology (MEITY). We created MeraAadhar. MeraAadhaar is a mobile App that gives the user the power to book a preferred operator on his phone in the preferred time slot and perform operations like Aadhaar Card updation and enrollment at the comfort of their home.',
+                                  'My team and I secured the first position in the Smart India Hackathon 2022 organized by the Government of India, winning a cash prize of rupees 1 Lakh. We developed MeraAadhar, a mobile app that empowers users to book preferred operators, perform Aadhaar Card updation and enrollment from home, based on a problem statement by the Ministry of Electronics and Information Technology (MEITY).',
                               time: 'Aug 2022',
                               pic: 'images/sih.jpeg',
                               link1: 'https://www.sih.gov.in/',
@@ -1376,7 +1376,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'GRAND FINALIST',
                               competition: 'UNESCO India Africa Hackathon',
                               description:
-                                  'After two rounds of elimination I got a chance to attend this huge event organized by Indian Govt and UNESCO with impeccable arrangements and experience. A chance to blend in and experience numerous cultures with an exchange of Technical Knowledge. We “CodeX” worked on an Education category problem to develop an app for data collection, analysis and visualization related to Schools in order to improve the education system. Vice President of India, UP CM, UP Governer and Education Minister were Chief Guests of this event.',
+                                  'I attended a prestigious event organized by the Indian Govt and UNESCO, featuring remarkable arrangements and a diverse cultural experience. As part of team "CodeX," we focused on an Education category problem and developed an app for data collection, analysis, and visualization in schools to enhance the education system. The event was graced by esteemed Chief Guests, including the Vice President of India, UP CM, UP Governor, and Education Minister.',
                               time: 'Nov 2022',
                               pic: 'images/uia.jpeg',
                               link1: 'https://uia.mic.gov.in/',
@@ -1444,7 +1444,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'WINNER',
                               competition: 'HACKTU 4.0 (Fampay Track)',
                               description:
-                                  'Our team emerged as the champion in the Fampay track of the prestigious HACKTU 4.0 hackathon, organized by CCS, a renowned technical society. We were tasked with addressing a problem statement put forth by Fampay, a well-known startup. Our solution involved developing an intuitive mobile application designed to enhance financial literacy among individuals. By leveraging our expertise, we crafted a visually appealing user interface and incorporated a comprehensive set of features into the app. Our exceptional solution propelled us to secure the first position in our track.',
+                                  'We won the Fampay track in the HACKTU 4.0 hackathon organized by CCS, a prestigious technical society. Our task was to address a problem statement by Fampay. We developed an intuitive mobile app for enhancing financial literacy, with a visually appealing interface and comprehensive features. Our exceptional solution secured us the first position in our track, showcasing our expertise and dedication.',
                               time: 'Feb 2023',
                               pic: 'images/hacktu.png',
                               link1: 'https://hacktu.ccstiet.com/',

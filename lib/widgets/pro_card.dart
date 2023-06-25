@@ -284,31 +284,65 @@ class ProCard extends StatelessWidget {
                                     FontAwesomeIcons.googlePlay,
                                     color: Colors.white,
                                   )),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              if (ResponsiveWrapper.of(context)
+                                  .isSmallerThan(MOBILE))
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 15.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Color(0xff04c189))),
+                                    child: TextButton(
+                                        onPressed: () {
+                                          showCustomDialog(context, noi!, name);
+                                        },
+                                        child: Text(
+                                          'Project Gallery',
+                                          style: positionText.copyWith(
+                                              fontSize: ResponsiveValue(context,
+                                                  defaultValue: 18.0,
+                                                  valueWhen: [
+                                                Condition.smallerThan(
+                                                    name: MOBILE, value: 15.0),
+                                                Condition.smallerThan(
+                                                    name: TABLET, value: 18.0)
+                                              ]).value),
+                                        )),
+                                  ),
+                                )
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Color(0xff04c189))),
-                              child: TextButton(
-                                  onPressed: () {
-                                    showCustomDialog(context, noi!, name);
-                                  },
-                                  child: Text(
-                                    'Project Gallery',
-                                    style: positionText.copyWith(
-                                        fontSize: ResponsiveValue(context,
-                                            defaultValue: 18.0,
-                                            valueWhen: [
-                                          Condition.smallerThan(
-                                              name: MOBILE, value: 15.0),
-                                          Condition.smallerThan(
-                                              name: TABLET, value: 18.0)
-                                        ]).value),
-                                  )),
-                            ),
-                          )
+                          if (!ResponsiveWrapper.of(context)
+                              .isSmallerThan(MOBILE))
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 15.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xff04c189))),
+                                child: TextButton(
+                                    onPressed: () {
+                                      showCustomDialog(context, noi!, name);
+                                    },
+                                    child: Text(
+                                      'Project Gallery',
+                                      style: positionText.copyWith(
+                                          fontSize: ResponsiveValue(context,
+                                              defaultValue: 18.0,
+                                              valueWhen: [
+                                            Condition.smallerThan(
+                                                name: MOBILE, value: 15.0),
+                                            Condition.smallerThan(
+                                                name: TABLET, value: 18.0)
+                                          ]).value),
+                                    )),
+                              ),
+                            )
                         ],
                       )),
             ResponsiveRowColumnItem(
@@ -331,7 +365,7 @@ class ProCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.219),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.45),
-                          Condition.smallerThan(name: MOBILE, value: 370.0),
+                          Condition.smallerThan(name: MOBILE, value: 400.0),
                         ]).value,
                     child: Image.asset(
                       pic,
@@ -344,7 +378,7 @@ class ProCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.18),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.23),
-                            Condition.smallerThan(name: MOBILE, value: 220.0),
+                            Condition.smallerThan(name: MOBILE, value: 230.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
