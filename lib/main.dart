@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             ResponsiveBreakpoint.autoScale(2460, name: '4K'),
           ],
         ),
-        title: 'Flutter Demo',
+        title: 'Rishabh Gupta',
         theme: ThemeData(
           primarySwatch: Colors.blue,
       

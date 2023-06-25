@@ -9,6 +9,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:portfolio/models/skillChip.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+
 class ProCard extends StatelessWidget {
   ProCard(
       {required this.name,
@@ -386,15 +387,14 @@ void showCustomDialog(BuildContext context, int noi, String name) {
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
                     height: 600,
-
-child:CachedNetworkImage(
-   imageUrl:"https://firebasestorage.googleapis.com/v0/b/todo-a836d.appspot.com/o/portfolio%2F${name.replaceAll(' ', '%20').replaceAll(',', '%2C')}${itemIndex + 1}.jpeg?alt=media",
-   placeholder: (context, url) => new Image.asset('images/loading.gif'),
-   errorWidget: (context, url, error) => new Icon(Icons.error),
- ),
-
-
-                 
+                    child: CachedNetworkImage(
+                        imageUrl:
+                            "https://firebasestorage.googleapis.com/v0/b/todo-a836d.appspot.com/o/portfolio%2F${name.replaceAll(' ', '%20').replaceAll(',', '%2C')}${itemIndex + 1}.jpeg?alt=media",
+                        placeholder: (context, url) =>
+                            new Image.asset('images/loading.gif'),
+                        errorWidget: (context, url, error) {
+                          return new Icon(Icons.error);
+                        }),
                   ),
                 ),
               ),
