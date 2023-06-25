@@ -68343,7 +68343,7 @@ return s},
 wo(a){return!0}}
 A.Gn.prototype={
 H(a){var s=null
-return new A.vA($.avN(),new A.wp(new A.vF(s),new A.a1g(),"Flutter Demo",A.aqw(s,B.hX,s),s),s)}}
+return new A.vA($.avN(),new A.wp(new A.vF(s),new A.a1g(),"Rishabh Gupta",A.aqw(s,B.hX,s),s),s)}}
 A.a1g.prototype={
 $2(a,b){var s=null
 b.toString
