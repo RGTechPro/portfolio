@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 70,
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 40, top: 30),
+                    padding: const EdgeInsets.only(right: 40, top: 15),
                     child: Row(
                       children: [
                         SizedBox(
@@ -805,7 +805,7 @@ class _HomePageState extends State<HomePage> {
                                           name: TABLET,
                                           value: screenWidth * 0.3),
                                       Condition.smallerThan(
-                                          name: MOBILE, value: 340.0),
+                                          name: MOBILE, value: 315.0),
                                     ]).value, //450
                                 child: Image.asset(
                                   'images/my_photo.png',
@@ -1060,12 +1060,11 @@ class _HomePageState extends State<HomePage> {
                           },
                           scrollDirection: Axis.horizontal,
                           children: [
-                                WorkCard(
+                            WorkCard(
                               position: 'FLUTTER DEVELOPER INTERN',
                               company: 'Townsquare',
                               description:
                                   'As a Flutter Developer Intern at Townsquare, I made valuable contributions to the optimization and enhancement of our social media app. I focused on streamlining loading times, optimizing code, and introducing exciting new features. I conducted thorough A/B testing to make informed decisions. Collaborating closely with designers and product managers, I prioritized the development of a seamless user experience. Additionally, I played a key role in implementing a robust and engaging notification system, further enhancing user engagement.',
-                                  
                               duration: 'May 2023 to June 2023',
                               pic: 'images/townsquare.png',
                               link: 'https://www.townsquare.social/',
@@ -1100,7 +1099,7 @@ class _HomePageState extends State<HomePage> {
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                     )),
-                                     SkillChip(
+                                SkillChip(
                                     skill: 'GCP',
                                     icon: Icon(
                                       DevIcons.googlecloudPlain,
@@ -1149,10 +1148,9 @@ class _HomePageState extends State<HomePage> {
                                     )),
                               ],
                             ),
-                        
-                     WorkCard(
+                            WorkCard(
                               position: 'EXECUTIVE MEMBER',
-                              company: 'Microsoft Learn Student Chapter',
+                              company: 'MLSC',
                               description:
                                   "As the Technical Coordinator for Makeathon 4.0 (Hackathon), I successfully organized and facilitated the event, ensuring its smooth execution. Achieved first rank in the coding competition 'Thapar Premier League', representing MLSC at TIET. Secured the first position in 'Ideathon' by pitching 'Clobofy', a solution for buying/selling used clothes and books. Conducted a workshop on Cyber Security in Tech Meet 2021 and coordinated a team for Quarter Quell as part of the organizing committee.",
                               duration: 'Oct 2020 to June 2022',
@@ -1189,19 +1187,19 @@ class _HomePageState extends State<HomePage> {
                                       DevIcons.html5Plain,
                                       color: Color(0xff04c189),
                                     )),
-                                      SkillChip(
+                                SkillChip(
                                     skill: 'CSS',
                                     icon: Icon(
                                       DevIcons.css3Plain,
                                       color: Color(0xff04c189),
                                     )),
-                                      SkillChip(
+                                SkillChip(
                                     skill: 'Javascript',
                                     icon: Icon(
                                       DevIcons.javascriptPlain,
                                       color: Color(0xff04c189),
                                     )),
-                                      SkillChip(
+                                SkillChip(
                                     skill: 'Django',
                                     icon: Icon(
                                       DevIcons.djangoPlain,
@@ -1451,7 +1449,6 @@ class _HomePageState extends State<HomePage> {
                               pic: 'images/hacktu.png',
                               link1: 'https://hacktu.ccstiet.com/',
                               link2: 'https://github.com/wersharks/finfy',
-                            
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
@@ -1723,7 +1720,7 @@ class _HomePageState extends State<HomePage> {
                               ],
                               noi: 8,
                             ),
-                             ProCard(
+                            ProCard(
                               name: 'FOODLY (FOOD DELIVERY APP)',
                               description:
                                   'An app for food delivery with catalogues, restaurant details, Veg /Non-veg filtered menu, option to add to cart, view cart,checkout, order summary and order tracking with unique reference id, order Time, invoice. It is fully integrated with firebase.',
@@ -1754,17 +1751,18 @@ class _HomePageState extends State<HomePage> {
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
-                              
                               ],
                               noi: 11,
                             ),
-                                 ProCard(
+                            ProCard(
                               name: 'Do.it ,Smart To-Do App',
                               description:
                                   "A Simple Todo app which has three profiles - Personal, Work and Home with beautiful and smooth UI which enables you to lodge your daily tasks and keep an active track by marking and deleting the completed tasks. The amazing part is that you won't loose your tasks data even if you are using this app on another device beacuse you need to sign in with google at the initial stage. All your tasks are securely stored in the cloud.",
                               pic: 'images/Do.it ,Smart To-Do App1.jpeg',
-                              link1: 'https://github.com/RGTechPro/do.it-todo-app-',
-                              link2: 'https://play.google.com/store/apps/details?id=com.todo.doit',
+                              link1:
+                                  'https://github.com/RGTechPro/do.it-todo-app-',
+                              link2:
+                                  'https://play.google.com/store/apps/details?id=com.todo.doit',
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
@@ -1790,7 +1788,6 @@ class _HomePageState extends State<HomePage> {
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
-                              
                               ],
                               noi: 11,
                             ),
@@ -1799,8 +1796,10 @@ class _HomePageState extends State<HomePage> {
                               description:
                                   "An app for tracking live prices and basic details about most of the cryptocurrencies of the world. This app includes news section which displays latest news related to cryptocurrencies. It is integrated with Coingecko’s API.",
                               pic: 'images/Crippy1.jpeg',
-                              link1: 'https://github.com/RGTechPro/crypt-coins-app',
-                              link2: 'https://play.google.com/store/apps/details?id=com.crippy.cryptapp',
+                              link1:
+                                  'https://github.com/RGTechPro/crypt-coins-app',
+                              link2:
+                                  'https://play.google.com/store/apps/details?id=com.crippy.cryptapp',
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
@@ -1826,11 +1825,10 @@ class _HomePageState extends State<HomePage> {
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
-                              
                               ],
                               noi: 3,
                             ),
-                              ProCard(
+                            ProCard(
                               name: 'GPT QnA bot',
                               description:
                                   "A bot built on GoLang and integrated with GPT's API that gives short and concise answers of every question.",
@@ -1843,8 +1841,6 @@ class _HomePageState extends State<HomePage> {
                                       DevIcons.goPlain,
                                       color: Color(0xff04c189),
                                     )),
-                              
-                              
                               ],
                               noi: 2,
                             ),

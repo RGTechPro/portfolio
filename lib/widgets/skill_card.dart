@@ -66,7 +66,7 @@ class SkillCard extends StatelessWidget {
                                         defaultValue: screenWidth * 0.01736,
                                         valueWhen: [
                                       Condition.smallerThan(
-                                          name: MOBILE, value: 20.0)
+                                          name: MOBILE, value: 19.0)
                                     ]).value!),
                               )),
                         ))

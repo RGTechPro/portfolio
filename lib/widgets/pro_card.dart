@@ -226,7 +226,7 @@ class ProCard extends StatelessWidget {
                                   children: skills!
                                       .map((i) => Padding(
                                             padding: const EdgeInsets.only(
-                                                right: 10, bottom: 10),
+                                                right: 5, bottom: 2),
                                             child: Chip(
                                                 avatar: i.icon,
                                                 labelPadding: EdgeInsets.all(
@@ -331,7 +331,7 @@ class ProCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.219),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.45),
-                          Condition.smallerThan(name: MOBILE, value: 400.0),
+                          Condition.smallerThan(name: MOBILE, value: 370.0),
                         ]).value,
                     child: Image.asset(
                       pic,
@@ -344,7 +344,7 @@ class ProCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.18),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.23),
-                            Condition.smallerThan(name: MOBILE, value: 230.0),
+                            Condition.smallerThan(name: MOBILE, value: 220.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),

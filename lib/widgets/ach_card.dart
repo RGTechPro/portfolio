@@ -346,7 +346,7 @@ class AchCard extends StatelessWidget {
                                 children: skills!
                                     .map((i) => Padding(
                                           padding: const EdgeInsets.only(
-                                              right: 10, bottom: 10),
+                                              right: 5, bottom: 2),
                                           child: Chip(
                                               avatar: i.icon,
                                               labelPadding: EdgeInsets.all(
@@ -462,7 +462,7 @@ class AchCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.197),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                          Condition.smallerThan(name: MOBILE, value: 300.0),
+                          Condition.smallerThan(name: MOBILE, value: 270.0),
                         ]).value,
 
                     //450
