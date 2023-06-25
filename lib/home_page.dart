@@ -1152,7 +1152,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'EXECUTIVE MEMBER',
                               company: 'MLSC',
                               description:
-                                  "As the Technical Coordinator for Makeathon 4.0, I organized and facilitated the event seamlessly. Achieved first rank in 'Thapar Premier League' coding competition, representing MLSC at TIET. Secured the top position in 'Ideathon' with 'Clobofy', a solution for buying/selling used clothes and books. Conducted a Cyber Security workshop in Tech Meet 2021 and coordinated a Quarter Quell team as part of the organizing committee.",
+                                  "As the Technical Coordinator for Makeathon 4.0, I organized and facilitated the event seamlessly. Achieved first rank in 'Thapar Premier League' coding competition, representing MLSC at TIET. Secured top position in 'Ideathon' with 'Clobofy', a solution for buying/selling used items. Conducted a Cyber Security workshop in Tech Meet 2021 and coordinated a Quarter Quell team as part of the organizing committee.",
                               duration: 'Oct 2020 to June 2022',
                               pic: 'images/mlsc.png',
                               link: 'https://mlsctiet.com/',
@@ -1606,7 +1606,7 @@ class _HomePageState extends State<HomePage> {
                             ProCard(
                               name: 'MERA AADHAR',
                               description:
-                                  'Mera Aadhaar is a mobile App that allows users to book a preferred operator on their phone, choose a convenient time slot, and perform operations such as Aadhaar Card updation and enrollment from the comfort of their home. My team and I secured the first position in the Smart India Hackathon 2022 through this project, organized by the Gov of India, earning a cash prize of ₹1 Lakh.',
+                                  'Mera Aadhaar is a mobile app enabling users to book a preferred operator, choose a convenient time slot, and update/enroll their Aadhaar Card from home. We secured the first position in the Smart India Hackathon 2022, organized by the Gov of India, earning a cash prize of ₹1 Lakh.',
                               pic: 'images/MERA AADHAR1.jpeg',
                               link1: 'https://github.com/wersharks/mera_aadhar',
                               skills: [
@@ -1757,7 +1757,7 @@ class _HomePageState extends State<HomePage> {
                             ProCard(
                               name: 'Do.it ,Smart To-Do App',
                               description:
-                                  "A Simple Todo app which has three profiles - Personal, Work and Home with beautiful and smooth UI which enables you to lodge your daily tasks and keep an active track by marking and deleting the completed tasks. The amazing part is that you won't loose your tasks data even if you are using this app on another device beacuse you need to sign in with google at the initial stage. All your tasks are securely stored in the cloud.",
+                                  "A Simple Todo app with three profiles - Personal, Work, and Home, featuring a beautiful and smooth UI. It allows you to track and manage your daily tasks by marking and deleting completed tasks. The app ensures data persistence across devices as it requires Google sign-in, securely storing tasks in the cloud.",
                               pic: 'images/Do.it ,Smart To-Do App1.jpeg',
                               link1:
                                   'https://github.com/RGTechPro/do.it-todo-app-',
