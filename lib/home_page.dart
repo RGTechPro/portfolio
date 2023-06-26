@@ -801,7 +801,7 @@ class _HomePageState extends State<HomePage> {
                                           name: TABLET,
                                           value: screenWidth * 0.3),
                                    const   Condition.smallerThan(
-                                          name: MOBILE, value: 300.0),
+                                          name: MOBILE, value: 280.0),
                                     ]).value, //450
                                
                                 decoration:const BoxDecoration(
