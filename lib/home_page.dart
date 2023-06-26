@@ -83,15 +83,15 @@ class _HomePageState extends State<HomePage> {
     double screenPad = screenWidth * 0.01;
     // screen padding for swiping between pages
     workPage = PageController(
-        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+        initialPage: _currentPosition_work, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     achPage = PageController(
-        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+        initialPage: _currentPosition_ach, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     proPage = PageController(
-        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+        initialPage: _currentPosition_pro, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     blogPage = PageController(
-        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+        initialPage: _currentPosition_blog, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     eduPage = PageController(
-        initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
+        initialPage: _currentPosition_edu, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     double mFont = ResponsiveValue(context,
         defaultValue: screenWidth * 0.01736,
         valueWhen:const [

@@ -227,7 +227,7 @@ class BlogCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.23),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                     const     Condition.smallerThan(name: MOBILE, value: 295.0),
+                     const     Condition.smallerThan(name: MOBILE, value: 270.0),
                         ]).value,
                     //450,
                    
@@ -243,7 +243,7 @@ class BlogCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.5),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5),
-                           const Condition.smallerThan(name: MOBILE, value: 500.0),
+                           const Condition.smallerThan(name: MOBILE, value: 485.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),

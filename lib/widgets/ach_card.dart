@@ -447,7 +447,7 @@ class AchCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.197),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                  const        Condition.smallerThan(name: MOBILE, value: 250.0),
+                  const        Condition.smallerThan(name: MOBILE, value: 215.0),
                         ]).value,
 
                     //450
@@ -465,7 +465,7 @@ class AchCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.375),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5),
-                         const   Condition.smallerThan(name: MOBILE, value: 480.0),
+                         const   Condition.smallerThan(name: MOBILE, value: 465.0),
                           ]).value,
 
                       //400

@@ -370,7 +370,7 @@ class ProCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.219),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.45),
-                       const   Condition.smallerThan(name: MOBILE, value: 340.0),
+                       const   Condition.smallerThan(name: MOBILE, value: 300.0),
                         ]).value,
                    
                     decoration:const BoxDecoration(
@@ -385,7 +385,7 @@ class ProCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.18),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.23),
-                        const    Condition.smallerThan(name: MOBILE, value: 200.0),
+                        const    Condition.smallerThan(name: MOBILE, value: 180.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
