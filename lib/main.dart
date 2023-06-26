@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         ),
         title: 'Rishabh Gupta',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
       
         ),
         home: HomePage(),
