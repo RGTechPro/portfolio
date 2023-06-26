@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
         valueWhen:const [
           Condition.smallerThan(name: DESKTOP, value: 17.7),
           Condition.smallerThan(name: TABLET, value: 16.2),
-          Condition.smallerThan(name: MOBILE, value: 16.9),
+          Condition.smallerThan(name: MOBILE, value: 16.8),
         ]).value!;
 
     int flex1 = 1;

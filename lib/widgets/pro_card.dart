@@ -370,7 +370,7 @@ class ProCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.219),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.45),
-                       const   Condition.smallerThan(name: MOBILE, value: 380.0),
+                       const   Condition.smallerThan(name: MOBILE, value: 355.0),
                         ]).value,
                    
                     decoration:const BoxDecoration(
@@ -385,7 +385,7 @@ class ProCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.18),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.23),
-                        const    Condition.smallerThan(name: MOBILE, value: 220.0),
+                        const    Condition.smallerThan(name: MOBILE, value: 208.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
@@ -408,7 +408,7 @@ void showCustomDialog(BuildContext context, int noi, String name) {
     barrierLabel: "Barrier",
     barrierDismissible: true,
     barrierColor: Colors.black.withOpacity(0.5),
-    transitionDuration: Duration(milliseconds: 700),
+    transitionDuration:const Duration(milliseconds: 700),
     pageBuilder: (_, __, ___) {
       return Stack(children: [
         Center(
@@ -474,7 +474,7 @@ void showCustomDialog(BuildContext context, int noi, String name) {
                     iconSize: 75,
                     onPressed: () {
                       buttonCarouselController.previousPage(
-                          duration: Duration(milliseconds: 300),
+                          duration:const Duration(milliseconds: 300),
                           curve: Curves.linear);
                     },
                     icon:const Icon(

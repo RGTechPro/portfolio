@@ -227,7 +227,7 @@ class BlogCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.23),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                     const     Condition.smallerThan(name: MOBILE, value: 300.0),
+                     const     Condition.smallerThan(name: MOBILE, value: 295.0),
                         ]).value,
                     //450,
                    

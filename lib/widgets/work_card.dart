@@ -362,7 +362,7 @@ class WorkCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.197),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                    const      Condition.smallerThan(name: MOBILE, value: 270.0),
+                    const      Condition.smallerThan(name: MOBILE, value: 265.0),
                         ]).value,
                  
                     decoration:const BoxDecoration(
