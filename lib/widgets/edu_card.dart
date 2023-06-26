@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_framework/responsive_row_column.dart';
+
 
 class EduCard extends StatelessWidget {
   EduCard(
@@ -24,7 +21,7 @@ class EduCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    print(screenWidth);
+   
     double screenHeight = MediaQuery.of(context).size.height; // screen width
 
     return Padding(
@@ -48,7 +45,7 @@ class EduCard extends StatelessWidget {
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                     const   Text(
                           'College',
                           style: positionText,
                         ),
@@ -58,7 +55,7 @@ class EduCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.36,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                               const   Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Text(
@@ -70,9 +67,9 @@ class EduCard extends StatelessWidget {
                                     Condition.smallerThan(
                                         name: DESKTOP,
                                         value: screenWidth * 0.02),
-                                    Condition.smallerThan(
+                                const    Condition.smallerThan(
                                         name: TABLET, value: 22.0),
-                                    Condition.smallerThan(
+                                 const  Condition.smallerThan(
                                         name: MOBILE, value: 25.0),
                                   ]).value),
                             ),
@@ -82,7 +79,7 @@ class EduCard extends StatelessWidget {
                           width: ResponsiveValue(context,
                               defaultValue: screenWidth * 0.36,
                               valueWhen: [
-                                Condition.smallerThan(
+                             const   Condition.smallerThan(
                                     name: DESKTOP, value: 900.0)
                               ]).value,
                           child: Text(
@@ -96,14 +93,14 @@ class EduCard extends StatelessWidget {
                           child: Text(
                             duration,
                             style: descriptionText.copyWith(
-                                color: Color(0xff04c189)),
+                                color:const Color(0xff04c189)),
                           ),
                         ),
                         IconButton(
                             onPressed: () {
                               html.window.open(link, "_blank");
                             },
-                            icon: Icon(
+                            icon:const Icon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
                               color: Colors.white,
                             ))
@@ -112,7 +109,7 @@ class EduCard extends StatelessWidget {
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                     const   Text(
                           'College',
                           style: positionText,
                         ),
@@ -122,7 +119,7 @@ class EduCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.36,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                           const       Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Text(
@@ -130,7 +127,7 @@ class EduCard extends StatelessWidget {
                               style: companyText.copyWith(
                                   fontSize: ResponsiveValue(context,
                                       defaultValue: 27.0,
-                                      valueWhen: [
+                                      valueWhen:const [
                                     Condition.smallerThan(
                                         name: DESKTOP, value: 22.0),
                                     Condition.smallerThan(
@@ -145,7 +142,7 @@ class EduCard extends StatelessWidget {
                           width: ResponsiveValue(context,
                               defaultValue: screenWidth * 0.36,
                               valueWhen: [
-                                Condition.smallerThan(
+                            const    Condition.smallerThan(
                                     name: DESKTOP, value: 900.0)
                               ]).value,
                           child: Text(
@@ -159,14 +156,14 @@ class EduCard extends StatelessWidget {
                           child: Text(
                             duration,
                             style: descriptionText.copyWith(
-                                color: Color(0xff04c189)),
+                                color:const Color(0xff04c189)),
                           ),
                         ),
                         IconButton(
                             onPressed: () {
                               html.window.open(link, "_blank");
                             },
-                            icon: Icon(
+                            icon:const Icon(
                               FontAwesomeIcons.arrowUpRightFromSquare,
                               color: Colors.white,
                             ))
@@ -180,7 +177,7 @@ class EduCard extends StatelessWidget {
                   bottom: ResponsiveValue(context,
                       defaultValue: 100.0,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+                      const  Condition.smallerThan(name: DESKTOP, value: 10.0)
                       ]).value!,
                 ),
                 child: ClipRRect(
@@ -193,9 +190,11 @@ class EduCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.23),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                          Condition.smallerThan(name: MOBILE, value: 350.0),
+                     const     Condition.smallerThan(name: MOBILE, value: 350.0),
                         ]).value,
-                    child: Image.asset(
+                   
+                    decoration:const BoxDecoration(
+                        shape: BoxShape.rectangle, color: Color(0xff252734)), child: Image.asset(
                       pic,
                       //height: 100,
                       alignment: Alignment.topLeft,
@@ -206,12 +205,10 @@ class EduCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.5),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5),
-                            Condition.smallerThan(name: MOBILE, value: 500.0),
+                         const   Condition.smallerThan(name: MOBILE, value: 500.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
                 ),
               ),

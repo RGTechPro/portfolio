@@ -1,10 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_circular_text/circular_text.dart';
-import 'package:flutter_circular_text/circular_text/model.dart';
-import 'package:flutter_circular_text/circular_text/widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/widgets/ach_card.dart';
@@ -35,9 +31,9 @@ class ScaleAndFadeTransformer extends PageTransformer {
     double fadeFactor = (1 - position.abs()) * (1 - _fade);
     double opacity = _fade + fadeFactor;
     double scale = _scale + scaleFactor;
-    return new Opacity(
+    return  Opacity(
       opacity: opacity,
-      child: new Transform.scale(
+      child:  Transform.scale(
         scale: scale,
         child: item,
       ),
@@ -52,7 +48,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  final GColors = [Color(0xff282b38), Color.fromARGB(255, 67, 71, 88)];
+  final GColors = const [Color(0xff282b38), Color.fromARGB(255, 67, 71, 88)];
   int _currentPosition_work = 0;
   int _currentPosition_ach = 0;
   int _currentPosition_pro = 0;
@@ -98,10 +94,10 @@ class _HomePageState extends State<HomePage> {
         initialPage: 0, viewportFraction: 1 + (screenPad * 2 / screenWidth));
     double mFont = ResponsiveValue(context,
         defaultValue: screenWidth * 0.01736,
-        valueWhen: [
+        valueWhen:const [
           Condition.smallerThan(name: DESKTOP, value: 17.7),
           Condition.smallerThan(name: TABLET, value: 16.2),
-          Condition.smallerThan(name: MOBILE, value: 18.0),
+          Condition.smallerThan(name: MOBILE, value: 16.9),
         ]).value!;
 
     int flex1 = 1;
@@ -111,8 +107,8 @@ class _HomePageState extends State<HomePage> {
       flex2 = 3;
     }
     if (ResponsiveWrapper.of(context).isSmallerThan(MOBILE)) {
-      flex1 = 3;
-      flex2 = 4;
+      flex1 = 1;
+      flex2 = 1;
     }
     return SafeArea(
       child: Container(
@@ -123,12 +119,12 @@ class _HomePageState extends State<HomePage> {
                 end: Alignment.bottomRight)),
         child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(60),
+            preferredSize:const Size.fromHeight(60),
             child: AppBar(
               title: Padding(
                 padding: const EdgeInsets.only(left: 40, top: 30),
                 child: Row(
-                  children: [
+                  children: const[
                     Text(
                       'Rishabh ',
                       style: TextStyle(fontFamily: 'Neue'),
@@ -158,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () {
                                 mainPage.jumpToPage(0);
                               },
-                              child: Text(
+                              child: const Text(
                                 'Home',
                                 style: TextStyle(
                                     color: Colors.white, fontFamily: 'Neue'),
@@ -168,23 +164,23 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             mainPage.jumpToPage(1);
                           },
-                          child: Text('About',
+                        
+                          style: const ButtonStyle(),  child: const Text('About',
                               style: TextStyle(
                                   color: Colors.white, fontFamily: 'Neue')),
-                          style: ButtonStyle(),
                         ),
                         TextButton(
                             onPressed: () {
                               mainPage.jumpToPage(5);
                             },
-                            child: Text('Works',
+                            child: const Text('Works',
                                 style: TextStyle(
                                     color: Colors.white, fontFamily: 'Neue'))),
                         TextButton(
                             onPressed: () {
                               mainPage.jumpToPage(6);
                             },
-                            child: Text('Blogs',
+                            child:const Text('Blogs',
                                 style: TextStyle(
                                     color: Colors.white, fontFamily: 'Neue')))
                       ],
@@ -246,25 +242,25 @@ class _HomePageState extends State<HomePage> {
                                   child: Container(
                                     height: ResponsiveValue(context,
                                         defaultValue: 450.0,
-                                        valueWhen: [
+                                        valueWhen:const [
                                           Condition.smallerThan(
                                               name: DESKTOP, value: 320.0)
                                         ]).value, //450
-                                    child: Image.asset(
+                                    
+                                    decoration: const BoxDecoration(
+                                        shape: BoxShape.rectangle,
+                                        color: Color(0xff252734)),child: Image.asset(
                                       'images/my_photo.png',
                                       //height: 100,
                                       alignment: Alignment.topLeft,
                                       width: ResponsiveValue(context,
                                           defaultValue: 350.0,
-                                          valueWhen: [
+                                          valueWhen:const [
                                             Condition.smallerThan(
                                                 name: DESKTOP, value: 250.0)
                                           ]).value,
                                       fit: BoxFit.fitWidth,
                                     ),
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.rectangle,
-                                        color: Color(0xff252734)),
                                   ),
                                 ),
                               ),
@@ -273,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                                 left: ResponsiveValue(context,
                                     defaultValue: 330.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                    const  Condition.smallerThan(
                                           name: DESKTOP, value: 260.0)
                                     ]).value,
                                 child: SizedBox(
@@ -285,7 +281,7 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: ResponsiveValue(context,
                                               defaultValue: 38.0,
                                               valueWhen: [
-                                                Condition.smallerThan(
+                                              const  Condition.smallerThan(
                                                     name: DESKTOP, value: 24.0)
                                               ]).value,
                                           fontWeight: FontWeight.bold)),
@@ -295,13 +291,13 @@ class _HomePageState extends State<HomePage> {
                                 top: ResponsiveValue(context,
                                     defaultValue: 330.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                  const    Condition.smallerThan(
                                           name: DESKTOP, value: 235.0)
                                     ]).value,
                                 left: ResponsiveValue(context,
                                     defaultValue: 350.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                   const   Condition.smallerThan(
                                           name: DESKTOP, value: 270.0)
                                     ]).value,
                                 child: SizedBox(
@@ -313,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: ResponsiveValue(context,
                                               defaultValue: 80.0,
                                               valueWhen: [
-                                                Condition.smallerThan(
+                                      const          Condition.smallerThan(
                                                     name: DESKTOP, value: 50.0)
                                               ]).value,
                                           fontWeight: FontWeight.bold)),
@@ -323,13 +319,13 @@ class _HomePageState extends State<HomePage> {
                                 top: ResponsiveValue(context,
                                     defaultValue: 405.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                               const       Condition.smallerThan(
                                           name: DESKTOP, value: 282.0)
                                     ]).value,
                                 left: ResponsiveValue(context,
                                     defaultValue: 375.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                   const   Condition.smallerThan(
                                           name: DESKTOP, value: 290.0)
                                     ]).value,
                                 child: SizedBox(
@@ -341,7 +337,7 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: ResponsiveValue(context,
                                               defaultValue: 25.0,
                                               valueWhen: [
-                                                Condition.smallerThan(
+                                            const    Condition.smallerThan(
                                                     name: DESKTOP, value: 20.0)
                                               ]).value,
                                           fontWeight: FontWeight.bold)),
@@ -351,14 +347,14 @@ class _HomePageState extends State<HomePage> {
                                 top: ResponsiveValue(context,
                                     defaultValue: 205.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                const      Condition.smallerThan(
                                           name: DESKTOP, value: 150.0)
                                     ]).value,
                                 // left: 315,
                                 left: ResponsiveValue(context,
                                     defaultValue: 0.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                  const    Condition.smallerThan(
                                           name: DESKTOP, value: 40.0)
                                     ]).value,
                                 child: SizedBox(
@@ -370,7 +366,7 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: ResponsiveValue(context,
                                               defaultValue: 60.0,
                                               valueWhen: [
-                                                Condition.smallerThan(
+                                         const       Condition.smallerThan(
                                                     name: DESKTOP, value: 35.0)
                                               ]).value,
                                           fontWeight: FontWeight.bold)),
@@ -380,13 +376,13 @@ class _HomePageState extends State<HomePage> {
                                 top: ResponsiveValue(context,
                                     defaultValue: 265.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                  const    Condition.smallerThan(
                                           name: DESKTOP, value: 190.0)
                                     ]).value,
                                 left: ResponsiveValue(context,
                                     defaultValue: 85.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                    const  Condition.smallerThan(
                                           name: DESKTOP, value: 85.0)
                                     ]).value,
                                 child: SizedBox(
@@ -398,7 +394,7 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: ResponsiveValue(context,
                                               defaultValue: 30.0,
                                               valueWhen: [
-                                                Condition.smallerThan(
+                                              const  Condition.smallerThan(
                                                     name: DESKTOP, value: 20.0)
                                               ]).value,
                                           fontWeight: FontWeight.bold)),
@@ -408,11 +404,11 @@ class _HomePageState extends State<HomePage> {
                                 top: ResponsiveValue(context,
                                     defaultValue: 415.0,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                   const   Condition.smallerThan(
                                           name: DESKTOP, value: 295.0)
                                     ]).value,
                                 left: 70,
-                                child: SizedBox(
+                                child: const SizedBox(
                                   width: 300,
                                   child: Text('SOFTWARE  DEVELOPER',
                                       style: TextStyle(
@@ -437,12 +433,12 @@ class _HomePageState extends State<HomePage> {
                                 valueWhen: [
                                   Condition.smallerThan(
                                       name: DESKTOP, value: screenWidth * .03),
-                                  Condition.smallerThan(
+                                const  Condition.smallerThan(
                                       name: TABLET, value: 40.0)
                                 ]).value!,
                             left: ResponsiveValue(context,
                                 defaultValue: 0.0,
-                                valueWhen: [
+                                valueWhen:const [
                                   Condition.smallerThan(
                                       name: TABLET, value: 40.0)
                                 ]).value!,
@@ -455,12 +451,12 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               if (!ResponsiveWrapper.of(context)
                                   .isSmallerThan(TABLET))
-                                SizedBox(
+                             const   SizedBox(
                                   height: 75,
                                 ),
                               if (ResponsiveWrapper.of(context)
                                   .isSmallerThan(TABLET))
-                                SizedBox(
+                             const   SizedBox(
                                   height: 20,
                                 ),
                               if (!ResponsiveWrapper.of(context)
@@ -472,7 +468,7 @@ class _HomePageState extends State<HomePage> {
                                     TextItem(
                                       startAngle: 210,
                                       space: 17,
-                                      text: Text('FLUTTER & CLOUD DEV',
+                                      text:const Text('FLUTTER & CLOUD DEV',
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontFamily: 'Neue',
@@ -482,7 +478,7 @@ class _HomePageState extends State<HomePage> {
                                     TextItem(
                                         startAngle: -177,
                                         space: 17,
-                                        text: Text(
+                                        text: const Text(
                                           '•',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
@@ -528,7 +524,7 @@ class _HomePageState extends State<HomePage> {
                                         TextItem(
                                           startAngle: 210,
                                           space: 17,
-                                          text: Text('FLUTTER & CLOUD DEV',
+                                          text: const Text('FLUTTER & CLOUD DEV',
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontFamily: 'Neue',
@@ -538,7 +534,7 @@ class _HomePageState extends State<HomePage> {
                                         TextItem(
                                             startAngle: -177,
                                             space: 17,
-                                            text: Text(
+                                            text: const Text(
                                               '•',
                                               textAlign: TextAlign.start,
                                               style: TextStyle(
@@ -550,7 +546,7 @@ class _HomePageState extends State<HomePage> {
                                             ))
                                       ]),
                                     ),
-                                    SizedBox(
+                                 const   SizedBox(
                                       width: 30,
                                     ),
                                     Padding(
@@ -581,7 +577,7 @@ class _HomePageState extends State<HomePage> {
                                   'I am Rishabh, experienced Flutter & Cloud Developer. I am here to help you build your amazing product!',
                                   style: TextStyle(
                                     // textBaseline: TextBaseline.alphabetic,
-                                    color: Color(0xff92949E),
+                                    color:const Color(0xff92949E),
                                     fontFamily: 'Neue',
                                     fontSize: ResponsiveValue(context,
                                         defaultValue: screenWidth * 0.0153,
@@ -589,7 +585,7 @@ class _HomePageState extends State<HomePage> {
                                           Condition.smallerThan(
                                               name: DESKTOP,
                                               value: screenWidth * 0.0153),
-                                          Condition.smallerThan(
+                                      const    Condition.smallerThan(
                                               name: TABLET, value: 17.0)
                                         ]).value,
                                   ),
@@ -611,24 +607,24 @@ class _HomePageState extends State<HomePage> {
                                           style: ButtonStyle(
                                               shape: MaterialStateProperty.all<
                                                       RoundedRectangleBorder>(
-                                                  RoundedRectangleBorder(
+                                           const       RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.zero,
                                                 // side: BorderSide(color: Colors.red)
                                               )),
                                               backgroundColor:
                                                   MaterialStateProperty.all(
-                                                      Color(0xff00CC8E))),
-                                          child: Text(
+                                                  const    Color(0xff00CC8E))),
+                                          child:const  Text(
                                             'Mail Me',
                                             style:
                                                 TextStyle(color: Colors.white),
                                           )),
                                     ),
-                                    SizedBox(
+                               const     SizedBox(
                                       width: 40,
                                     ),
                                     IconButton(
-                                      icon: FaIcon(
+                                      icon:const FaIcon(
                                         FontAwesomeIcons.twitter,
                                         color: Colors.white,
                                       ),
@@ -639,7 +635,7 @@ class _HomePageState extends State<HomePage> {
                                       },
                                     ),
                                     IconButton(
-                                      icon: FaIcon(
+                                      icon: const FaIcon(
                                         FontAwesomeIcons.instagram,
                                         color: Colors.white,
                                       ),
@@ -650,7 +646,7 @@ class _HomePageState extends State<HomePage> {
                                       },
                                     ),
                                     IconButton(
-                                      icon: FaIcon(
+                                      icon: const FaIcon(
                                         FontAwesomeIcons.linkedin,
                                         color: Colors.white,
                                       ),
@@ -661,7 +657,7 @@ class _HomePageState extends State<HomePage> {
                                       },
                                     ),
                                     IconButton(
-                                      icon: FaIcon(
+                                      icon:const FaIcon(
                                         FontAwesomeIcons.github,
                                         color: Colors.white,
                                       ),
@@ -692,8 +688,8 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 7.0),
+                     const Padding(
+                        padding:  EdgeInsets.only(bottom: 7.0),
                         child: Text('About Me', style: topicHeading),
                       ),
                       ResponsiveRowColumn(
@@ -707,12 +703,12 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           ResponsiveRowColumnItem(
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 25),
+                              padding: const EdgeInsets.symmetric(vertical: 20),
                               child: Container(
                                 width: ResponsiveValue(context,
                                     defaultValue: screenWidth * 0.544,
                                     valueWhen: [
-                                      Condition.smallerThan(
+                                    const  Condition.smallerThan(
                                           name: DESKTOP, value: 800.0)
                                     ]).value,
                                 child: RichText(
@@ -721,7 +717,7 @@ class _HomePageState extends State<HomePage> {
                                     style:
                                         aboutMeText.copyWith(fontSize: mFont),
                                     children: <TextSpan>[
-                                      TextSpan(text: "Hi, I'm a "),
+                                   const   TextSpan(text: "Hi, I'm a "),
                                       TextSpan(
                                           text: "final-year ",
                                           style: aboutMeText2.copyWith(
@@ -804,10 +800,13 @@ class _HomePageState extends State<HomePage> {
                                       Condition.smallerThan(
                                           name: TABLET,
                                           value: screenWidth * 0.3),
-                                      Condition.smallerThan(
-                                          name: MOBILE, value: 315.0),
+                                   const   Condition.smallerThan(
+                                          name: MOBILE, value: 300.0),
                                     ]).value, //450
-                                child: Image.asset(
+                               
+                                decoration:const BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    color: Color(0xff252734)), child: Image.asset(
                                   'images/my_photo.png',
                                   //height: 100,
                                   alignment: Alignment.topLeft,
@@ -820,15 +819,12 @@ class _HomePageState extends State<HomePage> {
                                         Condition.smallerThan(
                                             name: TABLET,
                                             value: screenWidth * 0.275),
-                                        Condition.smallerThan(
+                                      const  Condition.smallerThan(
                                             name: MOBILE, value: 270.0),
                                       ]).value //375,
                                   ,
                                   fit: BoxFit.fitWidth,
                                 ),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.rectangle,
-                                    color: Color(0xff252734)),
                               ),
                             ),
                           ),
@@ -849,173 +845,168 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Skills', style: topicHeading),
+                 const     Text('Skills', style: topicHeading),
                       Expanded(
                         child: SkillCard(
                           skills: [
                             SkillChip(
                                 skill: 'Flutter',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.flutterPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Firebase',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.firebasePlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Node.js',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.nodejsPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Python',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.pythonPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Bash',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.bashPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Dart',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.dartPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'SQL',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.mysqlPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'MongoDB',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.mongodbPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'GoLang',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.goPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'GraphQL',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.graphqlPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'C/C++',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.cplusplusPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'HTML',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.html5Plain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'CSS',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.css3Plain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Javascript',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.javascriptPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'AWS',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.amazonwebservicesOriginal,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Docker',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.dockerPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Android',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.androidPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Swift',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.swiftPlain,
                                   color: Color(0xff04c189),
                                 )),
 
                             SkillChip(
                                 skill: 'Git',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.gitPlain,
                                   color: Color(0xff04c189),
                                 )),
-                            //   SkillChip(skill: 'Latex', icon: Icon(DevIcons)),
+                            //   SkillChip(skill: 'Latex', icon:const Icon(DevIcons)),
                             SkillChip(
                                 skill: 'Kubernetes',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.kubernetesPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'GCP',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.googlecloudPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Django',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.djangoPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Figma',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.figmaPlain,
                                   color: Color(0xff04c189),
                                 )),
-                            SkillChip(
-                                skill: 'Jenkins',
-                                icon: Icon(
-                                  DevIcons.jenkinsPlain,
-                                  color: Color(0xff04c189),
-                                )),
+                          
                             SkillChip(
                                 skill: 'Nginx',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.nginxOriginal,
                                   color: Color(0xff04c189),
                                 )),
-                            //    SkillChip(skill: 'Azure', icon: Icon(DevIcons.)),
-                            //   SkillChip(skill: 'Solidity', icon: Icon(DevIcons.solid)),
+                            //    SkillChip(skill: 'Azure', icon:const Icon(DevIcons.)),
+                            //   SkillChip(skill: 'Solidity', icon:const Icon(DevIcons.solid)),
                             SkillChip(
                                 skill: 'Java',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.javaPlain,
                                   color: Color(0xff04c189),
                                 )),
                             SkillChip(
                                 skill: 'Linux',
-                                icon: Icon(
+                                icon:const Icon(
                                   DevIcons.linuxPlain,
                                   color: Color(0xff04c189),
                                 )),
@@ -1037,14 +1028,14 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Work Experience and Volunteering',
+                      Text('Work Experience & Volunteering',
                           style: topicHeading.copyWith(
                               fontSize: ResponsiveValue(context,
                                   defaultValue: 35.0,
                                   valueWhen: [
-                                Condition.smallerThan(
+                             const   Condition.smallerThan(
                                     name: DESKTOP, value: 25.0),
-                                Condition.smallerThan(
+                             const  Condition.smallerThan(
                                     name: MOBILE, value: 32.0),
                               ]).value!)),
                       Expanded(
@@ -1055,7 +1046,7 @@ class _HomePageState extends State<HomePage> {
                           onPageChanged: (int value) {
                             setState(() {
                               _currentPosition_work = value;
-                              print(_currentPosition_work.toDouble());
+                      
                             });
                           },
                           scrollDirection: Axis.horizontal,
@@ -1071,37 +1062,37 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'GCP',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.googlecloudPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1111,38 +1102,38 @@ class _HomePageState extends State<HomePage> {
                               position: 'SOFTWARE DEVELOPER INTERN',
                               company: 'Housy',
                               description:
-                                  'Worked as a Software Development Intern at Housy and handled the app development of their app. Integrated payment system. Created, implemented, and documented the source code for mobile/web applications at Housy. Performed unit and integration, beta, and A/B testing before launch. Conducted functional and non-functional testing. Fixed multiple bugs. Implemented new features for meeting the business model requirements. Brought new changes in the UI. Learnt iOS app deployment on App Store Connect.',
+                                  'As a Software Development Intern at Housy, I handled app development and integrated a payment system. I created, implemented, and documented source code for mobile/web applications, conducted testing, fixed bugs, and implemented new features to meet business requirements. I also made UI changes and gained experience in iOS app deployment on App Store Connect.',
                               duration: 'Feb 2022 to June 2022',
                               pic: 'images/housy.png',
                               link: 'https://www.housyforyou.com/',
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1152,56 +1143,56 @@ class _HomePageState extends State<HomePage> {
                               position: 'EXECUTIVE MEMBER',
                               company: 'MLSC',
                               description:
-                                  "As the Technical Coordinator for Makeathon 4.0, I organized and facilitated the event seamlessly. Achieved first rank in 'Thapar Premier League' coding competition, representing MLSC at TIET. Secured top position in 'Ideathon' with 'Clobofy', a solution for buying/selling used items. Conducted a Cyber Security workshop in Tech Meet 2021 and coordinated a Quarter Quell team as part of the organizing committee.",
+                                  "As Technical Coordinator for Makeathon 4.0, I organized the event flawlessly. Ranked first in 'Thapar Premier League' coding competition, representing MLSC at TIET. Won 'Ideathon' with 'Clobofy', a used item buying/selling solution. Conducted Cyber Security workshop in Tech Meet 2021. Coordinated Quarter Quell team as part of organizing committee.",
                               duration: 'Oct 2020 to June 2022',
                               pic: 'images/mlsc.png',
                               link: 'https://mlsctiet.com/',
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'HTML',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.html5Plain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'CSS',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.css3Plain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Javascript',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.javascriptPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Django',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.djangoPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1217,14 +1208,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(right: 7.0),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   workPage.previousPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -1233,7 +1224,7 @@ class _HomePageState extends State<HomePage> {
                             dotsCount: 3,
                             position: _currentPosition_work.toDouble(),
                             decorator: DotsDecorator(
-                              activeColor: Color(0xff04c189),
+                              activeColor:const Color(0xff04c189),
                               size: const Size.square(9.0),
                               activeSize: const Size(18.0, 9.0),
                               activeShape: RoundedRectangleBorder(
@@ -1244,14 +1235,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(left: 7),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   workPage.nextPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowRight,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -1278,9 +1269,9 @@ class _HomePageState extends State<HomePage> {
                               fontSize: ResponsiveValue(context,
                                   defaultValue: 35.0,
                                   valueWhen: [
-                                Condition.smallerThan(
+                             const   Condition.smallerThan(
                                     name: DESKTOP, value: 25.0),
-                                Condition.smallerThan(
+                             const   Condition.smallerThan(
                                     name: MOBILE, value: 32.0),
                               ]).value!)),
                       Expanded(
@@ -1299,7 +1290,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'WINNER',
                               competition: 'Smart India Hackathon 2022',
                               description:
-                                  'My team and I secured the first position in the Smart India Hackathon 2022 organized by the Government of India, winning a cash prize of rupees 1 Lakh. We developed MeraAadhar, a mobile app that empowers users to book preferred operators, perform Aadhaar Card updation and enrollment from home, based on a problem statement by the Ministry of Electronics and Information Technology (MEITY).',
+                                  'My team secured first position in Smart India Hackathon 2022, winning 1 Lakh cash prize. We developed MeraAadhar, a mobile app for booking preferred operators and Aadhaar Card updation/enrollment from home. The problem statement was from MEITY (Ministry of Electronics and Information Technology).',
                               time: 'Aug 2022',
                               pic: 'images/sih.jpeg',
                               link1: 'https://www.sih.gov.in/',
@@ -1309,63 +1300,63 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.0163265,
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                       // size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Django',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.djangoPlain,
                                       color: Color(0xff04c189),
                                       // size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'React',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.reactOriginal,
                                       color: Color(0xff04c189),
                                       // size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'AWS',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.amazonwebservicesOriginal,
                                       //size: screenWidth*0.016,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Docker',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.dockerPlain,
                                       //size: screenWidth*0.016,
                                       color: Color(0xff04c189),
@@ -1376,7 +1367,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'GRAND FINALIST',
                               competition: 'UNESCO India Africa Hackathon',
                               description:
-                                  'I attended a prestigious event organized by the Indian Govt and UNESCO, featuring remarkable arrangements and a diverse cultural experience. As part of team "CodeX," we focused on an Education category problem and developed an app for data collection, analysis, and visualization in schools to enhance the education system. The event was graced by esteemed Chief Guests, including the Vice President of India, UP CM, UP Governor, and Education Minister.',
+                                  'I attended a prestigious event by the Indian Govt and UNESCO, with diverse cultural experiences. In team "CodeX," we developed an app for data collection, analysis, and visualization in schools to enhance education. Esteemed Chief Guests, including the Vice President of India, UP CM, UP Governor, and Education Minister, graced the event.',
                               time: 'Nov 2022',
                               pic: 'images/uia.jpeg',
                               link1: 'https://uia.mic.gov.in/',
@@ -1386,55 +1377,55 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Django',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.djangoPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'React',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.reactOriginal,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'AWS',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.amazonwebservicesOriginal,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Docker',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.dockerPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1444,7 +1435,7 @@ class _HomePageState extends State<HomePage> {
                               position: 'WINNER',
                               competition: 'HACKTU 4.0 (Fampay Track)',
                               description:
-                                  'We won the Fampay track in the HACKTU 4.0 hackathon organized by CCS, a prestigious technical society. Our task was to address a problem statement by Fampay. We developed an intuitive mobile app for enhancing financial literacy, with a visually appealing interface and comprehensive features. Our exceptional solution secured us the first position in our track, showcasing our expertise and dedication.',
+                                  "We excelled in the Fampay track of HACKTU 4.0 hackathon by CCS, a prestigious technical society. Our task was addressing Fampay's problem. We built an intuitive mobile app for enhancing financial literacy, with a visually appealing interface. Our solution secured top position, showcasing expertise and dedication.",
                               time: 'Feb 2023',
                               pic: 'images/hacktu.png',
                               link1: 'https://hacktu.ccstiet.com/',
@@ -1452,63 +1443,63 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.0163265,
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                       // size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                       //size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'Django',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.djangoPlain,
                                       color: Color(0xff04c189),
                                       // size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'React',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.reactOriginal,
                                       color: Color(0xff04c189),
                                       // size: screenWidth*0.016,
                                     )),
                                 SkillChip(
                                     skill: 'AWS',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.amazonwebservicesOriginal,
                                       //size: screenWidth*0.016,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Docker',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.dockerPlain,
                                       //size: screenWidth*0.016,
                                       color: Color(0xff04c189),
@@ -1525,14 +1516,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(right: 7.0),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   achPage.previousPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration: const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -1541,7 +1532,7 @@ class _HomePageState extends State<HomePage> {
                             dotsCount: 3,
                             position: _currentPosition_ach.toDouble(),
                             decorator: DotsDecorator(
-                              activeColor: Color(0xff04c189),
+                              activeColor:const Color(0xff04c189),
                               size: const Size.square(9.0),
                               activeSize: const Size(18.0, 9.0),
                               activeShape: RoundedRectangleBorder(
@@ -1552,14 +1543,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(left: 7),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   achPage.nextPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowRight,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -1585,7 +1576,7 @@ class _HomePageState extends State<HomePage> {
                           style: topicHeading.copyWith(
                               fontSize: ResponsiveValue(context,
                                   defaultValue: 35.0,
-                                  valueWhen: [
+                                  valueWhen:const [
                                 Condition.smallerThan(
                                     name: DESKTOP, value: 25.0),
                                 Condition.smallerThan(
@@ -1598,7 +1589,7 @@ class _HomePageState extends State<HomePage> {
                           onPageChanged: (int value) {
                             setState(() {
                               _currentPosition_pro = value;
-                              print(_currentPosition_pro.toDouble());
+                          
                             });
                           },
                           scrollDirection: Axis.horizontal,
@@ -1612,58 +1603,53 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Django',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.djangoPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'React',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.reactOriginal,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'AWS',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.amazonwebservicesOriginal,
                                       color: Color(0xff04c189),
                                     )),
-                                SkillChip(
-                                    skill: 'Docker',
-                                    icon: Icon(
-                                      DevIcons.dockerPlain,
-                                      color: Color(0xff04c189),
-                                    )),
+                             
                               ],
                               noi: 14,
                             ),
@@ -1677,43 +1663,43 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Swift',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.swiftPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Django',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.djangoPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'AWS',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.amazonwebservicesOriginal,
                                       color: Color(0xff04c189),
                                     )),
@@ -1729,25 +1715,25 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1766,25 +1752,25 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1803,25 +1789,25 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'Flutter',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.flutterPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Firebase',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.firebasePlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Node.js',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.nodejsPlain,
                                       color: Color(0xff04c189),
                                     )),
                                 SkillChip(
                                     skill: 'Python',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.pythonPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1837,7 +1823,7 @@ class _HomePageState extends State<HomePage> {
                               skills: [
                                 SkillChip(
                                     skill: 'GoLang',
-                                    icon: Icon(
+                                    icon:const Icon(
                                       DevIcons.goPlain,
                                       color: Color(0xff04c189),
                                     )),
@@ -1854,14 +1840,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(right: 7.0),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   proPage.previousPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -1870,7 +1856,7 @@ class _HomePageState extends State<HomePage> {
                             dotsCount: 6,
                             position: _currentPosition_pro.toDouble(),
                             decorator: DotsDecorator(
-                              activeColor: Color(0xff04c189),
+                              activeColor:const Color(0xff04c189),
                               size: const Size.square(9.0),
                               activeSize: const Size(18.0, 9.0),
                               activeShape: RoundedRectangleBorder(
@@ -1881,14 +1867,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(left: 7),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   proPage.nextPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowRight,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -1901,7 +1887,7 @@ class _HomePageState extends State<HomePage> {
                 Query(
                     options: QueryOptions(
                       document: gql(readCounters),
-                      pollInterval: Duration(seconds: 10),
+                      pollInterval:const Duration(seconds: 10),
                     ),
                     builder: (QueryResult result,
                         {VoidCallback? refetch, FetchMore? fetchMore}) {
@@ -1910,7 +1896,7 @@ class _HomePageState extends State<HomePage> {
                       }
 
                       if (result.isLoading) {
-                        return Center(
+                        return const Center(
                           child: CircularProgressIndicator(
                             color: Color(0xff04c189),
                           ),
@@ -1920,7 +1906,7 @@ class _HomePageState extends State<HomePage> {
                       // it can be either Map or List
                       List data = result.data!['user']['publication']['posts'];
 
-                      print(data);
+                    
 
                       return Padding(
                           padding: EdgeInsets.symmetric(
@@ -1935,7 +1921,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Blogs', style: topicHeading),
+                            const  Text('Blogs', style: topicHeading),
                               Expanded(
                                   child: PageView.builder(
                                 physics: ScrollPhysics(),
@@ -1944,7 +1930,7 @@ class _HomePageState extends State<HomePage> {
                                 onPageChanged: (int value) {
                                   setState(() {
                                     _currentPosition_blog = value;
-                                    print(_currentPosition_blog.toDouble());
+                                   
                                   });
                                 },
                                 itemCount: data.length,
@@ -1968,15 +1954,15 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(right: 7.0),
                                     child: IconButton(
                                         padding: EdgeInsets.zero,
-                                        constraints: BoxConstraints(),
+                                        constraints:const BoxConstraints(),
                                         iconSize: 22,
                                         onPressed: () {
                                           blogPage.previousPage(
                                               duration:
-                                                  Duration(milliseconds: 300),
+                                               const   Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
-                                        icon: Icon(
+                                        icon:const Icon(
                                           FontAwesomeIcons.arrowLeft,
                                           color: Color(0xff00CC8E),
                                         )),
@@ -1985,7 +1971,7 @@ class _HomePageState extends State<HomePage> {
                                     dotsCount: data.length,
                                     position: _currentPosition_blog.toDouble(),
                                     decorator: DotsDecorator(
-                                      activeColor: Color(0xff04c189),
+                                      activeColor:const Color(0xff04c189),
                                       size: const Size.square(9.0),
                                       activeSize: const Size(18.0, 9.0),
                                       activeShape: RoundedRectangleBorder(
@@ -1997,15 +1983,15 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(left: 7),
                                     child: IconButton(
                                         padding: EdgeInsets.zero,
-                                        constraints: BoxConstraints(),
+                                        constraints:const BoxConstraints(),
                                         iconSize: 22,
                                         onPressed: () {
                                           blogPage.nextPage(
                                               duration:
-                                                  Duration(milliseconds: 300),
+                                               const   Duration(milliseconds: 300),
                                               curve: Curves.linear);
                                         },
-                                        icon: Icon(
+                                        icon:const Icon(
                                           FontAwesomeIcons.arrowRight,
                                           color: Color(0xff00CC8E),
                                         )),
@@ -2027,7 +2013,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Education', style: topicHeading),
+                 const     Text('Education', style: topicHeading),
                       Expanded(
                         child: PageView(
                           physics: ScrollPhysics(),
@@ -2036,7 +2022,7 @@ class _HomePageState extends State<HomePage> {
                           onPageChanged: (int value) {
                             setState(() {
                               _currentPosition_edu = value;
-                              print(_currentPosition_edu.toDouble());
+                              
                             });
                           },
                           scrollDirection: Axis.horizontal,
@@ -2060,14 +2046,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(right: 7.0),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   eduPage.previousPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowLeft,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -2076,7 +2062,7 @@ class _HomePageState extends State<HomePage> {
                             dotsCount: 1,
                             position: _currentPosition_edu.toDouble(),
                             decorator: DotsDecorator(
-                              activeColor: Color(0xff04c189),
+                              activeColor:const Color(0xff04c189),
                               size: const Size.square(9.0),
                               activeSize: const Size(18.0, 9.0),
                               activeShape: RoundedRectangleBorder(
@@ -2087,14 +2073,14 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.only(left: 7),
                             child: IconButton(
                                 padding: EdgeInsets.zero,
-                                constraints: BoxConstraints(),
+                                constraints:const BoxConstraints(),
                                 iconSize: 22,
                                 onPressed: () {
                                   eduPage.nextPage(
-                                      duration: Duration(milliseconds: 300),
+                                      duration:const Duration(milliseconds: 300),
                                       curve: Curves.linear);
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowRight,
                                   color: Color(0xff00CC8E),
                                 )),
@@ -2173,19 +2159,3 @@ class CustomClipperImage2 extends CustomClipper<Path> {
   }
 }
 
-// class CustomPageViewScrollPhysics extends ScrollPhysics {
-//   const CustomPageViewScrollPhysics({ScrollPhysics? parent})
-//       : super(parent: parent);
-
-//   @override
-//   CustomPageViewScrollPhysics applyTo(ScrollPhysics? ancestor) {
-//     return CustomPageViewScrollPhysics(parent: buildParent(ancestor)!);
-//   }
-
-//   @override
-//   SpringDescription get spring => const SpringDescription(
-//         mass: 50,
-//         stiffness: 50,
-//         damping: 0.8,
-//       );
-// }

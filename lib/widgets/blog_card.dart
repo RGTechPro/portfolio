@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:intl/intl.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -26,10 +23,9 @@ class BlogCard extends StatelessWidget {
     DateTime dateP = DateTime.parse(date);
     String new_date = DateFormat.yMMMMd().format(dateP);
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    print(screenWidth);
+ 
     double screenHeight = MediaQuery.of(context).size.height; // screen width
 
-    print(new_date);
     return Padding(
       padding: EdgeInsets.only(
           top: 0.012 * screenWidth,
@@ -55,7 +51,7 @@ class BlogCard extends StatelessWidget {
                           width: ResponsiveValue(context,
                               defaultValue: screenWidth * 0.36,
                               valueWhen: [
-                                Condition.smallerThan(
+                           const     Condition.smallerThan(
                                     name: DESKTOP, value: 900.0)
                               ]).value,
                           child: Padding(
@@ -69,9 +65,9 @@ class BlogCard extends StatelessWidget {
                                     Condition.smallerThan(
                                         name: DESKTOP,
                                         value: screenWidth * 0.02),
-                                    Condition.smallerThan(
+                             const       Condition.smallerThan(
                                         name: TABLET, value: 17.0),
-                                    Condition.smallerThan(
+                            const        Condition.smallerThan(
                                         name: MOBILE, value: 25.0),
                                   ]).value),
                             ),
@@ -81,7 +77,7 @@ class BlogCard extends StatelessWidget {
                           width: ResponsiveValue(context,
                               defaultValue: screenWidth * 0.36,
                               valueWhen: [
-                                Condition.smallerThan(
+                             const   Condition.smallerThan(
                                     name: DESKTOP, value: 900.0)
                               ]).value,
                           child: Text(
@@ -93,9 +89,9 @@ class BlogCard extends StatelessWidget {
                                   Condition.smallerThan(
                                       name: DESKTOP,
                                       value: screenWidth * 0.014),
-                                  Condition.smallerThan(
+                             const     Condition.smallerThan(
                                       name: TABLET, value: 13.5),
-                                  Condition.smallerThan(
+                             const     Condition.smallerThan(
                                       name: MOBILE, value: 15.0)
                                 ]).value),
                             textAlign: TextAlign.justify,
@@ -106,7 +102,7 @@ class BlogCard extends StatelessWidget {
                           child: Text(
                             new_date,
                             style: descriptionText.copyWith(
-                                color: Color(0xff04c189)),
+                                color:const Color(0xff04c189)),
                           ),
                         ),
                         Row(
@@ -115,7 +111,7 @@ class BlogCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowUpRightFromSquare,
                                   color: Colors.white,
                                 )),
@@ -123,7 +119,7 @@ class BlogCard extends StatelessWidget {
                               onPressed: () {
                                 html.window.open(link, "_blank");
                               },
-                              child: Text(
+                              child:const Text(
                                 'Continue Reading...',
                                 style: companyText,
                               ),
@@ -144,7 +140,7 @@ class BlogCard extends StatelessWidget {
                               style: companyText.copyWith(
                                   fontSize: ResponsiveValue(context,
                                       defaultValue: 22.0,
-                                      valueWhen: [
+                                      valueWhen:const [
                                     Condition.smallerThan(
                                         name: DESKTOP, value: 22.0),
                                     Condition.smallerThan(
@@ -159,7 +155,7 @@ class BlogCard extends StatelessWidget {
                           width: ResponsiveValue(context,
                               defaultValue: screenWidth * 0.544,
                               valueWhen: [
-                                Condition.smallerThan(
+                          const      Condition.smallerThan(
                                     name: DESKTOP, value: 900.0)
                               ]).value,
                           child: Text(
@@ -171,9 +167,9 @@ class BlogCard extends StatelessWidget {
                                   Condition.smallerThan(
                                       name: DESKTOP,
                                       value: screenWidth * 0.014),
-                                  Condition.smallerThan(
+                          const        Condition.smallerThan(
                                       name: TABLET, value: 13.5),
-                                  Condition.smallerThan(
+                             const     Condition.smallerThan(
                                       name: MOBILE, value: 15.0)
                                 ]).value),
                             textAlign: TextAlign.justify,
@@ -184,7 +180,7 @@ class BlogCard extends StatelessWidget {
                           child: Text(
                             new_date,
                             style: descriptionText.copyWith(
-                                color: Color(0xff04c189)),
+                                color:const Color(0xff04c189)),
                           ),
                         ),
                         Row(
@@ -193,7 +189,7 @@ class BlogCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowUpRightFromSquare,
                                   color: Colors.white,
                                 )),
@@ -201,7 +197,7 @@ class BlogCard extends StatelessWidget {
                               onPressed: () {
                                 html.window.open(link, "_blank");
                               },
-                              child: Text(
+                              child:const Text(
                                 'Continue Reading...',
                                 style: companyText,
                               ),
@@ -218,7 +214,7 @@ class BlogCard extends StatelessWidget {
                   bottom: ResponsiveValue(context,
                       defaultValue: 100.0,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+                    const    Condition.smallerThan(name: DESKTOP, value: 10.0)
                       ]).value!,
                 ),
                 child: ClipRRect(
@@ -231,10 +227,12 @@ class BlogCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.23),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                          Condition.smallerThan(name: MOBILE, value: 350.0),
+                     const     Condition.smallerThan(name: MOBILE, value: 300.0),
                         ]).value,
                     //450,
-                    child: Image.network(
+                   
+                    decoration:const BoxDecoration(
+                        shape: BoxShape.rectangle, color: Color(0xff252734)), child: Image.network(
                       pic,
                       //height: 100,
                       alignment: Alignment.topLeft,
@@ -245,12 +243,10 @@ class BlogCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.5),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5),
-                            Condition.smallerThan(name: MOBILE, value: 500.0),
+                           const Condition.smallerThan(name: MOBILE, value: 500.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
                 ),
               ),

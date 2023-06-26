@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:portfolio/models/skillChip.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_framework/responsive_row_column.dart';
+
 
 class WorkCard extends StatelessWidget {
   WorkCard(
@@ -28,7 +25,7 @@ class WorkCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    print(screenWidth);
+    
     double screenHeight = MediaQuery.of(context).size.height; // screen width
 
     return Padding(
@@ -58,7 +55,7 @@ class WorkCard extends StatelessWidget {
                                     valueWhen: [
                                   Condition.smallerThan(
                                       name: DESKTOP, value: screenWidth * 0.02),
-                                  Condition.smallerThan(
+                           const       Condition.smallerThan(
                                       name: TABLET, value: 17.0)
                                 ]).value),
                           ),
@@ -74,7 +71,7 @@ class WorkCard extends StatelessWidget {
                                     Condition.smallerThan(
                                         name: DESKTOP,
                                         value: screenWidth * 0.022),
-                                    Condition.smallerThan(
+                                 const   Condition.smallerThan(
                                         name: TABLET, value: 19.0)
                                   ]).value),
                             ),
@@ -83,7 +80,7 @@ class WorkCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.544,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                              const    Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Text(
@@ -95,7 +92,7 @@ class WorkCard extends StatelessWidget {
                                       Condition.smallerThan(
                                           name: DESKTOP,
                                           value: screenWidth * 0.015),
-                                      Condition.smallerThan(
+                                const      Condition.smallerThan(
                                           name: TABLET, value: 13.0)
                                     ]).value,
                               ),
@@ -107,7 +104,7 @@ class WorkCard extends StatelessWidget {
                             child: Text(
                               duration,
                               style: descriptionText.copyWith(
-                                  color: Color(0xff04c189),
+                                  color:const Color(0xff04c189),
                                   fontSize: ResponsiveValue(context,
                                       defaultValue: 20.0,
                                       valueWhen: [
@@ -122,7 +119,7 @@ class WorkCard extends StatelessWidget {
                               width: ResponsiveValue(context,
                                   defaultValue: screenWidth * 0.544,
                                   valueWhen: [
-                                    Condition.smallerThan(
+                               const     Condition.smallerThan(
                                         name: DESKTOP, value: 900.0)
                                   ]).value,
                               child: Padding(
@@ -139,12 +136,12 @@ class WorkCard extends StatelessWidget {
                                                     screenWidth * 0.003),
                                                 labelStyle: descriptionText,
                                                 backgroundColor:
-                                                    Color(0xff282b38),
+                                                const    Color(0xff282b38),
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             15),
-                                                    side: BorderSide(
+                                                    side:const BorderSide(
                                                         color: Colors.white)),
                                                 label: Text(
                                                   i.skill,
@@ -170,7 +167,7 @@ class WorkCard extends StatelessWidget {
                               onPressed: () {
                                 html.window.open(link, "_blank");
                               },
-                              icon: Icon(
+                              icon:const Icon(
                                 FontAwesomeIcons.arrowUpRightFromSquare,
                                 color: Colors.white,
                               ))
@@ -187,9 +184,9 @@ class WorkCard extends StatelessWidget {
                                     valueWhen: [
                                   Condition.smallerThan(
                                       name: DESKTOP, value: screenWidth * 0.02),
-                                  Condition.smallerThan(
+                            const      Condition.smallerThan(
                                       name: TABLET, value: 17.0),
-                                  Condition.smallerThan(
+                               const   Condition.smallerThan(
                                       name: MOBILE, value: 20.0),
                                 ]).value),
                           ),
@@ -208,9 +205,9 @@ class WorkCard extends StatelessWidget {
                                         Condition.smallerThan(
                                             name: DESKTOP,
                                             value: screenWidth * 0.022),
-                                        Condition.smallerThan(
+                                    const    Condition.smallerThan(
                                             name: TABLET, value: 19.0),
-                                        Condition.smallerThan(
+                                  const      Condition.smallerThan(
                                             name: MOBILE, value: 25.0),
                                       ]).value),
                                 ),
@@ -221,7 +218,7 @@ class WorkCard extends StatelessWidget {
                                 child: Text(
                                   duration,
                                   style: descriptionText.copyWith(
-                                      color: Color(0xff04c189),
+                                      color:const Color(0xff04c189),
                                       fontSize: ResponsiveValue(context,
                                           defaultValue: 22.0,
                                           valueWhen: [
@@ -231,7 +228,7 @@ class WorkCard extends StatelessWidget {
                                             Condition.smallerThan(
                                                 name: MOBILE,
                                                 value: screenWidth * 0.03),
-                                            Condition.smallerThan(
+                                        const    Condition.smallerThan(
                                                 name: MOBILE, value: 20.0),
                                             //   Condition.smallerThan(
                                             // name: 'SMOBILE',
@@ -247,7 +244,7 @@ class WorkCard extends StatelessWidget {
                               width: ResponsiveValue(context,
                                   defaultValue: screenWidth * 0.544,
                                   valueWhen: [
-                                    Condition.smallerThan(
+                             const       Condition.smallerThan(
                                         name: DESKTOP, value: 900.0)
                                   ]).value,
                               child: Text(
@@ -259,9 +256,9 @@ class WorkCard extends StatelessWidget {
                                         Condition.smallerThan(
                                             name: DESKTOP,
                                             value: screenWidth * 0.014),
-                                        Condition.smallerThan(
+                                  const      Condition.smallerThan(
                                             name: TABLET, value: 13.5),
-                                        Condition.smallerThan(
+                                   const     Condition.smallerThan(
                                             name: MOBILE, value: 15.0)
                                       ]).value,
                                 ),
@@ -269,27 +266,13 @@ class WorkCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          // Padding(
-                          //   padding: const EdgeInsets.symmetric(vertical: 7),
-                          //   child: Text(
-                          //     duration,
-                          //     style: descriptionText.copyWith(
-                          //                 color: Color(0xff04c189),
-                          //                 fontSize: ResponsiveValue(context,
-                          //                     defaultValue: 20.0,
-                          //                     valueWhen: [
-                          //                       Condition.smallerThan(
-                          //                           name: DESKTOP,
-                          //                           value: screenWidth * 0.0225)
-                          //                     ]).value),
-                          //   ),
-                          // ),
+            
                           if (skills!.isNotEmpty)
                             Container(
                               width: ResponsiveValue(context,
                                   defaultValue: screenWidth * 0.544,
                                   valueWhen: [
-                                    Condition.smallerThan(
+                              const      Condition.smallerThan(
                                         name: DESKTOP, value: 900.0)
                                   ]).value,
                               child: Padding(
@@ -306,12 +289,12 @@ class WorkCard extends StatelessWidget {
                                                     screenWidth * 0.0034),
                                                 labelStyle: descriptionText,
                                                 backgroundColor:
-                                                    Color(0xff282b38),
+                                             const       Color(0xff282b38),
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             15),
-                                                    side: BorderSide(
+                                                    side:const BorderSide(
                                                         color: Colors.white)),
                                                 label: Text(
                                                   i.skill,
@@ -323,7 +306,7 @@ class WorkCard extends StatelessWidget {
                                                                   screenWidth *
                                                                       0.012245,
                                                               valueWhen: [
-                                                        Condition.smallerThan(
+                                                  const      Condition.smallerThan(
                                                             name: MOBILE,
                                                             value: 15.0),
                                                         Condition.smallerThan(
@@ -348,7 +331,7 @@ class WorkCard extends StatelessWidget {
                               onPressed: () {
                                 html.window.open(link, "_blank");
                               },
-                              icon: Icon(
+                              icon:const Icon(
                                 FontAwesomeIcons.arrowUpRightFromSquare,
                                 color: Colors.white,
                               ))
@@ -361,12 +344,12 @@ class WorkCard extends StatelessWidget {
                   bottom: ResponsiveValue(context,
                       defaultValue: 100.0,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+                      const  Condition.smallerThan(name: DESKTOP, value: 10.0)
                       ]).value!,
                   left: ResponsiveValue(context,
                       defaultValue: screenWidth * 0.044,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 0.0)
+                 const       Condition.smallerThan(name: DESKTOP, value: 0.0)
                       ]).value!,
                 ),
                 child: ClipRRect(
@@ -379,9 +362,11 @@ class WorkCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.197),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                          Condition.smallerThan(name: MOBILE, value: 270.0),
+                    const      Condition.smallerThan(name: MOBILE, value: 270.0),
                         ]).value,
-                    child: Image.asset(
+                 
+                    decoration:const BoxDecoration(
+                        shape: BoxShape.rectangle, color: Color(0xff252734)),   child: Image.asset(
                       pic,
                       //height: 100,
                       alignment: Alignment.topLeft,
@@ -392,12 +377,10 @@ class WorkCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.375),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5),
-                            Condition.smallerThan(name: MOBILE, value: 500.0),
+                      const      Condition.smallerThan(name: MOBILE, value: 500.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
                 ),
               ),

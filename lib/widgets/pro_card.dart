@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:portfolio/models/skillChip.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -30,7 +27,7 @@ class ProCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    print(screenWidth);
+   
     double screenHeight = MediaQuery.of(context).size.height; // screen width
 
     return Padding(
@@ -62,7 +59,7 @@ class ProCard extends StatelessWidget {
                                     valueWhen: [
                                   Condition.smallerThan(
                                       name: DESKTOP, value: screenWidth * 0.02),
-                                  Condition.smallerThan(
+                                const  Condition.smallerThan(
                                       name: TABLET, value: 17.0)
                                 ]).value),
                           ),
@@ -70,7 +67,7 @@ class ProCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.544,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                             const     Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Text(
@@ -82,7 +79,7 @@ class ProCard extends StatelessWidget {
                                       Condition.smallerThan(
                                           name: DESKTOP,
                                           value: screenWidth * 0.015),
-                                      Condition.smallerThan(
+                                   const   Condition.smallerThan(
                                           name: TABLET, value: 13.0)
                                     ]).value,
                               ),
@@ -94,7 +91,7 @@ class ProCard extends StatelessWidget {
                               width: ResponsiveValue(context,
                                   defaultValue: screenWidth * 0.544,
                                   valueWhen: [
-                                    Condition.smallerThan(
+                             const       Condition.smallerThan(
                                         name: DESKTOP, value: 900.0)
                                   ]).value,
                               child: Padding(
@@ -111,12 +108,12 @@ class ProCard extends StatelessWidget {
                                                     screenWidth * 0.003),
                                                 labelStyle: descriptionText,
                                                 backgroundColor:
-                                                    Color(0xff282b38),
+                                                const    Color(0xff282b38),
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             15),
-                                                    side: BorderSide(
+                                                    side:const BorderSide(
                                                         color: Colors.white)),
                                                 label: Text(
                                                   i.skill,
@@ -137,7 +134,7 @@ class ProCard extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open(link1!, "_blank");
                                   },
-                                  icon: Icon(
+                                  icon:const Icon(
                                     FontAwesomeIcons.github,
                                     color: Colors.white,
                                   )),
@@ -146,7 +143,7 @@ class ProCard extends StatelessWidget {
                                     onPressed: () {
                                       html.window.open(link2!, "_blank");
                                     },
-                                    icon: Icon(
+                                    icon:const Icon(
                                       FontAwesomeIcons.googlePlay,
                                       color: Colors.white,
                                     )),
@@ -156,12 +153,12 @@ class ProCard extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 15.0),
                             child: Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Color(0xff04c189))),
+                                  border: Border.all(color:const Color(0xff04c189))),
                               child: TextButton(
                                   onPressed: () {
                                     showCustomDialog(context, noi!, name);
                                   },
-                                  child: Text(
+                                  child:const Text(
                                     'Project Gallery',
                                     style: positionText,
                                   )),
@@ -180,9 +177,9 @@ class ProCard extends StatelessWidget {
                                     valueWhen: [
                                   Condition.smallerThan(
                                       name: DESKTOP, value: screenWidth * 0.02),
-                                  Condition.smallerThan(
+                              const    Condition.smallerThan(
                                       name: TABLET, value: 17.0),
-                                  Condition.smallerThan(
+                               const   Condition.smallerThan(
                                       name: MOBILE, value: 20.0),
                                 ]).value),
                           ),
@@ -190,7 +187,7 @@ class ProCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.544,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                             const     Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Text(
@@ -202,9 +199,9 @@ class ProCard extends StatelessWidget {
                                       Condition.smallerThan(
                                           name: DESKTOP,
                                           value: screenWidth * 0.014),
-                                      Condition.smallerThan(
+                                   const   Condition.smallerThan(
                                           name: TABLET, value: 13.5),
-                                      Condition.smallerThan(
+                                  const    Condition.smallerThan(
                                           name: MOBILE, value: 15.0)
                                     ]).value,
                               ),
@@ -216,12 +213,20 @@ class ProCard extends StatelessWidget {
                               width: ResponsiveValue(context,
                                   defaultValue: screenWidth * 0.544,
                                   valueWhen: [
-                                    Condition.smallerThan(
+                             const       Condition.smallerThan(
                                         name: DESKTOP, value: 900.0)
                                   ]).value,
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    vertical: screenWidth * 0.0068),
+                                    vertical:
+                                    ResponsiveValue(context,
+                                  defaultValue:  screenWidth * 0.0068,
+                                  valueWhen: [
+                                const    Condition.smallerThan(
+                                        name: MOBILE, value: 1.0)
+                                  ]).value!
+                                    
+                                    ),
                                 child: Wrap(
                                   children: skills!
                                       .map((i) => Padding(
@@ -233,12 +238,12 @@ class ProCard extends StatelessWidget {
                                                     screenWidth * 0.0034),
                                                 labelStyle: descriptionText,
                                                 backgroundColor:
-                                                    Color(0xff282b38),
+                                                  const Color(0xff282b38),
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             15),
-                                                    side: BorderSide(
+                                                    side:const BorderSide(
                                                         color: Colors.white)),
                                                 label: Text(
                                                   i.skill,
@@ -250,7 +255,7 @@ class ProCard extends StatelessWidget {
                                                             screenWidth *
                                                                 0.012245,
                                                         valueWhen: [
-                                                          Condition.smallerThan(
+                                                    const      Condition.smallerThan(
                                                               name: MOBILE,
                                                               value: 15.0),
                                                           Condition.smallerThan(
@@ -272,7 +277,7 @@ class ProCard extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open(link1!, "_blank");
                                   },
-                                  icon: Icon(
+                                  icon:const Icon(
                                     FontAwesomeIcons.github,
                                     color: Colors.white,
                                   )),
@@ -280,11 +285,11 @@ class ProCard extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open(link2!, "_blank");
                                   },
-                                  icon: Icon(
+                                  icon:const Icon(
                                     FontAwesomeIcons.googlePlay,
                                     color: Colors.white,
                                   )),
-                              SizedBox(
+                         const     SizedBox(
                                 width: 10,
                               ),
                               if (ResponsiveWrapper.of(context)
@@ -305,7 +310,7 @@ class ProCard extends StatelessWidget {
                                           style: positionText.copyWith(
                                               fontSize: ResponsiveValue(context,
                                                   defaultValue: 18.0,
-                                                  valueWhen: [
+                                                  valueWhen:const [
                                                 Condition.smallerThan(
                                                     name: MOBILE, value: 15.0),
                                                 Condition.smallerThan(
@@ -334,7 +339,7 @@ class ProCard extends StatelessWidget {
                                       style: positionText.copyWith(
                                           fontSize: ResponsiveValue(context,
                                               defaultValue: 18.0,
-                                              valueWhen: [
+                                              valueWhen:const [
                                             Condition.smallerThan(
                                                 name: MOBILE, value: 15.0),
                                             Condition.smallerThan(
@@ -352,7 +357,7 @@ class ProCard extends StatelessWidget {
                   bottom: ResponsiveValue(context,
                       defaultValue: 100.0,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+                  const      Condition.smallerThan(name: DESKTOP, value: 10.0)
                       ]).value!,
                 ),
                 child: ClipRRect(
@@ -365,9 +370,11 @@ class ProCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.219),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.45),
-                          Condition.smallerThan(name: MOBILE, value: 400.0),
+                       const   Condition.smallerThan(name: MOBILE, value: 380.0),
                         ]).value,
-                    child: Image.asset(
+                   
+                    decoration:const BoxDecoration(
+                        shape: BoxShape.rectangle, color: Color(0xff252734)), child: Image.asset(
                       pic,
                       //height: 100,
                       alignment: Alignment.topLeft,
@@ -378,12 +385,10 @@ class ProCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.18),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.23),
-                            Condition.smallerThan(name: MOBILE, value: 230.0),
+                        const    Condition.smallerThan(name: MOBILE, value: 220.0),
                           ]).value,
                       fit: BoxFit.fill,
                     ),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
                 ),
               ),
@@ -410,7 +415,11 @@ void showCustomDialog(BuildContext context, int noi, String name) {
           child: Container(
             height: 600,
             width: 300,
-            child: CarouselSlider.builder(
+            
+            margin:const EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(40)),child: CarouselSlider.builder(
               carouselController: buttonCarouselController,
               options: CarouselOptions(height: 600.0, viewportFraction: 1),
               itemCount: noi,
@@ -425,18 +434,14 @@ void showCustomDialog(BuildContext context, int noi, String name) {
                         imageUrl:
                             "https://firebasestorage.googleapis.com/v0/b/todo-a836d.appspot.com/o/portfolio%2F${name.replaceAll(' ', '%20').replaceAll(',', '%2C')}${itemIndex + 1}.jpeg?alt=media",
                         placeholder: (context, url) =>
-                            new Image.asset('images/loading.gif'),
+                             Image.asset('images/loading.gif'),
                         errorWidget: (context, url, error) {
-                          return new Icon(Icons.error);
+                          return const Icon(Icons.error);
                         }),
                   ),
                 ),
               ),
             ),
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(40)),
           ),
         ),
         Align(
@@ -449,10 +454,10 @@ void showCustomDialog(BuildContext context, int noi, String name) {
                   iconSize: 75,
                   onPressed: () {
                     buttonCarouselController.nextPage(
-                        duration: Duration(milliseconds: 300),
+                        duration:const Duration(milliseconds: 300),
                         curve: Curves.linear);
                   },
-                  icon: Icon(
+                  icon:const Icon(
                     FontAwesomeIcons.arrowRight,
                     color: Colors.white,
                   )),
@@ -472,36 +477,21 @@ void showCustomDialog(BuildContext context, int noi, String name) {
                           duration: Duration(milliseconds: 300),
                           curve: Curves.linear);
                     },
-                    icon: Icon(
+                    icon:const Icon(
                       FontAwesomeIcons.arrowLeft,
                       color: Colors.white,
                     )),
               )),
         ),
-        // Align(
-        //   alignment: AlignmentDirectional.topStart,
-        //   child: Material(
-        //       color: Colors.transparent,
-        //       child: Padding(
-        //         padding: const EdgeInsets.only(left: 10.0),
-        //         child: IconButton(
-        //             onPressed: () {
-        //               Navigator.pop(context);
-        //             },
-        //             icon: Icon(
-        //               FontAwesomeIcons.xmark,
-        //               color: Colors.black54.withOpacity(0.25),
-        //             )),
-        //       )),
-        // )
+
       ]);
     },
     transitionBuilder: (_, anim, __, child) {
       Tween<Offset> tween;
       if (anim.status == AnimationStatus.reverse) {
-        tween = Tween(begin: Offset(-1, 0), end: Offset.zero);
+        tween = Tween(begin:const Offset(-1, 0), end: Offset.zero);
       } else {
-        tween = Tween(begin: Offset(1, 0), end: Offset.zero);
+        tween = Tween(begin:const Offset(1, 0), end: Offset.zero);
       }
 
       return SlideTransition(

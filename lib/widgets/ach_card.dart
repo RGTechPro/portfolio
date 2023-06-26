@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/constants.dart';
 import 'dart:html' as html;
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:portfolio/models/skillChip.dart';
-import 'package:portfolio/widgets/skill_card.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_framework/responsive_row_column.dart';
 
 class AchCard extends StatelessWidget {
   AchCard(
@@ -34,7 +29,7 @@ class AchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width; // screen width
-    print(screenWidth);
+
     double screenHeight = MediaQuery.of(context).size.height; // screen width
 
     return Padding(
@@ -69,7 +64,7 @@ class AchCard extends StatelessWidget {
                                   valueWhen: [
                                 Condition.smallerThan(
                                     name: DESKTOP, value: screenWidth * 0.02),
-                                Condition.smallerThan(name: TABLET, value: 17.0)
+                               const Condition.smallerThan(name: TABLET, value: 17.0)
                               ]).value),
                         ),
                         Padding(
@@ -84,7 +79,7 @@ class AchCard extends StatelessWidget {
                                   Condition.smallerThan(
                                       name: DESKTOP,
                                       value: screenWidth * 0.022),
-                                  Condition.smallerThan(
+                            const      Condition.smallerThan(
                                       name: TABLET, value: 19.0)
                                 ]).value),
                           ),
@@ -93,7 +88,7 @@ class AchCard extends StatelessWidget {
                           width: ResponsiveValue(context,
                               defaultValue: screenWidth * 0.544,
                               valueWhen: [
-                                Condition.smallerThan(
+                            const    Condition.smallerThan(
                                     name: DESKTOP, value: 900.0)
                               ]).value,
                           //width: 800,
@@ -106,7 +101,7 @@ class AchCard extends StatelessWidget {
                                     Condition.smallerThan(
                                         name: DESKTOP,
                                         value: screenWidth * 0.015),
-                                    Condition.smallerThan(
+                               const     Condition.smallerThan(
                                         name: TABLET, value: 13.0)
                                   ]).value,
                             ),
@@ -118,7 +113,7 @@ class AchCard extends StatelessWidget {
                           child: Text(
                             time,
                             style: descriptionText.copyWith(
-                                color: Color(0xff04c189),
+                                color:const Color(0xff04c189),
                                 fontSize: ResponsiveValue(context,
                                     defaultValue: 20.0,
                                     valueWhen: [
@@ -133,7 +128,7 @@ class AchCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.544,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                                 const Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Padding(
@@ -150,11 +145,11 @@ class AchCard extends StatelessWidget {
                                                   screenWidth * 0.003),
                                               labelStyle: descriptionText,
                                               backgroundColor:
-                                                  Color(0xff282b38),
+                                              const    Color(0xff282b38),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(15),
-                                                  side: BorderSide(
+                                                  side:const BorderSide(
                                                       color: Colors.white)),
                                               label: Text(
                                                 i.skill,
@@ -180,7 +175,7 @@ class AchCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link1, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowUpRightFromSquare,
                                   color: Colors.white,
                                 )),
@@ -195,7 +190,7 @@ class AchCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link2!, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.github,
                                   color: Colors.white,
                                 )),
@@ -211,7 +206,7 @@ class AchCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link3!, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.linkedinIn,
                                   color: Colors.white,
                                 )),
@@ -230,9 +225,9 @@ class AchCard extends StatelessWidget {
                                   valueWhen: [
                                 Condition.smallerThan(
                                     name: DESKTOP, value: screenWidth * 0.02),
-                                Condition.smallerThan(
+                     const           Condition.smallerThan(
                                     name: TABLET, value: 17.0),
-                                Condition.smallerThan(
+                             const   Condition.smallerThan(
                                     name: MOBILE, value: 20.0),
                               ]).value),
                         ),
@@ -251,9 +246,9 @@ class AchCard extends StatelessWidget {
                                       Condition.smallerThan(
                                           name: DESKTOP,
                                           value: screenWidth * 0.022),
-                                      Condition.smallerThan(
+                             const        Condition.smallerThan(
                                           name: TABLET, value: 19.0),
-                                      Condition.smallerThan(
+                              const        Condition.smallerThan(
                                           name: MOBILE, value: 25.0),
                                     ]).value),
                               ),
@@ -264,7 +259,7 @@ class AchCard extends StatelessWidget {
                               child: Text(
                                 time,
                                 style: descriptionText.copyWith(
-                                    color: Color(0xff04c189),
+                                    color:const Color(0xff04c189),
                                     fontSize: ResponsiveValue(context,
                                         defaultValue: 22.0,
                                         valueWhen: [
@@ -274,7 +269,7 @@ class AchCard extends StatelessWidget {
                                           Condition.smallerThan(
                                               name: MOBILE,
                                               value: screenWidth * 0.03),
-                                          Condition.smallerThan(
+                                   const       Condition.smallerThan(
                                               name: MOBILE, value: 20.0),
                                           //   Condition.smallerThan(
                                           // name: 'SMOBILE',
@@ -291,7 +286,7 @@ class AchCard extends StatelessWidget {
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.544,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                           const       Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             //width: 800,
@@ -304,9 +299,9 @@ class AchCard extends StatelessWidget {
                                       Condition.smallerThan(
                                           name: DESKTOP,
                                           value: screenWidth * 0.014),
-                                      Condition.smallerThan(
+                              const        Condition.smallerThan(
                                           name: TABLET, value: 13.5),
-                                      Condition.smallerThan(
+                              const        Condition.smallerThan(
                                           name: MOBILE, value: 15.0)
                                     ]).value,
                               ),
@@ -314,29 +309,14 @@ class AchCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Padding(
-                        //   padding: const EdgeInsets.symmetric(vertical: 10),
-                        //   child: Text(
-                        //     time,
-                        //     style: descriptionText.copyWith(color: Color(0xff04c189)
-
-                        //     ,fontSize: ResponsiveValue(context,
-                        //     defaultValue:
-                        //     22.0,
-                        //     valueWhen: [
-                        //       Condition.smallerThan(name: DESKTOP,value:screenWidth*0.0225)
-                        //     ]
-                        //   ).value
-
-                        //     ),
-                        //   ),
-                        // ),
+               
+              
                         if (skills!.isNotEmpty)
                           Container(
                             width: ResponsiveValue(context,
                                 defaultValue: screenWidth * 0.544,
                                 valueWhen: [
-                                  Condition.smallerThan(
+                            const      Condition.smallerThan(
                                       name: DESKTOP, value: 900.0)
                                 ]).value,
                             child: Padding(
@@ -353,11 +333,11 @@ class AchCard extends StatelessWidget {
                                                   screenWidth * 0.0034),
                                               labelStyle: descriptionText,
                                               backgroundColor:
-                                                  Color(0xff282b38),
+                                               const   Color(0xff282b38),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(15),
-                                                  side: BorderSide(
+                                                  side:const BorderSide(
                                                       color: Colors.white)),
                                               label: Text(
                                                 i.skill,
@@ -368,7 +348,7 @@ class AchCard extends StatelessWidget {
                                                             screenWidth *
                                                                 0.012245,
                                                         valueWhen: [
-                                                      Condition.smallerThan(
+                                          const            Condition.smallerThan(
                                                           name: MOBILE,
                                                           value: 15.0),
                                                            Condition.smallerThan(
@@ -398,7 +378,7 @@ class AchCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link1, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.arrowUpRightFromSquare,
                                   color: Colors.white,
                                 )),
@@ -413,7 +393,7 @@ class AchCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link2!, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.github,
                                   color: Colors.white,
                                 )),
@@ -428,7 +408,7 @@ class AchCard extends StatelessWidget {
                                 onPressed: () {
                                   html.window.open(link3!, "_blank");
                                 },
-                                icon: Icon(
+                                icon:const Icon(
                                   FontAwesomeIcons.linkedinIn,
                                   color: Colors.white,
                                 )),
@@ -444,12 +424,12 @@ class AchCard extends StatelessWidget {
                   bottom: ResponsiveValue(context,
                       defaultValue: 100.0,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 10.0)
+               const         Condition.smallerThan(name: DESKTOP, value: 10.0)
                       ]).value!,
                   left: ResponsiveValue(context,
                       defaultValue: screenWidth * 0.044,
                       valueWhen: [
-                        Condition.smallerThan(name: DESKTOP, value: 0.0)
+                   const     Condition.smallerThan(name: DESKTOP, value: 0.0)
                       ]).value!,
                 ),
                 child: ClipRRect(
@@ -462,12 +442,14 @@ class AchCard extends StatelessWidget {
                               name: DESKTOP, value: screenWidth * 0.197),
                           Condition.smallerThan(
                               name: TABLET, value: screenWidth * 0.24),
-                          Condition.smallerThan(name: MOBILE, value: 270.0),
+                  const        Condition.smallerThan(name: MOBILE, value: 270.0),
                         ]).value,
 
                     //450
 
-                    child: Image.asset(
+                
+                    decoration:const BoxDecoration(
+                        shape: BoxShape.rectangle, color: Color(0xff252734)),    child: Image.asset(
                       pic,
                       //height: 100,
                       alignment: Alignment.topLeft,
@@ -478,14 +460,12 @@ class AchCard extends StatelessWidget {
                                 name: DESKTOP, value: screenWidth * 0.375),
                             Condition.smallerThan(
                                 name: TABLET, value: screenWidth * 0.5),
-                            Condition.smallerThan(name: MOBILE, value: 500.0),
+                         const   Condition.smallerThan(name: MOBILE, value: 500.0),
                           ]).value,
 
                       //400
                       fit: BoxFit.fill,
                     ),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle, color: Color(0xff252734)),
                   ),
                 ),
               ),
