@@ -3,7 +3,7 @@ import 'package:portfolio/home_page.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-final httpLink = HttpLink("https://api.hashnode.com/");
+final httpLink = HttpLink("https://gql.hashnode.com.");
 
 ValueNotifier<GraphQLClient> client = ValueNotifier(
     GraphQLClient(cache: GraphQLCache(store: InMemoryStore()), link: httpLink));
