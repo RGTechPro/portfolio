@@ -311,7 +311,7 @@ class _HomePageState extends State<HomePage> {
                                     ]).value,
                                 child: SizedBox(
                                   width: 150,
-                                  child: Text('15',
+                                  child: Text('18',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontFamily: 'Neue',
@@ -368,7 +368,7 @@ class _HomePageState extends State<HomePage> {
                                     ]).value,
                                 child: SizedBox(
                                   width: 150,
-                                  child: Text('867+',
+                                  child: Text('987+',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontFamily: 'Neue',
@@ -2099,9 +2099,9 @@ class _HomePageState extends State<HomePage> {
                                     title: data[index]['node']['title'],
                                     brief: data[index]['node']['brief'],
                                     date: data[index]['node']['publishedAt'],
-                                    pic: data[index]['node']['coverImage']['url'],
-                                    link:
-                                       data[index]['node']['url'],
+                                    pic: data[index]['node']['coverImage']
+                                        ['url'],
+                                    link: data[index]['node']['url'],
                                   );
                                 },
                               )),
