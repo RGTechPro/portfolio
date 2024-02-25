@@ -727,22 +727,8 @@ class _HomePageState extends State<HomePage> {
                                     style:
                                         aboutMeText.copyWith(fontSize: mFont),
                                     children: <TextSpan>[
-                                      const TextSpan(text: "Hi, I'm a "),
                                       TextSpan(
-                                          text: "final-year ",
-                                          style: aboutMeText2.copyWith(
-                                              fontSize: mFont)),
-                                      TextSpan(
-                                          text: 'undergraduate at ',
-                                          style: aboutMeText.copyWith(
-                                              fontSize: mFont)),
-                                      TextSpan(
-                                          text:
-                                              'Thapar Institute of Engineering & Technology',
-                                          style: aboutMeText2.copyWith(
-                                              fontSize: mFont)),
-                                      TextSpan(
-                                          text: ", and I've been a ",
+                                          text: "Hi, I've been a ",
                                           style: aboutMeText.copyWith(
                                               fontSize: mFont)),
                                       TextSpan(
@@ -1066,7 +1052,7 @@ class _HomePageState extends State<HomePage> {
                               company: 'Nova Meta',
                               description:
                                   'As a Flutter Developer at Nova, I led app scaling, introducing innovative features like audio/video channels, community integration, and advanced chat functionalities. Restructuring the code, I implemented a robust analytics mechanism, enhancing overall performance and UX. Through these enhancements, I guided the app to new heights, ensuring increased user engagement and a seamless experience.',
-                              duration: 'Nov 2023 to Present',
+                              duration: 'Oct 2023 to Present',
                               pic: 'images/nova.png',
                               link: 'https://joinsupernova.co/',
                               skills: [
@@ -2190,7 +2176,7 @@ class _HomePageState extends State<HomePage> {
                                   'Thapar Institute of Engineering & Technology',
                               description:
                                   'Pursuing B.E. in Computer Engineering',
-                              duration: '2020 to 2024',
+                              duration: '',
                               pic: 'images/thapar.webp',
                               link: 'https://www.thapar.edu/',
                             ),
