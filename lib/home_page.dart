@@ -1025,7 +1025,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Work Experience & Volunteering',
+                      Text('Work Experience',
                           style: topicHeading.copyWith(
                               fontSize: ResponsiveValue(context,
                                   defaultValue: 35.0,
