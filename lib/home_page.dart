@@ -1048,11 +1048,58 @@ class _HomePageState extends State<HomePage> {
                           scrollDirection: Axis.horizontal,
                           children: [
                             WorkCard(
+                              position: 'SDE-I (Mobile)',
+                              company: 'Junglee Games',
+                              description:
+                                  "As a SDE-I (Mobile) engineer at Junglee Games, the fastest-growing skill games company in Southeast Asia, I focus on optimizing the Junglee Poker app built on Flutter. My responsibilities include implementing features, optimizing code, and supporting scaling efforts to enhance performance and user engagement.",
+                              duration: 'March 2024 to Present',
+                              pic: 'images/junglee.png',
+                              link: 'https://www.jungleegames.com/#',
+                              skills: [
+                                SkillChip(
+                                    skill: 'Flutter',
+                                    icon: const Icon(
+                                      DevIcons.flutterPlain,
+                                      color: Color(0xff04c189),
+                                    )),
+                                SkillChip(
+                                    skill: 'Firebase',
+                                    icon: const Icon(
+                                      DevIcons.firebasePlain,
+                                      color: Color(0xff04c189),
+                                    )),
+                                SkillChip(
+                                    skill: 'Node.js',
+                                    icon: const Icon(
+                                      DevIcons.nodejsPlain,
+                                      color: Color(0xff04c189),
+                                    )),
+                                SkillChip(
+                                    skill: 'Python',
+                                    icon: const Icon(
+                                      DevIcons.pythonPlain,
+                                      color: Color(0xff04c189),
+                                    )),
+                                SkillChip(
+                                    skill: 'Swift',
+                                    icon: const Icon(
+                                      DevIcons.swiftPlain,
+                                      color: Color(0xff04c189),
+                                    )),
+                                SkillChip(
+                                    skill: 'GCP',
+                                    icon: const Icon(
+                                      DevIcons.googlecloudPlain,
+                                      color: Color(0xff04c189),
+                                    )),
+                              ],
+                            ),
+                            WorkCard(
                               position: 'FLUTTER DEVELOPER',
                               company: 'Nova Meta',
                               description:
                                   'As a Flutter Developer at Nova, I led app scaling, introducing innovative features like audio/video channels, community integration, and advanced chat functionalities. Restructuring the code, I implemented a robust analytics mechanism, enhancing overall performance and UX. Through these enhancements, I guided the app to new heights, ensuring increased user engagement and a seamless experience.',
-                              duration: 'Oct 2023 to Present',
+                              duration: 'Oct 2023 to March 2024',
                               pic: 'images/nova.png',
                               link: 'https://joinsupernova.co/',
                               skills: [
@@ -1306,7 +1353,7 @@ class _HomePageState extends State<HomePage> {
                                 )),
                           ),
                           DotsIndicator(
-                            dotsCount: 5,
+                            dotsCount: 6,
                             position: _currentPosition_work.toDouble(),
                             decorator: DotsDecorator(
                               activeColor: const Color(0xff04c189),
